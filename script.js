@@ -1,14 +1,29 @@
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("contato-form").addEventListener("submit", function (event) {
-        event.preventDefault(); // Impede o envio tradicional do formulário
+        event.preventDefault(); // Impede o envio padrão do formulário
 
-        let nome = encodeURIComponent(document.getElementById("nome").value);
-        let tipoProblema = encodeURIComponent(document.getElementById("tipo-problema").value);
-        let mensagem = encodeURIComponent(document.getElementById("mensagem").value);
+        let nome = document.getElementById("nome").value;
+        let problema = document.getElementById("problema").value;
+        let mensagem = document.getElementById("mensagem").value;
 
-        let texto = `Olá, meu nome é ${nome}.%0AÁrea de Problema: ${tipoProblema}.%0A%0A${mensagem}`;
-        let url = `https://api.whatsapp.com/send/?phone=5543988008177&text=${texto}`;
+        if (nome === "" || problema === "" || mensagem === "") {
+            alert("Por favor, preencha todos os campos.");
+            return;
+        }
 
-        window.open(url, "_blank"); // Abre o WhatsApp com os dados preenchidos
+        // Criando a mensagem formatada para WhatsApp
+        let texto = `Olá, meu nome é ${nome}. Tenho um problema na área de ${problema} e gostaria de mais informações.\n\nDescrição: ${mensagem}`;
+
+        // Codificando a mensagem para URL
+        let mensagemCodificada = encodeURIComponent(texto);
+
+        // Seu número de WhatsApp (com DDD e código do país)
+        let numeroWhatsApp = "5543988008177"; 
+
+        // Link do WhatsApp
+        let linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensagemCodificada}`;
+
+        // Redireciona o usuário para o WhatsApp
+        window.location.href = linkWhatsApp;
     });
 });
