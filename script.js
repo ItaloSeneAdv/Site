@@ -1,9 +1,17 @@
-document.addEventListener("DOMContentLoaded", function () {
-    document.getElementById("contato-form").addEventListener("submit", function (event) {
+window.onload = function () {
+    let formulario = document.getElementById("contato-form");
 
-        let nome = document.getElementById("nome").value;
-        let problema = document.getElementById("problema").value;
-        let mensagem = document.getElementById("mensagem").value;
+    if (!formulario) {
+        console.error("Erro: Formulário não encontrado!");
+        return;
+    }
+
+    formulario.addEventListener("submit", function (event) {
+        event.preventDefault(); // Impede o envio padrão do formulário
+
+        let nome = document.getElementById("nome").value.trim();
+        let problema = document.getElementById("problema").value.trim();
+        let mensagem = document.getElementById("mensagem").value.trim();
 
         if (nome === "" || problema === "" || mensagem === "") {
             alert("Por favor, preencha todos os campos.");
@@ -25,4 +33,4 @@ document.addEventListener("DOMContentLoaded", function () {
         // Redireciona o usuário para o WhatsApp
         window.location.href = linkWhatsApp;
     });
-});
+};
