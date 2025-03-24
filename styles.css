@@ -1,0 +1,720 @@
+/* Reset padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #121417, #22252B);
+    color: #EAEAEA;
+    font-family: "Athena", serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/* HEADER */
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+/* CONTAINER */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 96%;
+    max-width: 1920px;
+}
+
+/* LOGO */
+.logo {
+    height: 120px; /* Aumentando o tamanho */
+    width: auto;
+}
+
+/* MENU */
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+/* BOTÕES */
+.menu a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 12px 24px;
+    background: #CF640C; /* Agora o fundo é sólido */
+    border-radius: 55px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background: #f36d07; /* Um laranja um pouco mais claro no hover */
+}
+
+/* HERO SECTION */
+.hero {
+    width: 100%;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(to bottom, #121417, #22252B);
+    border: 2px solid #CF640C; /* Moldura fina laranja */
+    padding: 40px 20px;
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #EAEAEA;
+    font-family: "Safira March", serif;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #EAEAEA;
+    font-family: "Athena", serif;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    text-decoration: none;
+    font-size: 18px;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 14px 28px;
+    background: #CF640C;
+    border-radius: 55px;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: #f36d07;
+}
+/* HERO SECTION */
+.hero {
+    text-align: center;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 36px;
+    font-family: "Safira March", serif;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 20px;
+    font-family: "Athena", serif;
+    color: #EAEAEA;
+    line-height: 1.5;
+}/* HERO SECTION AJUSTADA */
+.hero {
+    width: 100%;
+    height: 100vh; /* Ocupa toda a tela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(to bottom, #121417, #22252B);
+    padding: 40px 20px;
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.hero h1 {
+    font-size: 52px; /* Maior destaque */
+    font-weight: bold;
+    color: #EAEAEA;
+    font-family: "Safira March", serif;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 22px;
+    color: #EAEAEA;
+    font-family: "Athena", serif;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    text-decoration: none;
+    font-size: 20px;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 16px 32px;
+    background: #CF640C;
+    border-radius: 55px;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: #f36d07;
+}
+
+/* SEÇÃO CONTATO */
+.contato {
+    text-align: center;
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 40px;
+    background: #1A1D25;
+    border: 2px solid #CF640C; /* Moldura fina laranja */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.contato h2 {
+    font-size: 32px;
+    font-family: "Safira March", serif;
+    color: #CF640C;
+    margin-bottom: 20px;
+}
+
+.contato p {
+    font-size: 18px;
+    color: #EAEAEA;
+    margin-bottom: 20px;
+}
+
+/* LINKS (E-mail, telefone e endereço) */
+.contato ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.contato ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.contato ul li a {
+    color: #CF640C;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contato ul li a:hover {
+    text-decoration: underline;
+}
+
+/* FORMULÁRIO */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form label {
+    font-size: 16px;
+    color: #EAEAEA;
+    margin-top: 10px;
+}
+
+form input, form textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #CF640C;
+    border-radius: 5px;
+    background-color: #22252B;
+    color: #EAEAEA;
+    font-size: 16px;
+}
+
+form textarea {
+    height: 120px;
+}
+
+/* BOTÃO ENVIAR */
+button {
+    margin-top: 20px;
+    padding: 14px 28px;
+    background: #CF640C;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 55px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #f36d07;
+    transform: scale(1.05);
+}
+/* SEÇÃO SOBRE */
+.sobre {
+    width: 100%;
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 60px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1A1D25;
+    border: 2px solid #CF640C; /* Moldura fina laranja */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.sobre-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.sobre-texto {
+    flex: 1;
+    text-align: left;
+}
+
+.sobre-texto h2 {
+    font-size: 36px;
+    font-family: "Safira March", serif;
+    color: #CF640C;
+    margin-bottom: 20px;
+}
+
+.sobre-texto p {
+    font-size: 18px;
+    color: #EAEAEA;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+/* IMAGEM */
+.sobre-imagem {
+    flex: 1;
+    text-align: center;
+}
+
+.sobre-imagem img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+/* BOTÃO SOCIAL */
+.social-btn {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-btn .cta-button {
+    font-size: 18px;
+    padding: 14px 28px;
+    background: #CF640C;
+    color: #FFFFFF;
+    border-radius: 55px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.social-btn .cta-button:hover {
+    background: #f36d07;
+    transform: scale(1.05);
+}
+
+/* SEÇÃO ÁREAS DE ATUAÇÃO */
+.atuacao {
+    text-align: center;
+    padding: 80px 5%;
+    background: #1A1D25;
+    border: 2px solid #CF640C; /* Moldura fina laranja */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.atuacao h2 {
+    font-size: 36px;
+    font-family: "Safira March", serif;
+    color: #CF640C;
+    margin-bottom: 40px;
+}
+
+/* Container em Grid para alinhar os itens lado a lado */
+.atuacao-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Estilo dos Cards */
+.area {
+    background: #22252B;
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+/* Ícones */
+.area i {
+    font-size: 50px; /* Ícones maiores */
+    color: #CF640C;
+    margin-bottom: 15px;
+}
+
+.area h3 {
+    font-size: 22px;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.area p {
+    font-size: 16px;
+    color: #EAEAEA;
+    line-height: 1.6;
+}
+
+/* Efeito ao passar o mouse */
+.area:hover {
+    transform: scale(1.05);
+}
+
+/* VERSÃO MOBILE */
+   @media (max-width: 768px) {
+    /* GERAL */
+    body {
+        font-size: 16px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section {
+        padding: 40px 8%;
+    }
+
+    /* SOBRE */
+    .sobre-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+        gap: 20px;
+    }
+
+    .sobre-texto {
+        width: 100%;
+    }
+
+    .sobre-imagem {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+    .sobre-imagem img {
+        max-width: 180px; /* TAMANHO BOM PARA CELULAR */
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .social-btn {
+        display: flex;
+        justify-content: flex-start; /* ALINHADO AO TEXTO */
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .social-btn .cta-button {
+        font-size: 16px;
+        padding: 12px 24px;
+        width: auto;
+    }
+
+    /* ALINHA IMAGEM E TEXTO LADO A LADO QUANDO HÁ ESPAÇO */
+    @media (min-width: 480px) { 
+        .sobre-container {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .sobre-texto {
+            width: 60%;
+        }
+
+        .sobre-imagem {
+            width: 40%;
+            justify-content: flex-end;
+        }
+    }
+}
+/* =========================== MOBILE =========================== */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    section {
+        padding: 40px 8%;
+    }
+
+    /* CONTAINER GERAL */
+    .sobre-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Mantém o texto alinhado à esquerda */
+        text-align: left;
+        width: 100%;
+    }
+
+    .sobre-texto {
+        width: 100%;
+    }
+
+    .social-btn {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start; /* Botão alinhado ao texto */
+        margin-top: 15px;
+    }
+
+    .social-btn .cta-button {
+        font-size: 16px;
+        padding: 12px 24px;
+        width: auto;
+    }
+
+    .sobre-imagem {
+        display: flex;
+        justify-content: center; /* Imagem centralizada no mobile */
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .sobre-imagem img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+}
+
+/* =========================== MOBILE =========================== */
+@media (max-width: 768px) {
+    .sobre {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: left;
+        width: 100%;
+        padding: 40px 8%;
+        border: 2px solid #CF640C; /* Mantém a moldura */
+    }
+
+    .sobre-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .sobre-texto {
+        width: 100%;
+        text-align: left;
+    }
+
+    .sobre-imagem {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .sobre-imagem img {
+        max-width: 90%; /* Ajuste fino para evitar que a imagem ultrapasse */
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .social-btn {
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Centraliza o botão */
+        margin-top: 30px; /* Espaço suficiente para não encostar */
+    }
+
+    .social-btn .cta-button {
+        font-size: 16px;
+        padding: 12px 24px;
+        width: auto;
+    }
+    footer a {
+        color: #CF640C;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    
+    footer a:hover {
+        text-decoration: underline;
+    }
+}
+/*  Estilização do Rodapé */
+footer {
+    background-color: #121417; /* Fundo escuro */
+    color: #EAEAEA; /* Cor do texto */
+    text-align: center;
+    padding: 15px 0;
+    border-top: 2px solid #CF640C; /* Linha laranja para separar */
+    width: 100%;
+    position: relative; /* Mantém no fluxo normal */
+    bottom: 0;
+    margin-top: 50px; /*  Garante separação do conteúdo acima */
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 10px;
+}
+
+footer p {
+        font-size: 14px;
+        color: #FFFFFF; 
+        font-weight: bold; 
+        letter-spacing: 0.5px; 
+    }
+    
+/* Garante que o rodapé sempre fique no final da página */
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.whatsapp-fixo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    z-index: 1000;
+}
+.whatsapp-fixo img {
+    width: 100%;
+    height: 100%;
+}
+/* Ajuste de tamanho para ficar igual aos outros inputs */
+#tipo-problema {
+    width: 100%;
+    height: 45px; /* Defina uma altura igual aos outros campos */
+    padding: 12px;
+    font-size: 18px;
+    border: 1px solid #CF640C;
+    border-radius: 5px;
+    background-color: #22252B;
+    color: #EAEAEA;
+    cursor: pointer;
+    appearance: none; /* Remove a seta padrão no Chrome/Safari */
+}
+
+/* Ajusta opções para não ficarem minúsculas */
+#tipo-problema option {
+    background: #1A1D25;
+    color: #EAEAEA;
+    font-size: 16px;
+    padding: 10px;
+}
+/* Ajuste para restaurar o tamanho original do formulário */
+.contato form {
+    width: 100%;
+    max-width: 600px; /* Define um tamanho fixo maior */
+    margin: 0 auto;
+}
+
+/* Ajuste do tamanho de TODOS os inputs, textarea e select */
+.contato input,
+.contato select,
+.contato textarea {
+    width: 100%;
+    height: 55px; /* Volta ao tamanho maior */
+    padding: 15px;
+    font-size: 18px; /* Deixa o texto mais legível */
+    border: 1px solid #CF640C;
+    border-radius: 5px;
+    background-color: #22252B;
+    color: #EAEAEA;
+    cursor: pointer;
+    appearance: none; /* Remove a seta padrão do select */
+}
+
+/* Ajuste específico para textarea (para não ficar pequeno demais) */
+.contato textarea {
+    height: 120px; /* Volta ao tamanho original */
+    resize: none;
+}
+/* Ajuste para restaurar o tamanho original do formulário */
+.contato form {
+    width: 100%;
+    max-width: 650px; /* Ajuste para restaurar o tamanho original */
+    margin: 0 auto;
+}
+
+/* Ajuste do tamanho de TODOS os inputs, select e textarea */
+.contato input,
+.contato select,
+.contato textarea {
+    width: 100%;
+    height: 60px; /* Volta ao tamanho que estava antes */
+    padding: 18px;
+    font-size: 20px; /* Ajusta para o tamanho original do texto */
+    border: 2px solid #CF640C; /* Mantém o destaque visual */
+    border-radius: 5px;
+    background-color: #22252B;
+    color: #EAEAEA;
+    cursor: pointer;
+    appearance: none; /* Remove a seta padrão do select */
+}
+
+/* Ajuste específico para textarea */
+.contato textarea {
+    height: 150px; /* Retorna ao tamanho original */
+    resize: none;
+}
