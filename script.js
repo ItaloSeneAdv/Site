@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("contato-form").addEventListener("submit", function (event) {
-        event.preventDefault(); // Impede o envio padrão do formulário
 
         let nome = document.getElementById("nome").value;
         let problema = document.getElementById("problema").value;
