@@ -19,7 +19,7 @@ window.onload = function () {
         }
 
         // Criando a mensagem formatada para WhatsApp
-        let texto = `Olá, meu nome é ${nome}. Tenho um problema na área de ${problema} e gostaria de mais informações.\n\nDescrição: ${mensagem}`;
+        let texto = `Olá, meu nome é ${nome}. Tenho um problema na área de ${problema} e gostaria de mais informações.\n\nMeu problema é: ${mensagem}`;
 
         // Codificando a mensagem para URL
         let mensagemCodificada = encodeURIComponent(texto);
