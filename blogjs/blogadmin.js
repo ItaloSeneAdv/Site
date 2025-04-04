@@ -1,9 +1,10 @@
+// blogjs/blogadmin.js
+
 async function getPosts() {
-  return getLocalPosts();
+  return await loadPosts();
 }
 
 async function savePosts(posts) {
-  saveLocalPosts(posts);
   downloadJSON(posts);
 }
 
@@ -15,12 +16,9 @@ function downloadJSON(posts) {
   a.download = 'blogposts.json';
   a.click();
   URL.revokeObjectURL(url);
-  
-  // Feedback visual para o usuário
-  alert('Arquivo JSON gerado com sucesso! Por favor, faça upload do arquivo "blogposts.json" para a raiz do seu site. Coloque uma , depois do último }');
+  alert('Arquivo JSON gerado! Faça o upload dele para a raiz do seu site.');
 }
 
-// Renderização dos posts na admin
 async function renderAdmin() {
   const list = document.getElementById('admin-list');
   const posts = await getPosts();
@@ -49,9 +47,8 @@ async function renderAdmin() {
   });
 }
 
-// Funções de edição/exclusão
 function editPost(id) {
-  const posts = getLocalPosts();
+  const posts = getPosts();
   const post = posts.find(p => p.id === id);
   if (post) {
     document.getElementById('post-id').value = post.id;
@@ -66,20 +63,17 @@ function editPost(id) {
 }
 
 function deletePost(id) {
-  if (confirm('Tem certeza que deseja excluir este post permanentemente?')) {
-    const updatedPosts = getLocalPosts().filter(p => p.id !== id);
-    saveLocalPosts(updatedPosts);
+  if (confirm('Excluir este post permanentemente?')) {
+    const updatedPosts = getPosts().filter(p => p.id !== id);
+    savePosts(updatedPosts);
     renderAdmin();
   }
 }
 
-// Gerenciamento do formulário
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('post-form');
-  
-  // Define a data de hoje como padrão
   document.getElementById('date').valueAsDate = new Date();
-  
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     
@@ -93,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
       content: document.getElementById('content').value.trim()
     };
 
-    const posts = getLocalPosts();
+    const posts = await getPosts();
     const existingIndex = posts.findIndex(p => p.id === postData.id);
     
     if (existingIndex >= 0) {
@@ -102,14 +96,11 @@ document.addEventListener('DOMContentLoaded', () => {
       posts.unshift(postData);
     }
 
-    saveLocalPosts(posts);
-    downloadJSON(posts);
-    
+    await savePosts(posts);
     document.getElementById('post-id').value = '';
     form.reset();
     renderAdmin();
   });
 
-  // Carregar posts ao iniciar
   renderAdmin();
 });
