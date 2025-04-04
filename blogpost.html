@@ -31,9 +31,12 @@
   </footer>
   <script src="blogjs/blogstorage.js"></script>
   <script>
-    const id = new URLSearchParams(location.search).get('id');
-    const post = getPosts().find(p => p.id === id);
-    const content = document.getElementById('post-content');
+  const id = new URLSearchParams(location.search).get('id');
+  const content = document.getElementById('post-content');
+
+  (async () => {
+    const posts = await getPublicPosts();
+    const post = posts.find(p => p.id === id);
 
     if (post) {
       const imagePath = post.image ? `blogimages/${post.image}` : '';
@@ -44,9 +47,10 @@
         <div class="post-content">${post.content.replace(/\n/g, '<br>')}</div>
       `;
     } else {
-      content.innerHTML = `<p>Post não encontrado.</p>`;
+      content.innerHTML = '<p>Post não encontrado.</p>';
     }
-  </script>
+  })();
+</script>
   <script src="mobile.js"></script>
 </body>
 </html>
