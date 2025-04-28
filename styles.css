@@ -676,3 +676,19 @@ footer a:hover {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
+/* CORREÇÃO PARA OS ITENS DE CONTATO */
+.contato ul li {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.contato ul li strong {
+    white-space: nowrap; /* Mantém "Telefone:" em uma linha */
+}
+
+.contato ul li a {
+    display: inline !important; /* Força exibição do link */
+    color: #CF640C !important;
+    text-decoration: none !important;
+}
