@@ -6,16 +6,21 @@
   <title>Post | Blog Jurídico</title>
   <link rel="stylesheet" href="blogcss/blogpost.css">
   <link rel="stylesheet" href="blogcss/blogstyle.css">
+  <!-- Scroll Reveal -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js"></script>
 </head>
 <body>
   <header>
     <div class="container">
-      <img src="logo.png" alt="Logotipo de Ítalo Sêne Advocacia" class="logo">
+      <a href="index.html" class="logo-link">
+        <img src="logo.png" alt="Logotipo de Ítalo Sêne Advocacia" class="logo">
+      </a>
       <div class="menu-toggle">&#9776;</div>
       <nav>
         <ul class="menu">
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#contato">Contato</a></li>
+          <li><a href="index.html#atuacao">Áreas de Atuação</a></li>
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
           <li><a href="index.html">Site</a></li>
         </ul>
       </nav>
@@ -29,29 +34,92 @@
       <p>&copy; 2025 Ítalo Sêne Advocacia. Todos os direitos reservados.</p>
     </div>
   </footer>
-  <script src="blogjs/blogstorage.js"></script>
-  <script>
-  const id = new URLSearchParams(location.search).get('id');
-  const content = document.getElementById('post-content');
-
-  (async () => {
-    const posts = await getPublicPosts();
-    const post = posts.find(p => p.id === id);
-
-    if (post) {
-      const imagePath = post.image ? `blogimages/${post.image}` : '';
-      content.innerHTML = `
-        <h1>${post.title}</h1>
-        <span class="post-meta">${post.author} — ${post.date}</span>
-        ${post.image ? `<img src="${imagePath}" alt="${post.title}" onerror="this.style.display='none'">` : ''}
-        <div class="post-content">${post.content.replace(/\n/g, '<br>')}</div>
-      `;
-    } else {
-      content.innerHTML = '<p>Post não encontrado.</p>';
-    }
-  })();
-</script>
+  
   <script src="blogjs/blogstorage.js?v=2"></script>
-  <script src="mobile.js"></script>
+  <script>
+    const id = new URLSearchParams(location.search).get('id');
+    const content = document.getElementById('post-content');
+
+    (async () => {
+      const posts = await getPublicPosts();
+      const post = posts.find(p => p.id === id);
+
+      if (post) {
+        const imagePath = post.image ? `blogimages/${post.image}` : '';
+        content.innerHTML = `
+          <h1>${post.title}</h1>
+          <span class="post-meta">${post.author} — ${post.date}</span>
+          ${post.image ? `<img src="${imagePath}" alt="${post.title}" onerror="this.style.display='none'">` : ''}
+          <div class="post-content">${post.content.replace(/\n/g, '<br>')}</div>
+        `;
+      } else {
+        content.innerHTML = '<p>Post não encontrado.</p>';
+      }
+    })();
+  </script>
+  <script>
+    // Mobile Menu Script
+    document.addEventListener('DOMContentLoaded', function() {
+      // Elementos do menu
+      const menuToggle = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('.menu');
+      let menuClose = document.querySelector('.menu-close');
+      
+      // Criar ou gerenciar o botão de fechar
+      function setupMenuClose() {
+        menuClose = document.querySelector('.menu-close');
+        
+        if (!menuClose) {
+          menuClose = document.createElement('div');
+          menuClose.className = 'menu-close';
+          menuClose.innerHTML = '&times;';
+          menu.insertBefore(menuClose, menu.firstChild);
+        }
+        
+        // Adicionar evento de clique ao X
+        menuClose.addEventListener('click', function() {
+          menu.classList.remove('active');
+        });
+      }
+      
+      // Setup inicial
+      if (menu && menuToggle) {
+        setupMenuClose();
+        
+        // Abrir menu
+        menuToggle.addEventListener('click', function(e) {
+          e.stopPropagation();
+          menu.classList.add('active');
+        });
+        
+        // Fechar menu ao clicar fora
+        document.addEventListener('click', function(event) {
+          if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
+            menu.classList.remove('active');
+          }
+        });
+        
+        // Fechar menu ao clicar em um link
+        const menuLinks = menu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            menu.classList.remove('active');
+          });
+        });
+      }
+      
+      // Scroll Reveal
+      const sr = ScrollReveal({
+        origin: 'bottom',
+        distance: '50px',
+        duration: 1000,
+        delay: 200,
+        reset: false
+      });
+      
+      sr.reveal('.scroll-reveal', { interval: 200 });
+      sr.reveal('.scroll-reveal-item', { interval: 150 });
+    });
+  </script>
 </body>
 </html>

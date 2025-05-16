@@ -51,6 +51,8 @@
 
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Scroll Reveal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js"></script>
     <script src="script.js" defer></script>
 </head>
 <body>
@@ -59,97 +61,115 @@
     </a>     
     <header>
         <div class="container">
-            <img src="logo.png" alt="Logotipo de Ítalo Sêne Advocacia" class="logo">
+            <a href="#" class="logo-link">
+                <img src="logo.png" alt="Logotipo de Ítalo Sêne Advocacia" class="logo">
+            </a>
             <div class="menu-toggle">&#9776;</div>
             <nav>
                 <ul class="menu">
                     <div class="menu-close">&times;</div>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                    <li><a href="blogindex.html">Blog</a></li>
+                    <li><a href="#atuacao" class="menu-link">Áreas de Atuação</a></li>
+                    <li><a href="#sobre" class="menu-link">Sobre</a></li>
+                    <li><a href="#contato" class="menu-link">Contato</a></li>
+                    <li><a href="blogindex.html" class="menu-link">Blog</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     
-    <section class="hero">
+    <section class="hero scroll-reveal">
         <div class="hero-content">
             <h1>Atuação estratégica em Direito Civil e Contratual, com foco em soluções administrativas e extrajudiciais</h1>
             <p>Especializado em solução jurídica e administrativa para você e seu negócio.</p>
             <a href="#contato" class="cta-button">Agende uma Consulta</a>
         </div>
     </section>
-
-    <section id="contato" class="contato">
-        <h2>Contato</h2>
-        <p>Entre em contato para mais informações sobre serviços jurídicos.</p>
-        <ul>
-            <li><strong>E-mail:</strong> <a href="mailto:italoseneadv@gmail.com">italoseneadv@gmail.com</a></li>
-            <li><strong>Telefone:</strong> <a href="https://api.whatsapp.com/send/?phone=5543988008177&text=Preciso+de+auxílio+jurídico!&type=phone_number" target="_blank"> (43) 98800-8177</a></li>
-            <li><strong>Endereço:</strong> <a href="https://maps.app.goo.gl/7z9h3PK7GL9zjsJHA" target="_blank">Rua Nossa Senhora de Fátima, 1375, Centro, Siqueira Campos/PR</a></li>
-        </ul>
     
-        <form id="contato-form">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
-    
-            <label for="problema">Diga qual a área do seu problema (família, crime, trânsito, tributário etc.):</label>
-            <input type="text" id="problema" name="problema" required>
-    
-            <label for="mensagem">Nos conte seu problema:</label>
-            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-    
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
-    
-    <section id="sobre" class="sobre">
-            </div>
-            <div class="sobre-texto">
-                <h2>Quem sou?</h2>
-                <div class="sobre-container">
-                    <div class="sobre-imagem">
-                        <img src="fotoperfil.png" alt="Ítalo Sêne">
-                <p>Advogado profissional em Direito Civil e Contratual. Com foco em soluções administrativas e extrajudiciais. Meu compromisso é oferecer assessoria jurídica estratégica, prevenindo litígios desnecessários e garantindo segurança para indivíduos e empresas.</p>
-                <div class="social-btn">
-                    <a href="https://www.instagram.com/italosene.advogado/" target="_blank" class="cta-button">Me Acompanhe</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    
-    <section id="atuacao" class="atuacao">
+    <section id="atuacao" class="atuacao scroll-reveal">
         <h2>Áreas de Atuação</h2>
         <div class="atuacao-container">
-            <div class="area">
+            <a href="/areas/contratual.html" class="area scroll-reveal-item">
                 <i class="fa-solid fa-scroll"></i>
                 <h3>Direito Contratual</h3>
                 <p>Consultoria e assessoria jurídica na elaboração, revisão e negociação de contratos civis e empresariais, com foco na segurança jurídica e prevenção de litígios.</p>
-            </div>
-            <div class="area">
+            </a>
+            <a href="/areas/civil.html" class="area scroll-reveal-item">
                 <i class="fa-solid fa-scale-balanced"></i>
                 <h3>Direito Civil</h3>
                 <p>Consultoria e assessoria na resolução de conflitos, responsabilidade civil, mediação entre famílias, pessoas e empresas.</p>
-            </div>
-            <div class="area">
+            </a>
+            <a href="/areas/transito.html" class="area scroll-reveal-item">
                 <i class="fa-solid fa-car"></i>
                 <h3>Direito de Trânsito</h3>
                 <p>Defesa técnica e estratégica, administrativa e judicial, garantindo direitos e segurança jurídica.</p>
-            </div>
-             <div class="area">
-            <i class="fa-solid fa-exclamation"></i>
-            <h3>Consultoria Jurídica</h3>
-            <p>Orientação jurídica personalizada, com foco na tomada de decisões seguras e adequadas ao seu caso específico.</p>
-        </div>
-            <div class="area">
-            <i class="fa-solid fa-question"></i>
-            <h3>Continua em dúvida?</h3>
-            <p>Se ainda não identificou qual área do Direito está relacionada à sua dúvida, uma análise pode auxiliar na compreensão do contexto jurídico e das alternativas disponíveis.</p>
-        </div>
+            </a>
+            <a href="/areas/consultoria.html" class="area scroll-reveal-item">
+                <i class="fa-solid fa-exclamation"></i>
+                <h3>Consultoria Jurídica</h3>
+                <p>Orientação jurídica personalizada, com foco na tomada de decisões seguras e adequadas ao seu caso específico.</p>
+            </a>
+            <a href="/areas/duvidas.html" class="area scroll-reveal-item">
+                <i class="fa-solid fa-question"></i>
+                <h3>Continua em dúvida?</h3>
+                <p>Se ainda não identificou qual área do Direito está relacionada à sua dúvida, uma análise pode auxiliar na compreensão do contexto jurídico e das alternativas disponíveis.</p>
+            </a>
         </div>
     </section>
+    
+    <div class="linha-dupla scroll-reveal">
+        <section id="contato" class="contato">
+            <h2>Contato</h2>
+            <p>Entre em contato para mais informações sobre serviços jurídicos.</p>
+            <ul>
+                <li><strong>E-mail:</strong> <a href="mailto:italoseneadv@gmail.com">italoseneadv@gmail.com</a></li>
+                <li><strong>Telefone:</strong> <a href="https://api.whatsapp.com/send/?phone=5543988008177&text=Preciso+de+auxílio+jurídico!" target="_blank">(43) 98800-8177</a></li>
+                <li><strong>Endereço:</strong> <a href="https://maps.app.goo.gl/7z9h3PK7GL9zjsJHA" target="_blank">Rua Nossa Senhora de Fátima, 1375, Centro, Siqueira Campos/PR</a></li>
+                <li><strong>Outros meios:</strong> <a href="https://linktr.ee/ItaloSeneAdvogado" target="_blank">Minhas redes sociais</a></li>
+            </ul>
 
+            <form id="contato-form">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="problema">Área do problema (família, crime, trânsito, tributário etc.):</label>
+                <input type="text" id="problema" name="problema" required>
+
+                <label for="mensagem">Nos conte seu problema:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <section id="sobre" class="sobre">
+            <div class="sobre-container">
+                <div class="sobre-texto">
+                    <h2>Quem sou?</h2>
+                    <div class="sobre-imagem scroll-reveal-item">
+                        <img src="fotoperfil.png" alt="Ítalo Sêne">
+                    </div>
+                    <p>Ítalo Sêne é advogado profissional registrado na OAB/PR 127.730.</p>
+                    <p>Atuante em Direito Civil e Contratual. Com foco em soluções administrativas e extrajudiciais. Tem o compromisso de oferecer assessoria jurídica estratégica, prevenindo litígios desnecessários e garantindo segurança para indivíduos e empresas.</p>
+                    <div class="social-btn">
+                        <a href="https://www.instagram.com/italosene.advogado/" target="_blank" class="cta-button">Me Acompanhe</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+<div class="mapa-container">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.4602437647387!2d-49.837722124242904!3d-23.006580179209695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c35fdeaf2d3c9d%3A0x61bc5e7929c9d7b4!2sR.%20Nossa%20Sra.%20de%20F%C3%A1tima%2C%201375%20-%20Centro%2C%20Siqueira%20Campos%20-%20PR%2C%2084940-000!5e0!3m2!1spt-BR!2sbr!4v1716050682979!5m2!1spt-BR!2sbr"
+            width="100%" 
+            height="250" 
+            style="border:0; border-radius: 10px; margin-top: 20px; margin-bottom: 20px;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Localização do escritório de advocacia">
+        </iframe>
+        <a href="https://maps.app.goo.gl/yN9AUHLhZ9Di2bis9" target="_blank" class="cta-button mapa-button">Venha nos conhecer</a>
+    </div>
     <footer>
         <div class="footer-container">
             <p>&copy; 2025 Ítalo Sêne Advocacia. Todos os direitos reservados.</p>
@@ -157,25 +177,58 @@
     </footer>
     
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const menuClose = document.querySelector('.menu-close');
-            const menu = document.querySelector('.menu');
-            
-            menuToggle.addEventListener('click', function() {
-                menu.classList.add('active');
-            });
-            
-            menuClose.addEventListener('click', function() {
+      document.addEventListener('DOMContentLoaded', function() {
+    // Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menuClose = document.querySelector('.menu-close');
+    const menu = document.querySelector('.menu');
+    
+    if (menuToggle && menu) {
+        // Abrir menu
+        menuToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            menu.classList.add('active');
+        });
+        
+        // Fechar menu com botão de fechar
+        if (menuClose) {
+            menuClose.addEventListener('click', function(e) {
+                e.stopPropagation();
                 menu.classList.remove('active');
             });
-            
-            document.querySelectorAll('.menu a').forEach(link => {
-                link.addEventListener('click', function() {
-                    menu.classList.remove('active');
-                });
+        }
+        
+        // Fechar menu ao clicar nos links
+        document.querySelectorAll('.menu a').forEach(link => {
+            link.addEventListener('click', function() {
+                menu.classList.remove('active');
             });
         });
+        
+        // Fechar menu ao clicar fora dele
+        document.addEventListener('click', function(event) {
+            if (menu.classList.contains('active') && 
+                !menu.contains(event.target) && 
+                !menuToggle.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        });
+    }
+    
+    // Scroll Reveal
+    if (typeof ScrollReveal !== 'undefined') {
+        const sr = ScrollReveal({
+            origin: 'bottom',
+            distance: '50px',
+            duration: 1000,
+            delay: 200,
+            reset: false
+        });
+        
+        sr.reveal('.scroll-reveal', { interval: 200 });
+        sr.reveal('.scroll-reveal-item', { interval: 150 });
+    }
+});
     </script>
 </body>
 </html>

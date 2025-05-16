@@ -71,14 +71,12 @@ header {
   color: #FFFFFF;
   font-weight: bold;
   padding: 10px 15px;
-  background: #CF640C;
-  border-radius: 55px;
   transition: 0.3s;
   display: block;
 }
 
 .menu a:hover {
-  background: #f36d07;
+  color: #CF640C;
 }
 
 .menu-toggle {
@@ -234,4 +232,112 @@ main {
   .post-meta {
     font-size: 14px;
   }
+}
+@media (max-width: 768px) {
+  .header-container,
+  .container {
+    padding: 0 15px;
+  }
+  
+  .logo {
+    height: 45px;
+  }
+  
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    color: #CF640C;
+    margin-left: auto;
+    z-index: 999;
+  }
+  
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: #1A1D25;
+    flex-direction: column;
+    padding: 80px 20px;
+    gap: 20px;
+    transition: 0.3s;
+    z-index: 100;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+  }
+  
+  .menu.active {
+    right: 0;
+  }
+  
+  .menu li {
+    width: 100%;
+  }
+  
+  .menu a {
+    width: 100%;
+    padding: 12px 20px;
+    text-align: center;
+  }
+  
+  .menu-close {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: #CF640C;
+    cursor: pointer;
+  }
+  
+  main {
+    padding: 15px;
+  }
+}
+/* RESPONSIVIDADE */
+@media (max-width: 992px) {
+  .logo {
+    height: 50px;
+  }
+  
+  .menu a {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+}
+.menu-close,
+.menu-close.active {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    pointer-events: none !important;
+}
+
+@media (max-width: 992px) {
+    .menu-close,
+    .menu-close.active {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-close,
+    .menu-close.active {
+        display: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-close,
+    .menu-close.active {
+        display: none !important;
+    }
 }

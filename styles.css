@@ -61,14 +61,13 @@ header {
     color: #FFFFFF;
     font-weight: bold;
     padding: 10px 15px;
-    background: #CF640C;
-    border-radius: 55px;
     transition: 0.3s;
     display: block;
 }
 
 .menu a:hover {
-    background: #f36d07;
+    color: #CF640C;
+    transform: scale(1.05);
 }
 
 /* Menu mobile */
@@ -90,6 +89,7 @@ header {
     text-align: center;
     background: linear-gradient(to bottom, #121417, #22252B);
     border: 2px solid #CF640C;
+    border-radius: 10px;
     padding: 30px 20px;
     margin: 20px auto;
     max-width: 1200px;
@@ -129,6 +129,7 @@ header {
 
 .cta-button:hover {
     background: #f36d07;
+    transform: scale(1.05);
 }
 
 /* SEÇÃO CONTATO */
@@ -176,6 +177,7 @@ header {
 
 .contato ul li a:hover {
     text-decoration: underline;
+    transform: scale(1.05);
 }
 
 /* FORMULÁRIO */
@@ -209,11 +211,13 @@ header {
     cursor: pointer;
     appearance: none;
     margin-top: 5px;
+    
 }
 
 .contato textarea {
     height: 150px;
     resize: none;
+    
 }
 
 /* BOTÃO ENVIAR */
@@ -224,6 +228,7 @@ button {
     color: #FFFFFF;
     font-weight: bold;
     font-size: 18px;
+    font-family: "Athena", serif;
     border: none;
     border-radius: 55px;
     cursor: pointer;
@@ -292,6 +297,7 @@ button:hover {
     margin: 0 auto;
     max-width: 1200px;
     width: 90%;
+    
 }
 
 .atuacao h2 {
@@ -303,6 +309,7 @@ button:hover {
 
 /* Container em Grid para alinhar os itens lado a lado */
 .atuacao-container {
+    
     display: flex;
     justify-content: center;
     gap: 40px;
@@ -316,32 +323,41 @@ button:hover {
     border-radius: 10px;
     width: 300px;
     text-align: center;
-    transition: 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.area:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
 }
 
 /* Ícones */
 .area i {
     font-size: 50px;
     color: #CF640C;
-    margin-bottom: 15px;
+    margin-bottom: 15px;    
+}
+
+.area:hover i {
+    transform: scale(1.1); 
 }
 
 .area h3 {
     font-size: 22px;
     color: #FFFFFF;
     margin-bottom: 10px;
+    transform: scale(1.05);
+    
 }
 
 .area p {
     font-size: 16px;
     color: #EAEAEA;
     line-height: 1.6;
+    transform: scale(1.05);
+    
 }
 
-/* Efeito ao passar o mouse */
-.area:hover {
-    transform: scale(1.05);
-}
 
 /*  Estilização do Rodapé */
 footer {
@@ -377,6 +393,7 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+    transform: scale(1.05);
 }
 
 .whatsapp-fixo {
@@ -391,6 +408,11 @@ footer a:hover {
 .whatsapp-fixo img {
     width: 100%;
     height: 100%;
+    transition: transform 0.3s ease; 
+}
+
+.whatsapp-fixo:hover img {
+    transform: scale(1.05); 
 }
 
 /* Esconder menu-close em desktop por padrão */
@@ -675,4 +697,264 @@ footer a:hover {
     border: 2px solid #CF640C;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.linha-dupla {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    width: 95%;
+    max-width: 1300px;
+    margin: 60px auto;
+}
+.linha-dupla .sobre,
+.linha-dupla .contato {
+    flex: 1;
+    background: #1A1D25;
+    border: 2px solid #CF640C;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+/* Ajuste da linha dupla */
+.linha-dupla {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Garante que os elementos tenham a mesma altura */
+    gap: 40px;
+    width: 95%;
+    max-width: 1300px;
+    margin: 60px auto;
+}
+
+/* Remove estilos conflitantes do .sobre */
+.sobre {
+    width: 100%;
+    max-width: initial; /* Remove o limite de 500px */
+    margin: 0; /* Remove margem automática */
+    padding: 30px;
+    background: #1A1D25;
+    border: 2px solid #CF640C;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    flex: 1; /* Garante que ambas as seções tenham largura igual */
+}
+
+/* Ajusta a seção contato para ter as mesmas características */
+.contato {
+    width: 100%;
+    max-width: initial;
+    margin: 0;
+    padding: 30px;
+    background: #1A1D25;
+    border: 2px solid #CF640C;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Garante que ambas as seções tenham a mesma altura */
+.linha-dupla .sobre,
+.linha-dupla .contato {
+    min-height: 600px; /* Define uma altura mínima igual para ambas */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .linha-dupla {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .linha-dupla .sobre,
+    .linha-dupla .contato {
+        min-height: auto;
+    }
+}
+
+/* Remove sublinhado dos links nas áreas de atuação */
+.atuacao .area {
+    text-decoration: none;
+    
+}
+
+/* Garantir que os elementos dentro das áreas também não tenham sublinhado */
+.atuacao .area h3,
+.atuacao .area p {
+    text-decoration: none;
+    
+}
+
+/* Remover sublinhado ao passar o mouse */
+.atuacao .area:hover,
+.atuacao .area:focus {
+    text-decoration: none;
+    
+}
+@media (max-width: 768px) {
+  .header-container,
+  .container {
+    padding: 0 15px;
+  }
+  
+  .logo {
+    height: 45px;
+    
+  }
+  
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    color: #CF640C;
+    margin-left: auto;
+    z-index: 999;
+    
+  }
+  
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: #1A1D25;
+    flex-direction: column;
+    padding: 80px 20px;
+    gap: 20px;
+    transition: 0.3s;
+    z-index: 100;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+  }
+  
+  .menu.active {
+    right: 0;
+  }
+  
+  .menu li {
+    width: 100%;
+  }
+  
+  .menu a {
+    width: 100%;
+    padding: 12px 20px;
+    text-align: center;
+  }
+  
+  .menu-close {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: #CF640C;
+    cursor: pointer;
+  }
+  
+  main {
+    padding: 15px;
+  }
+}
+/* RESPONSIVIDADE */
+@media (max-width: 992px) {
+  .logo {
+    height: 50px;
+  }
+  
+  .menu a {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+}
+.menu-close,
+.menu-close.active {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    pointer-events: none !important;
+}
+
+@media (max-width: 992px) {
+    .menu-close,
+    .menu-close.active {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-close,
+    .menu-close.active {
+        display: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-close,
+    .menu-close.active {
+        display: none !important;
+    }
+}
+.mapa-container {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mapa-container iframe {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+}
+
+.mapa-container iframe:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+    transform: scale(1.05);
+}
+
+.mapa-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #CF640C;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 55px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.mapa-button:hover {
+    background: #f36d07;
+    transform: scale(1.05);
+}
+
+/* Ajustes responsivos para o mapa */
+@media (max-width: 768px) {
+    .mapa-container iframe {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .mapa-container iframe {
+        height: 180px;
+    }
+    
+    .mapa-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
 }
