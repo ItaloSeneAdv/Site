@@ -1,3 +1,4 @@
+// blogjs/blogmain.js - Garantindo o uso correto da função formatDate
 document.addEventListener('DOMContentLoaded', async () => {
   const container = document.getElementById('posts-container');
   const searchInput = document.getElementById('search');
@@ -52,24 +53,62 @@ document.addEventListener('DOMContentLoaded', async () => {
     filteredPosts.slice(start, end).forEach(post => {
       const card = document.createElement('article');
       card.className = 'blog-card';
+      
+      // Criando o HTML do card com a imagem clicável
       card.innerHTML = `
         ${post.image ? `
           <div class="card-image">
-            <img src="blogimages/${post.image}" alt="${post.title}" onerror="this.style.display='none'">
+            <a href="blogpost.html?id=${post.id}" class="image-link">
+              <img src="blogimages/${post.image}" alt="${post.title}" onerror="this.style.display='none'">
+            </a>
           </div>` : ''}
         <div class="card-content">
           <h3 class="card-title">${post.title}</h3>
           <div class="card-meta">
             <span class="author">${post.author}</span>
-            <span class="date">${new Date(post.date).toLocaleDateString('pt-BR')}</span>
+            <span class="date">${formatDate(post.date)}</span>
           </div>
           <a href="blogpost.html?id=${post.id}" class="read-more">Leia mais →</a>
         </div>
       `;
+      
       container.appendChild(card);
     });
 
+    // Adicione estilos para a imagem clicável
+    addImageStyles();
+    
     renderPagination();
+  }
+
+  // Função para adicionar estilos CSS para imagens clicáveis
+  function addImageStyles() {
+    // Verifica se já existe o estilo
+    if (!document.getElementById('clickable-image-styles')) {
+      const styleSheet = document.createElement('style');
+      styleSheet.id = 'clickable-image-styles';
+      styleSheet.innerHTML = `
+        .card-image {
+          overflow: hidden;
+          cursor: pointer;
+          position: relative;
+        }
+        .card-image img {
+          transition: transform 0.3s ease;
+          width: 100%;
+          height: auto;
+        }
+        .card-image:hover img {
+          transform: scale(1.05);
+        }
+        .image-link {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      `;
+      document.head.appendChild(styleSheet);
+    }
   }
 
   // Paginação

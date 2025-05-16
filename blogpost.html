@@ -1,11 +1,18 @@
 <!DOCTYPE html>
+<!-- Oi! Não precisar olhar o código por aqui, ele está no Github. Se algo estiver quebrado, tente desativar o adblock (ele some com o link do whatsapp). Se estiver procurando quem fez o site, fui eu mesmo. -->
+
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Post | Blog Jurídico</title>
+  <title>Post | Blog Ítalo Sêne Advocacia</title>
   <link rel="stylesheet" href="blogcss/blogpost.css">
   <link rel="stylesheet" href="blogcss/blogstyle.css">
+  <link rel="icon" href="iconenavegador.png" type="image/png">
+  <link rel="shortcut icon" href="iconenavegador.png">
+  <link rel="apple-touch-icon" href="iconenavegador.png">
+  <!-- Font Awesome para ícones de redes sociais -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <!-- Scroll Reveal -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js"></script>
 </head>
@@ -35,27 +42,67 @@
     </div>
   </footer>
   
-  <script src="blogjs/blogstorage.js?v=2"></script>
+  <script src="blogjs/blogstorage.js?v=3"></script>
   <script>
-    const id = new URLSearchParams(location.search).get('id');
-    const content = document.getElementById('post-content');
-
-    (async () => {
-      const posts = await getPublicPosts();
-      const post = posts.find(p => p.id === id);
-
-      if (post) {
+    // Função para carregar e exibir o post individual
+    document.addEventListener('DOMContentLoaded', async () => {
+      const params = new URLSearchParams(window.location.search);
+      const postId = params.get('id');
+      const content = document.getElementById('post-content');
+      
+      if (!postId) {
+        content.innerHTML = '<div class="error">Post não encontrado.</div>';
+        return;
+      }
+      
+      try {
+        const posts = await getPublicPosts();
+        const post = posts.find(p => p.id === postId);
+        
+        if (!post) {
+          content.innerHTML = '<div class="error">Post não encontrado.</div>';
+          return;
+        }
+        
+        document.title = `${post.title} - Blog Ítalo Sêne Advocacia`;
+        
         const imagePath = post.image ? `blogimages/${post.image}` : '';
+        const currentUrl = window.location.href;
+        const encodedUrl = encodeURIComponent(currentUrl);
+        const encodedTitle = encodeURIComponent(post.title);
+        
         content.innerHTML = `
           <h1>${post.title}</h1>
-          <span class="post-meta">${post.author} — ${post.date}</span>
-          ${post.image ? `<img src="${imagePath}" alt="${post.title}" onerror="this.style.display='none'">` : ''}
+          <div class="post-meta">
+            <span class="post-author">Por: ${post.author}</span>
+            <span class="post-date">Publicado em: ${formatDate(post.date)}</span>
+          </div>
+          ${post.image ? `<div class="post-image"><img src="${imagePath}" alt="${post.title}" onerror="this.style.display='none'"></div>` : ''}
           <div class="post-content">${post.content.replace(/\n/g, '<br>')}</div>
+          
+          <div class="share-container scroll-reveal-item">
+            <h3>Compartilhe este artigo:</h3>
+            <div class="social-share-buttons">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}" target="_blank" class="share-btn facebook" aria-label="Compartilhar no Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}" target="_blank" class="share-btn linkedin" aria-label="Compartilhar no LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://api.whatsapp.com/send?text=${encodedTitle}%20${encodedUrl}" target="_blank" class="share-btn whatsapp" aria-label="Compartilhar no WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a href="https://www.instagram.com/" target="_blank" class="share-btn instagram" aria-label="Compartilhar no Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+          </div>
         `;
-      } else {
-        content.innerHTML = '<p>Post não encontrado.</p>';
+      } catch (error) {
+        console.error('Erro ao carregar post:', error);
+        content.innerHTML = '<div class="error">Erro ao carregar o post. Por favor, tente novamente mais tarde.</div>';
       }
-    })();
+    });
   </script>
   <script>
     // Mobile Menu Script

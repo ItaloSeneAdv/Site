@@ -150,6 +150,60 @@ main {
   box-sizing: border-box;
 }
 
+/* ========== BOTÕES DE COMPARTILHAMENTO ========== */
+.share-container {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+}
+
+.share-container h3 {
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.social-share-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.share-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.share-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.facebook {
+  background: #3b5998;
+}
+
+.linkedin {
+  background: #0077b5;
+}
+
+.whatsapp {
+  background: #25d366;
+}
+
+.instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
 /* RESPONSIVIDADE */
 @media (max-width: 992px) {
   .logo {
@@ -218,6 +272,10 @@ main {
   main {
     padding: 15px;
   }
+  
+  .social-share-buttons {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 480px) {
@@ -231,6 +289,10 @@ main {
   
   .post-meta {
     font-size: 14px;
+  }
+  
+  .share-container h3 {
+    text-align: center;
   }
 }
 @media (max-width: 768px) {

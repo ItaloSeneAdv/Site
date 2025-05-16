@@ -1,5 +1,4 @@
-// blogjs/blogadmin.js
-
+// blogjs/blogadmin.js - Removida a função formatDate duplicada
 async function getPosts() {
   return await loadPosts();
 }
@@ -19,6 +18,10 @@ function downloadJSON(posts) {
   alert('Arquivo JSON gerado! Faça o upload dele para a raiz do seu site.');
 }
 
+// Variáveis de controle para paginação do painel admin
+let adminCurrentPage = 1;
+const postsPerAdminPage = 3;
+
 async function renderAdmin() {
   const list = document.getElementById('admin-list');
   const posts = await getPosts();
@@ -30,44 +33,74 @@ async function renderAdmin() {
     return;
   }
   
-  posts.forEach(post => {
+  // Cálculo da paginação
+  const startIndex = (adminCurrentPage - 1) * postsPerAdminPage;
+  const endIndex = startIndex + postsPerAdminPage;
+  const paginatedPosts = posts.slice(startIndex, endIndex);
+  
+  paginatedPosts.forEach(post => {
     const div = document.createElement('div');
     div.className = 'admin-post-item';
     div.innerHTML = `
       <div class="post-header">
         <strong>${post.title}</strong>
-        <span class="post-date">${post.date}</span>
+        <span class="post-date">${formatDate(post.date)}</span>
       </div>
-      <div class="post-actions">
-        <button onclick="editPost('${post.id}')" class="btn-edit">✏️ Editar</button>
-        <button onclick="deletePost('${post.id}')" class="btn-delete">🗑️ Excluir</button>
+      <div class="post-meta">
+        <span class="post-author">Autor: ${post.author}</span>
       </div>
     `;
     list.appendChild(div);
   });
+  
+  // Renderiza a paginação do admin
+  renderAdminPagination(posts.length);
 }
 
-function editPost(id) {
-  const posts = getPosts();
-  const post = posts.find(p => p.id === id);
-  if (post) {
-    document.getElementById('post-id').value = post.id;
-    document.getElementById('title').value = post.title;
-    document.getElementById('author').value = post.author;
-    document.getElementById('date').value = post.date;
-    document.getElementById('image').value = post.image || '';
-    document.getElementById('type').value = post.type || '';
-    document.getElementById('content').value = post.content;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+function renderAdminPagination(totalPosts) {
+  const paginationContainer = document.getElementById('admin-pagination');
+  if (!paginationContainer) {
+    const container = document.createElement('div');
+    container.id = 'admin-pagination';
+    container.className = 'admin-pagination';
+    document.getElementById('admin-list').after(container);
+    renderAdminPagination(totalPosts);
+    return;
   }
-}
-
-function deletePost(id) {
-  if (confirm('Excluir este post permanentemente?')) {
-    const updatedPosts = getPosts().filter(p => p.id !== id);
-    savePosts(updatedPosts);
-    renderAdmin();
-  }
+  
+  paginationContainer.innerHTML = '';
+  
+  const totalPages = Math.ceil(totalPosts / postsPerAdminPage);
+  
+  // Botão anterior
+  const prevButton = document.createElement('button');
+  prevButton.textContent = '← Anterior';
+  prevButton.disabled = adminCurrentPage === 1;
+  prevButton.addEventListener('click', () => {
+    if (adminCurrentPage > 1) {
+      adminCurrentPage--;
+      renderAdmin();
+    }
+  });
+  paginationContainer.appendChild(prevButton);
+  
+  // Indicador de página atual
+  const pageIndicator = document.createElement('span');
+  pageIndicator.className = 'page-indicator';
+  pageIndicator.textContent = `Página ${adminCurrentPage} de ${totalPages}`;
+  paginationContainer.appendChild(pageIndicator);
+  
+  // Botão próximo
+  const nextButton = document.createElement('button');
+  nextButton.textContent = 'Próximo →';
+  nextButton.disabled = adminCurrentPage >= totalPages;
+  nextButton.addEventListener('click', () => {
+    if (adminCurrentPage < totalPages) {
+      adminCurrentPage++;
+      renderAdmin();
+    }
+  });
+  paginationContainer.appendChild(nextButton);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -99,6 +132,18 @@ document.addEventListener('DOMContentLoaded', () => {
     await savePosts(posts);
     document.getElementById('post-id').value = '';
     form.reset();
+    
+    // Adiciona mensagem de sucesso
+    const successMsg = document.createElement('div');
+    successMsg.className = 'success-message';
+    successMsg.textContent = 'Post salvo com sucesso!';
+    form.after(successMsg);
+    
+    // Remove a mensagem após 3 segundos
+    setTimeout(() => {
+      successMsg.remove();
+    }, 3000);
+    
     renderAdmin();
   });
 
