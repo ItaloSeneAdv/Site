@@ -72,6 +72,7 @@
         const encodedTitle = encodeURIComponent(post.title);
         
         content.innerHTML = `
+          ${post.type ? `<div class="post-type-badge">${post.type}</div>` : ''}
           <h1>${post.title}</h1>
           <div class="post-meta">
             <span class="post-author">Por: ${post.author}</span>
@@ -98,11 +99,39 @@
             </div>
           </div>
         `;
+        
+        // Adicionar estilos para o badge do tipo
+        addPostTypeStyles();
+        
       } catch (error) {
         console.error('Erro ao carregar post:', error);
         content.innerHTML = '<div class="error">Erro ao carregar o post. Por favor, tente novamente mais tarde.</div>';
       }
     });
+    
+    // Função para adicionar estilos do badge do tipo
+    function addPostTypeStyles() {
+      if (!document.getElementById('post-type-styles')) {
+        const styleSheet = document.createElement('style');
+        styleSheet.id = 'post-type-styles';
+        styleSheet.innerHTML = `
+          .post-type-badge {
+            background: #cf640c;
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: bold;
+            padding: 4px 8px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            box-shadow: 0 2px 4px rgba(207, 100, 12, 0.3);
+          }
+        `;
+        document.head.appendChild(styleSheet);
+      }
+    }
   </script>
   <script>
     // Mobile Menu Script
