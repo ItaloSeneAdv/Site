@@ -79,19 +79,6 @@ header {
   color: #CF640C;
 }
 
-.menu-toggle {
-  display: none;
-  cursor: pointer;
-  font-size: 24px;
-  color: #CF640C;
-  margin-left: auto;
-}
-
-/* Esconder menu-close em desktop por padrão */
-.menu-close {
-  display: none;
-}
-
 /* ========== RODAPÉ FULL SCREEN ========== */
 footer {
   background: #1A1D25;
@@ -204,6 +191,51 @@ main {
   background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 }
 
+/* ========== HAMBURGER MENU ========== */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  width: 40px;
+  height: 30px;
+  position: relative;
+  z-index: 1000;
+}
+
+.hamburger span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #CF640C;
+  border-radius: 3px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: all 0.3s ease;
+}
+
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 12px; }
+.hamburger span:nth-child(3) { top: 24px; }
+
+.hamburger.active span:nth-child(1) {
+  top: 12px;
+  transform: rotate(135deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  left: -60px;
+}
+
+.hamburger.active span:nth-child(3) {
+  top: 12px;
+  transform: rotate(-135deg);
+}
+
 /* RESPONSIVIDADE */
 @media (max-width: 992px) {
   .logo {
@@ -225,8 +257,9 @@ main {
     height: 45px;
   }
   
-  .menu-toggle {
+  .hamburger {
     display: block;
+    margin-left: auto;
   }
   
   .menu {
@@ -257,16 +290,6 @@ main {
     width: 100%;
     padding: 12px 20px;
     text-align: center;
-  }
-  
-  .menu-close {
-    display: block;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 24px;
-    color: #CF640C;
-    cursor: pointer;
   }
   
   main {
@@ -294,112 +317,4 @@ main {
   .share-container h3 {
     text-align: center;
   }
-}
-@media (max-width: 768px) {
-  .header-container,
-  .container {
-    padding: 0 15px;
-  }
-  
-  .logo {
-    height: 45px;
-  }
-  
-  .menu-toggle {
-    display: block;
-    cursor: pointer;
-    font-size: 24px;
-    color: #CF640C;
-    margin-left: auto;
-    z-index: 999;
-  }
-  
-  .menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 80%;
-    max-width: 300px;
-    height: 100vh;
-    background: #1A1D25;
-    flex-direction: column;
-    padding: 80px 20px;
-    gap: 20px;
-    transition: 0.3s;
-    z-index: 100;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.3);
-  }
-  
-  .menu.active {
-    right: 0;
-  }
-  
-  .menu li {
-    width: 100%;
-  }
-  
-  .menu a {
-    width: 100%;
-    padding: 12px 20px;
-    text-align: center;
-  }
-  
-  .menu-close {
-    display: block;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 24px;
-    color: #CF640C;
-    cursor: pointer;
-  }
-  
-  main {
-    padding: 15px;
-  }
-}
-/* RESPONSIVIDADE */
-@media (max-width: 992px) {
-  .logo {
-    height: 50px;
-  }
-  
-  .menu a {
-    font-size: 14px;
-    padding: 8px 12px;
-  }
-  
-  .container {
-    padding: 0 15px;
-  }
-}
-.menu-close,
-.menu-close.active {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    width: 0 !important;
-    height: 0 !important;
-    pointer-events: none !important;
-}
-
-@media (max-width: 992px) {
-    .menu-close,
-    .menu-close.active {
-        display: none !important;
-    }
-}
-
-@media (max-width: 768px) {
-    .menu-close,
-    .menu-close.active {
-        display: none !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .menu-close,
-    .menu-close.active {
-        display: none !important;
-    }
 }
