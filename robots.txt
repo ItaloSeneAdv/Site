@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Disallow: /blogadmin.html
+Disallow: /blogjs/blogadmin.js
+Disallow: /blogjs/bloglogin.js
+Disallow: /blogadmin.js
+Disallow: /admin/
+Disallow: /wp-admin/
+Disallow: /private/
+Disallow: /backup/
+Disallow: /cgi-bin/
+
+Sitemap: https://italoseneadv.github.io/Site/sitemap.xml
