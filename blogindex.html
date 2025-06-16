@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- Oi! Não precisar olhar o código por aqui, ele está no Github. Se algo estiver quebrado, tente desativar o adblock (ele some com o link do whatsapp). Se estiver procurando quem fez o site, fui eu mesmo. -->
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -9,7 +8,6 @@
   <link rel="icon" href="iconenavegador.png" type="image/png">
   <link rel="shortcut icon" href="iconenavegador.png">
   <link rel="apple-touch-icon" href="iconenavegador.png">
-  <!-- Scroll Reveal -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js"></script>
 </head>
 <body>
@@ -18,7 +16,11 @@
       <a href="index.html" class="logo-link">
         <img src="logo.png" alt="Logotipo de Ítalo Sêne Advocacia" class="logo">
       </a>
-      <div class="menu-toggle">&#9776;</div>
+      <button class="hamburger" id="hamburger"> <!-- Alterado para padrão hamburger -->
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <nav>
         <ul class="menu">
           <li><a href="index.html#atuacao">Áreas de Atuação</a></li>
@@ -46,57 +48,31 @@
   <script src="blogjs/blogstorage.js?v=3" defer></script>
   <script src="blogjs/blogmain.js" defer></script>
   <script>
-    // Mobile Menu Script
     document.addEventListener('DOMContentLoaded', function() {
-      // Elementos do menu
-      const menuToggle = document.querySelector('.menu-toggle');
+      const hamburger = document.getElementById('hamburger');
       const menu = document.querySelector('.menu');
-      let menuClose = document.querySelector('.menu-close');
       
-      // Criar ou gerenciar o botão de fechar
-      function setupMenuClose() {
-        menuClose = document.querySelector('.menu-close');
-        
-        if (!menuClose) {
-          menuClose = document.createElement('div');
-          menuClose.className = 'menu-close';
-          menuClose.innerHTML = '&times;';
-          menu.insertBefore(menuClose, menu.firstChild);
-        }
-        
-        // Adicionar evento de clique ao X
-        menuClose.addEventListener('click', function() {
-          menu.classList.remove('active');
-        });
-      }
-      
-      // Setup inicial
-      if (menu && menuToggle) {
-        setupMenuClose();
-        
-        // Abrir menu
-        menuToggle.addEventListener('click', function(e) {
+      hamburger.addEventListener('click', function(e) {
           e.stopPropagation();
-          menu.classList.add('active');
-        });
-        
-        // Fechar menu ao clicar fora
-        document.addEventListener('click', function(event) {
-          if (!menu.contains(event.target) && !menuToggle.contains(event.target)) {
-            menu.classList.remove('active');
-          }
-        });
-        
-        // Fechar menu ao clicar em um link
-        const menuLinks = menu.querySelectorAll('a');
-        menuLinks.forEach(link => {
-          link.addEventListener('click', function() {
-            menu.classList.remove('active');
-          });
-        });
-      }
+          menu.classList.toggle('active');
+          hamburger.classList.toggle('active');
+      });
       
-      // Scroll Reveal
+      document.addEventListener('click', function(event) {
+          if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
+              menu.classList.remove('active');
+              hamburger.classList.remove('active');
+          }
+      });
+      
+      const menuLinks = menu.querySelectorAll('a');
+      menuLinks.forEach(link => {
+          link.addEventListener('click', function() {
+              menu.classList.remove('active');
+              hamburger.classList.remove('active');
+          });
+      });
+      
       const sr = ScrollReveal({
         origin: 'bottom',
         distance: '50px',

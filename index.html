@@ -82,10 +82,13 @@
             <a href="#" class="logo-link">
                 <img src="logo.png" alt="Logotipo de Ítalo Sêne Advocacia" class="logo">
             </a>
-            <div class="menu-toggle">&#9776;</div>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav>
                 <ul class="menu">
-                    <div class="menu-close">&times;</div>
                     <li><a href="#atuacao" class="menu-link">Áreas de Atuação</a></li>
                     <li><a href="#sobre" class="menu-link">Sobre</a></li>
                     <li><a href="#contato" class="menu-link">Contato</a></li>
@@ -196,57 +199,50 @@
     
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-    // Menu Toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const menuClose = document.querySelector('.menu-close');
-    const menu = document.querySelector('.menu');
-    
-    if (menuToggle && menu) {
+        // Elementos do menu
+        const hamburger = document.getElementById('hamburger');
+        const menu = document.querySelector('.menu');
+        
         // Abrir menu
-        menuToggle.addEventListener('click', function(e) {
+        hamburger.addEventListener('click', function(e) {
             e.stopPropagation();
-            menu.classList.add('active');
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
         });
         
-        // Fechar menu com botão de fechar
-        if (menuClose) {
-            menuClose.addEventListener('click', function(e) {
-                e.stopPropagation();
-                menu.classList.remove('active');
-            });
-        }
-        
-        // Fechar menu ao clicar nos links
-        document.querySelectorAll('.menu a').forEach(link => {
-            link.addEventListener('click', function() {
-                menu.classList.remove('active');
-            });
-        });
-        
-        // Fechar menu ao clicar fora dele
+        // Fechar menu ao clicar fora
         document.addEventListener('click', function(event) {
             if (menu.classList.contains('active') && 
                 !menu.contains(event.target) && 
-                !menuToggle.contains(event.target)) {
+                !hamburger.contains(event.target)) {
                 menu.classList.remove('active');
+                hamburger.classList.remove('active');
             }
         });
-    }
-    
-    // Scroll Reveal
-    if (typeof ScrollReveal !== 'undefined') {
-        const sr = ScrollReveal({
-            origin: 'bottom',
-            distance: '50px',
-            duration: 1000,
-            delay: 200,
-            reset: false
+        
+        // Fechar menu ao clicar em um link
+        const menuLinks = menu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                menu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
         });
         
-        sr.reveal('.scroll-reveal', { interval: 200 });
-        sr.reveal('.scroll-reveal-item', { interval: 150 });
-    }
-});
+        // Scroll Reveal
+        if (typeof ScrollReveal !== 'undefined') {
+            const sr = ScrollReveal({
+                origin: 'bottom',
+                distance: '50px',
+                duration: 1000,
+                delay: 200,
+                reset: false
+            });
+            
+            sr.reveal('.scroll-reveal', { interval: 200 });
+            sr.reveal('.scroll-reveal-item', { interval: 150 });
+        }
+    });
     </script>
 </body>
 </html>

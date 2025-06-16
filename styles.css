@@ -70,26 +70,61 @@ header {
     transform: scale(1.05);
 }
 
-/* Menu mobile */
-.menu-toggle {
+/* Estilos do Hamburger */
+.hamburger {
     display: none;
     cursor: pointer;
-    font-size: 24px;
-    color: #CF640C;
-    margin-left: auto;
+    background: transparent;
+    border: none;
+    padding: 0;
+    width: 40px;
+    height: 30px;
+    position: relative;
+    z-index: 1000;
+}
+
+.hamburger span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #CF640C;
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: all 0.3s ease;
+}
+
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 12px; }
+.hamburger span:nth-child(3) { top: 24px; }
+
+.hamburger.active span:nth-child(1) {
+    top: 12px;
+    transform: rotate(135deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+
+.hamburger.active span:nth-child(3) {
+    top: 12px;
+    transform: rotate(-135deg);
 }
 
 /* HERO SECTION */
 .hero {
     width: 90%;
-    min-height: 70vh;
+    min-height: 55vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     background: linear-gradient(to bottom, #121417, #22252B);
     border: 2px solid #CF640C;
-    border-radius: 10px;
     padding: 30px 20px;
     margin: 20px auto;
     max-width: 1200px;
@@ -240,48 +275,49 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* SEÇÃO SOBRE ATUALIZADA */
+/* SEÇÃO SOBRE */
 .sobre {
     width: 100%;
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 40px 5%;
+    max-width: initial;
+    margin: 0;
+    padding: 30px;
     background: #1A1D25;
     border: 2px solid #CF640C;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    flex: 1;
 }
 
 .sobre-container {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     gap: 40px;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
 }
 
 .sobre-texto {
-    flex: 1;
+    flex: 1 1 400px;
     text-align: center;
 }
 
 .sobre-texto h2 {
-    text-align: center;
     font-size: 36px;
     font-family: "Safira March", serif;
     color: #CF640C;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
-.sobre-imagem {
-    flex: 0 0 300px;
-    text-align: center;
+.sobre-texto p {
+    font-size: 18px;
+    color: #EAEAEA;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
 
 .sobre-imagem img {
+    max-width: 250px;
     width: 100%;
-    max-width: 280px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
@@ -358,6 +394,22 @@ button:hover {
     
 }
 
+/* Remove sublinhado dos links nas áreas de atuação */
+.atuacao .area {
+    text-decoration: none;
+}
+
+/* Garantir que os elementos dentro das áreas também não tenham sublinhado */
+.atuacao .area h3,
+.atuacao .area p {
+    text-decoration: none;
+}
+
+/* Remover sublinhado ao passar o mouse */
+.atuacao .area:hover,
+.atuacao .area:focus {
+    text-decoration: none;
+}
 
 /*  Estilização do Rodapé */
 footer {
@@ -420,6 +472,77 @@ footer a:hover {
     display: none;
 }
 
+/* Ajuste da linha dupla */
+.linha-dupla {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 40px;
+    width: 95%;
+    max-width: 1300px;
+    margin: 60px auto;
+}
+
+/* Ajusta a seção contato para ter as mesmas características */
+.contato {
+    width: 100%;
+    max-width: initial;
+    margin: 0;
+    padding: 30px;
+    background: #1A1D25;
+    border: 2px solid #CF640C;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Garante que ambas as seções tenham a mesma altura */
+.linha-dupla .sobre,
+.linha-dupla .contato {
+    min-height: 600px;
+}
+
+/* MAPA */
+.mapa-container {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mapa-container iframe {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+}
+
+.mapa-container iframe:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+    transform: scale(1.05);
+}
+
+.mapa-button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #CF640C;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 55px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.mapa-button:hover {
+    background: #f36d07;
+    transform: scale(1.05);
+}
+
 /* RESPONSIVIDADE */
 @media (max-width: 992px) {
     .logo {
@@ -451,14 +574,26 @@ footer a:hover {
 @media (max-width: 768px) {
     .container {
         padding: 0 15px;
+        display: flex; /* ✅ Container flex para alinhamento */
+        justify-content: space-between; /* ✅ Logo à esquerda, hamburger à direita */
+        align-items: center; /* ✅ Centraliza verticalmente */
+        position: relative; /* ✅ Referência para posicionamento (opcional) */
     }
     
     .logo {
         height: 50px;
     }
     
-    .menu-toggle {
-        display: block;
+    .hamburger {
+    display: block;
+    position: absolute; /* Posicionamento absoluto dentro do container */
+    right: 15px; /* Distância da borda direita */
+    top: 0%; /* Centraliza verticalmente */
+    transform: translateY(-50%); /* Ajuste fino de centralização */
+}
+    
+    .menu-close {
+        display: none !important;
     }
     
     .menu {
@@ -490,16 +625,6 @@ footer a:hover {
         padding: 12px 20px;
         text-align: center;
         font-size: 16px;
-    }
-    
-    .menu-close {
-        display: block;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        font-size: 24px;
-        color: #CF640C;
-        cursor: pointer;
     }
     
     .hero {
@@ -541,6 +666,22 @@ footer a:hover {
         width: 100%;
         max-width: 300px;
     }
+    
+    /* Ajustes linha dupla */
+    .linha-dupla {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .linha-dupla .sobre,
+    .linha-dupla .contato {
+        min-height: auto;
+    }
+    
+    /* Ajustes mapa */
+    .mapa-container iframe {
+        height: 200px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -581,7 +722,7 @@ footer a:hover {
         font-size: 16px;
     }
     
-    /* Ajustes adicionais para telas muito pequenas, mantendo texto à esquerda e imagem à direita */
+    /* Ajustes adicionais para telas muito pequenas */
     .sobre-texto {
         flex: 0 0 55%;
     }
@@ -589,7 +730,32 @@ footer a:hover {
     .sobre-imagem {
         flex: 0 0 40%;
     }
+    
+    .hero {
+        width: 95%;
+        min-height: 40vh;
+    }
+    
+    .sobre-texto p {
+        text-align: justify;
+    }
+    
+    .sobre-imagem img {
+        max-width: 200px;
+    }
+    
+    /* Ajustes mapa */
+    .mapa-container iframe {
+        height: 180px;
+    }
+    
+    .mapa-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
 }
+
+/* Regras adicionais para mobile */
 @media (max-width: 768px) {
     .hero {
         min-height: 50vh;
@@ -615,264 +781,7 @@ footer a:hover {
     }
 }
 
-@media (max-width: 480px) {
-    .sobre-imagem img {
-        max-width: 200px;
-    }
-    
-    .hero {
-        width: 95%;
-        min-height: 40vh;
-    }
-    
-    .sobre-texto p {
-        text-align: justify;
-    }
-}
-.hero {
-    width: 90%;
-    min-height: 55vh; /* Reduzido */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: linear-gradient(to bottom, #121417, #22252B);
-    border: 2px solid #CF640C;
-    padding: 30px 20px;
-    margin: 20px auto;
-    max-width: 1200px;
-    box-sizing: border-box;
-}
-
-.sobre {
-    width: 90%;
-    max-width: 1100px;
-    margin: 60px auto;
-    padding: 30px 20px;
-    background: #1A1D25;
-    border: 2px solid #CF640C;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.sobre-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-}
-
-.sobre-texto {
-    flex: 1 1 400px;
-    text-align: center;
-}
-
-.sobre-texto h2 {
-    font-size: 36px;
-    font-family: "Safira March", serif;
-    color: #CF640C;
-    margin-bottom: 20px;
-}
-
-.sobre-texto p {
-    font-size: 18px;
-    color: #EAEAEA;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-.sobre-imagem img {
-    max-width: 250px;
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-.sobre {
-    width: 100%;
-    max-width: 500px; /* reduzido de 1100px */
-    margin: 60px auto;
-    padding: 30px 30px; /* menos margem interna nas laterais */
-    background: #1A1D25;
-    border: 2px solid #CF640C;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-.linha-dupla {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 40px;
-    width: 95%;
-    max-width: 1300px;
-    margin: 60px auto;
-}
-.linha-dupla .sobre,
-.linha-dupla .contato {
-    flex: 1;
-    background: #1A1D25;
-    border: 2px solid #CF640C;
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-/* Ajuste da linha dupla */
-.linha-dupla {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch; /* Garante que os elementos tenham a mesma altura */
-    gap: 40px;
-    width: 95%;
-    max-width: 1300px;
-    margin: 60px auto;
-}
-
-/* Remove estilos conflitantes do .sobre */
-.sobre {
-    width: 100%;
-    max-width: initial; /* Remove o limite de 500px */
-    margin: 0; /* Remove margem automática */
-    padding: 30px;
-    background: #1A1D25;
-    border: 2px solid #CF640C;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    flex: 1; /* Garante que ambas as seções tenham largura igual */
-}
-
-/* Ajusta a seção contato para ter as mesmas características */
-.contato {
-    width: 100%;
-    max-width: initial;
-    margin: 0;
-    padding: 30px;
-    background: #1A1D25;
-    border: 2px solid #CF640C;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Garante que ambas as seções tenham a mesma altura */
-.linha-dupla .sobre,
-.linha-dupla .contato {
-    min-height: 600px; /* Define uma altura mínima igual para ambas */
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .linha-dupla {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    .linha-dupla .sobre,
-    .linha-dupla .contato {
-        min-height: auto;
-    }
-}
-
-/* Remove sublinhado dos links nas áreas de atuação */
-.atuacao .area {
-    text-decoration: none;
-    
-}
-
-/* Garantir que os elementos dentro das áreas também não tenham sublinhado */
-.atuacao .area h3,
-.atuacao .area p {
-    text-decoration: none;
-    
-}
-
-/* Remover sublinhado ao passar o mouse */
-.atuacao .area:hover,
-.atuacao .area:focus {
-    text-decoration: none;
-    
-}
-@media (max-width: 768px) {
-  .header-container,
-  .container {
-    padding: 0 15px;
-  }
-  
-  .logo {
-    height: 45px;
-    
-  }
-  
-  .menu-toggle {
-    display: block;
-    cursor: pointer;
-    font-size: 24px;
-    color: #CF640C;
-    margin-left: auto;
-    z-index: 999;
-    
-  }
-  
-  .menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 80%;
-    max-width: 300px;
-    height: 100vh;
-    background: #1A1D25;
-    flex-direction: column;
-    padding: 80px 20px;
-    gap: 20px;
-    transition: 0.3s;
-    z-index: 100;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.3);
-  }
-  
-  .menu.active {
-    right: 0;
-  }
-  
-  .menu li {
-    width: 100%;
-  }
-  
-  .menu a {
-    width: 100%;
-    padding: 12px 20px;
-    text-align: center;
-  }
-  
-  .menu-close {
-    display: block;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 24px;
-    color: #CF640C;
-    cursor: pointer;
-  }
-  
-  main {
-    padding: 15px;
-  }
-}
-/* RESPONSIVIDADE */
-@media (max-width: 992px) {
-  .logo {
-    height: 50px;
-  }
-  
-  .menu a {
-    font-size: 14px;
-    padding: 8px 12px;
-  }
-  
-  .container {
-    padding: 0 15px;
-  }
-}
+/* Remover menu-close em todos os dispositivos */
 .menu-close,
 .menu-close.active {
     display: none !important;
@@ -881,80 +790,4 @@ footer a:hover {
     width: 0 !important;
     height: 0 !important;
     pointer-events: none !important;
-}
-
-@media (max-width: 992px) {
-    .menu-close,
-    .menu-close.active {
-        display: none !important;
-    }
-}
-
-@media (max-width: 768px) {
-    .menu-close,
-    .menu-close.active {
-        display: none !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .menu-close,
-    .menu-close.active {
-        display: none !important;
-    }
-}
-.mapa-container {
-    width: 100%;
-    max-width: 650px;
-    margin: 0 auto 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.mapa-container iframe {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: 0.3s;
-}
-
-.mapa-container iframe:hover {
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
-    transform: scale(1.05);
-}
-
-.mapa-button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: #CF640C;
-    color: #FFFFFF;
-    font-weight: bold;
-    font-size: 16px;
-    border: none;
-    border-radius: 55px;
-    cursor: pointer;
-    transition: 0.3s;
-    text-decoration: none;
-}
-
-.mapa-button:hover {
-    background: #f36d07;
-    transform: scale(1.05);
-}
-
-/* Ajustes responsivos para o mapa */
-@media (max-width: 768px) {
-    .mapa-container iframe {
-        height: 200px;
-    }
-}
-
-@media (max-width: 480px) {
-    .mapa-container iframe {
-        height: 180px;
-    }
-    
-    .mapa-button {
-        padding: 8px 16px;
-        font-size: 14px;
-    }
 }
