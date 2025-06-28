@@ -16,9 +16,9 @@
   <!-- Scroll Reveal -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js"></script>
 </head>
-<body>
   <header>
     <div class="container">
+      <div class="overlay" id="overlay"></div>
       <a href="index.html" class="logo-link">
         <img src="logo.png" alt="Logotipo de Ítalo Sêne Advocacia" class="logo">
       </a>
@@ -137,36 +137,37 @@
       }
     }
 
-    // Mobile Menu Script
-    document.addEventListener('DOMContentLoaded', function() {
-      // Elementos do menu
-      const hamburger = document.getElementById('hamburger');
-      const menu = document.querySelector('.menu');
-      
-      // Abrir menu
-      hamburger.addEventListener('click', function(e) {
-          e.stopPropagation();
-          menu.classList.toggle('active');
-          hamburger.classList.toggle('active');
-      });
-      
-      // Fechar menu ao clicar fora
-      document.addEventListener('click', function(event) {
-          if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
-              menu.classList.remove('active');
-              hamburger.classList.remove('active');
-          }
-      });
-      
-      // Fechar menu ao clicar em um link
-      const menuLinks = menu.querySelectorAll('a');
-      menuLinks.forEach(link => {
-          link.addEventListener('click', function() {
-              menu.classList.remove('active');
-              hamburger.classList.remove('active');
-          });
-      });
-      
+  document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.querySelector('.menu');
+    const overlay = document.getElementById('overlay');
+    const body = document.body;
+
+    hamburger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        menu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        overlay.classList.toggle('active');
+        body.classList.toggle('no-scroll');
+    });
+
+    overlay.addEventListener('click', function() {
+        menu.classList.remove('active');
+        hamburger.classList.remove('active');
+        overlay.classList.remove('active');
+        body.classList.remove('no-scroll');
+    });
+
+    const menuLinks = menu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            menu.classList.remove('active');
+            hamburger.classList.remove('active');
+            overlay.classList.remove('active');
+            body.classList.remove('no-scroll');
+        });
+    });
+});
       // Scroll Reveal
       const sr = ScrollReveal({
           origin: 'bottom',
@@ -178,7 +179,6 @@
       
       sr.reveal('.scroll-reveal', { interval: 200 });
       sr.reveal('.scroll-reveal-item', { interval: 150 });
-    });
   </script>
 </body>
 </html>

@@ -3,16 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Blog Ítalo Sêne Advocacia</title>
-  <link rel="stylesheet" href="blogcss/blogstyle.css" />
+  <title>Blog Ítalo Sêne Advocacia | Artigos e Notícias Jurídicas</title>
+  <meta name="description" content="Acompanhe os artigos e notícias jurídicas do Ítalo Sêne Advocacia. Conteúdo atualizado sobre Direito Civil, Contratual, Trânsito, Previdenciário e mais.">
+  <meta name="keywords" content="blog jurídico, artigos de direito, notícias jurídicas, direito civil, direito contratual, direito de trânsito, direito previdenciário, direito bancário, direito rural, direito criminal, direito de família, direito do consumidor, direito trabalhista, Ítalo Sêne Advocacia">
+  <meta name="author" content="Ítalo Sêne Advocacia">
   <link rel="icon" href="iconenavegador.png" type="image/png">
   <link rel="shortcut icon" href="iconenavegador.png">
   <link rel="apple-touch-icon" href="iconenavegador.png">
+  <link rel="stylesheet" href="blogcss/blogstyle.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js"></script>
 </head>
-<body>
   <header>
     <div class="container">
+      <div class="overlay" id="overlay"></div>
       <a href="index.html" class="logo-link">
         <img src="logo.png" alt="Logotipo de Ítalo Sêne Advocacia" class="logo">
       </a>
@@ -48,31 +51,37 @@
   <script src="blogjs/blogstorage.js?v=3" defer></script>
   <script src="blogjs/blogmain.js" defer></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const hamburger = document.getElementById('hamburger');
-      const menu = document.querySelector('.menu');
-      
-      hamburger.addEventListener('click', function(e) {
-          e.stopPropagation();
-          menu.classList.toggle('active');
-          hamburger.classList.toggle('active');
-      });
-      
-      document.addEventListener('click', function(event) {
-          if (!menu.contains(event.target) && !hamburger.contains(event.target)) {
-              menu.classList.remove('active');
-              hamburger.classList.remove('active');
-          }
-      });
-      
-      const menuLinks = menu.querySelectorAll('a');
-      menuLinks.forEach(link => {
-          link.addEventListener('click', function() {
-              menu.classList.remove('active');
-              hamburger.classList.remove('active');
-          });
-      });
-      
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const menu = document.querySelector('.menu');
+    const overlay = document.getElementById('overlay');
+    const body = document.body;
+
+    hamburger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        menu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+        overlay.classList.toggle('active');
+        body.classList.toggle('no-scroll');
+    });
+
+    overlay.addEventListener('click', function() {
+        menu.classList.remove('active');
+        hamburger.classList.remove('active');
+        overlay.classList.remove('active');
+        body.classList.remove('no-scroll');
+    });
+
+    const menuLinks = menu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            menu.classList.remove('active');
+            hamburger.classList.remove('active');
+            overlay.classList.remove('active');
+            body.classList.remove('no-scroll');
+        });
+    });
+});
       const sr = ScrollReveal({
         origin: 'bottom',
         distance: '50px',
@@ -83,7 +92,7 @@
       
       sr.reveal('.scroll-reveal', { interval: 200 });
       sr.reveal('.scroll-reveal-item', { interval: 150 });
-    });
+    
   </script>
 </body>
 </html>
