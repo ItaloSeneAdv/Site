@@ -10,6 +10,10 @@ document.addEventListener('DOMContentLoaded', () => {
       'styles.css': 'styles-light.css',
       'styles-light.css': 'styles.css'
     },
+    'index': {
+      'styles.css': 'styles-light.css',
+      'styles-light.css': 'styles.css'
+    },
     'blogindex': {
       'blogstyle.css': 'blogstyle-light.css',
       'blogstyle-light.css': 'blogstyle.css'
