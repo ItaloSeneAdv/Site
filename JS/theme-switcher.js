@@ -6,10 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const pageName = window.location.pathname.split('/').pop().split('.')[0];
 
   const themeMap = {
-    'landingpage': {
-      'styles.css': 'styles-light.css',
-      'styles-light.css': 'styles.css'
-    },
     'index': {
       'styles.css': 'styles-light.css',
       'styles-light.css': 'styles.css'
