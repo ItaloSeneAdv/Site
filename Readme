@@ -1,0 +1,69 @@
+# Ítalo Sêne Advocacia
+
+## Descrição
+Este repositório contém o código-fonte do site do escritório de advocacia Ítalo Sêne, atuante em diversas áreas do Direito, incluindo Direito Civil, Contratual, de Família, do Consumidor, de Trânsito, Agrário, Previdenciário, Bancário, Trabalhista e Criminal. O site oferece informações sobre os serviços prestados, além de um blog com artigos e notícias jurídicas.
+
+## Tecnologias Utilizadas
+- **HTML5**: Estruturação do conteúdo do site.
+- **CSS3**: Estilização e layout responsivo.
+- **JavaScript**: Interatividade e funcionalidades dinâmicas.
+- **Font Awesome**: Ícones para melhorar a interface do usuário.
+- **ScrollReveal.js**: Efeitos de revelação ao rolar a página.
+
+## Estrutura do Projeto
+```
+/Site
+├── .gitignore
+├── areas/
+│   ├── civil.html
+│   ├── consultoria.html
+│   ├── consumidor.html
+│   ├── contratual.html
+│   ├── duvidas.html
+│   ├── familia.html
+│   ├── transito.html
+├── blog/
+│   ├── bloghtmls/
+│   │   ├── blogadmin.html
+│   │   ├── blogindex.html
+│   │   ├── blogpost.html
+│   ├── blogposts.json
+│   ├── blogstyle.css
+│   ├── blogstyle-light.css
+│   ├── blogpost.css
+│   ├── blogpost-light.css
+├── CSS/
+│   ├── styles.css
+│   ├── styles-light.css
+├── JS/
+│   ├── blogadmin.js
+│   ├── bloglogin.js
+│   ├── blogmain.js
+│   ├── blogstorage.js
+│   ├── mobile.js
+│   ├── script.js
+│   ├── theme-switcher.js
+├── fonts/
+│   ├── Athena-Regular.ttf
+│   ├── Safira March.otf
+├── landingassets/
+│   ├── fotoperfil.webp
+│   ├── iconenavegador.webp
+│   ├── logo.webp
+│   ├── whatsapp-icon.webp
+├── landingpage.html
+└── google0b1fdc01032bdc67.html
+
+
+## Como Executar o Projeto
+**Abra o arquivo `landingpage.html` em um navegador** para visualizar o site ou clique no link.
+
+
+## Licença
+Este projeto está licenciado sob a [MIT License](LICENSE).
+
+## Contato
+Para mais informações, entre em contato:
+- **Email**: italoseneadv@gmail.com
+- **Telefone**: +55 43 98800-8177
+
