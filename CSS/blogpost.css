@@ -1,0 +1,556 @@
+@font-face {
+  font-family: "Athena";
+  src: url("../fonts/Athena-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Safira March";
+  src: url("../fonts/Safira March.otf") format("opentype");
+}
+
+/* Reset padrão */
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #121417; /* Fundo escuro padrão */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Athena", serif;
+  color: #EAEAEA; /* Cor do texto padrão */
+  overflow-x: hidden; /* Evita rolagem horizontal */
+}
+
+/* Bloqueio de scroll para menu mobile */
+body.no-scroll {
+  overflow: hidden;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+}
+
+/* HEADER - Compartilhado com outras páginas */
+header {
+  background: #1A1D25; /* Fundo do cabeçalho */
+  padding: 20px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 96%;
+  max-width: 1920px;
+  padding: 0 10px;
+  margin: 0 auto;
+  flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+}
+
+.logo-link {
+  display: flex; /* Para alinhar a imagem do logo */
+  align-items: center;
+}
+
+.logo {
+  height: 70px; /* Tamanho do logo */
+  width: auto;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  display: inline-block;
+}
+
+.menu a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.menu a:hover {
+  color: #CF640C; /* Cor de destaque no hover */
+  transform: scale(1.05);
+}
+
+/* TOGGLE DE TEMA - Compartilhado com outras páginas */
+.theme-toggle-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.theme-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.theme-toggle .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #121417; /* Fundo do slider (dark mode) */
+  transition: background 0.4s;
+  border-radius: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+}
+
+.theme-toggle .slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background: #FFFFFF; /* Cor do círculo do slider */
+  transition: transform 0.4s;
+  border-radius: 50%;
+}
+
+.theme-toggle input:checked + .slider {
+  background: #CF640C; /* Fundo do slider (light mode) */
+}
+
+.theme-toggle input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.theme-toggle .icon {
+  font-size: 18px;
+  color: #FFFFFF;
+  line-height: 34px;
+}
+
+.theme-toggle .sun {
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.theme-toggle input:checked + .slider .sun {
+  opacity: 1;
+}
+
+.theme-toggle .moon {
+  opacity: 1;
+  transition: opacity 0.4s;
+}
+
+.theme-toggle input:checked + .slider .moon {
+  opacity: 0;
+}
+
+.theme-toggle input:focus + .slider {
+  box-shadow: 0 0 8px rgba(207, 100, 12, 0.7);
+}
+
+/* HAMBURGER - Compartilhado com outras páginas */
+.hamburger {
+  position: absolute !important;
+  right: 20px;
+  top: 30% !important; /* Ajuste para centralizar verticalmente */
+  transform: translateY(-0%) !important;
+  display: none; /* Escondido por padrão em desktop */
+  z-index: 1001;
+  background: transparent !important;
+  width: 40px;
+  height: 0px;
+  cursor: pointer;
+  border: none; /* Remove borda padrão do botão */
+}
+
+.hamburger span {
+  transition: all 0.3s ease;
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #CF640C; /* Cor do hamburger */
+  border-radius: 3px;
+  opacity: 1;
+  position: absolute;
+  left: 0;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+
+.hamburger span:nth-child(2) {
+  top: 12px;
+}
+
+.hamburger span:nth-child(3) {
+  top: 24px;
+}
+
+.hamburger.active span:nth-child(1) {
+  top: 12px;
+  transform: rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  top: 12px;
+  transform: rotate(-45deg);
+}
+
+/* MAIN - Específico para a página de post */
+main {
+  flex: 1; /* Ocupa o espaço restante */
+  width: 100%;
+  max-width: 960px; /* Largura máxima para o conteúdo do post */
+  margin: 20px auto; /* Centraliza o conteúdo */
+  padding: 0 15px; /* Padding lateral para respiro */
+  box-sizing: border-box;
+}
+
+.post-container {
+  font-family: "Athena", serif;
+  color: #FFFFFF;
+  padding: 30px;
+  text-align: justify; /* Texto justificado */
+  background: #1A1D25; /* Fundo do container do post */
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.post-type-badge {
+  background: #cf640c; /* Cor do badge */
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 15px; /* Espaçamento abaixo do badge */
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  box-shadow: 0 2px 4px rgba(207, 100, 12, 0.3);
+}
+
+.post-container h1 {
+  font-family: "Times New Roman", Times, serif;
+  text-align: left; /* Título alinhado à esquerda */
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+  line-height: 1.3;
+  color: #FFFFFF;
+}
+
+.post-meta {
+  color: #DDDDDD;
+  font-size: 16px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #333; /* Linha separadora */
+  padding-bottom: 20px;
+}
+
+.post-content {
+  color: #EEEEEE;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  text-align: justify; /* Conteúdo do texto justificado */
+}
+
+.post-image {
+  text-align: center; /* Centraliza a imagem */
+  margin: 30px 0; /* Margem acima e abaixo da imagem */
+}
+
+.post-image img {
+  max-width: 60%; /* Imagem do post com no máximo 60% da largura do container */
+  height: auto;
+  display: block; /* Garante que a imagem se comporte como bloco para margin auto */
+  margin: 0 auto; /* Centraliza a imagem */
+  border-radius: 5px;
+  box-sizing: border-box;
+  border: 1px solid #444; /* Borda sutil na imagem */
+}
+
+.share-container {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #333; /* Linha separadora */
+  text-align: center; /* Centraliza o título e botões de compartilhamento */
+}
+
+.share-container h3 {
+  color: #FFFFFF;
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+.social-share-buttons {
+  display: flex;
+  gap: 20px; /* Espaçamento entre os botões */
+  flex-wrap: wrap;
+  justify-content: center; /* Centraliza os botões */
+}
+
+.share-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #FFFFFF;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.share-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Cores dos botões de redes sociais */
+.facebook {
+  background: #3b5998;
+}
+
+.linkedin {
+  background: #0077b5;
+}
+
+.whatsapp {
+  background: #25d366;
+}
+
+.instagram {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+/* FOOTER - Compartilhado com outras páginas */
+footer {
+  background: #1A1D25;
+  padding: 30px 0;
+  border-top: 2px solid #CF640C;
+  margin-top: 50px; /* Espaçamento acima do footer */
+  text-align: center;
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+footer p {
+  font-size: 14px;
+  color: #FFFFFF;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+footer a {
+  color: #CF640C;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* MEDIA QUERIES */
+
+/* Desktop grande */
+@media (min-width: 993px) {
+  .hamburger {
+    display: none; /* Garante que o hamburger não apareça em desktop */
+  }
+
+  .menu {
+    position: static !important;
+    display: flex !important;
+    width: auto;
+    height: auto;
+    padding: 0;
+    box-shadow: none;
+    background: transparent;
+    flex-direction: row;
+  }
+
+  .theme-toggle-wrapper {
+    position: static;
+    transform: none;
+  }
+}
+
+/* Tablets e Desktops menores */
+@media (max-width: 992px) {
+  .logo {
+    height: 50px;
+  }
+
+  .menu a {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Mostra o hamburger em mobile */
+    right: 20px;
+    top: 50%; /* Centraliza verticalmente */
+    transform: translateY(-50%) !important;
+  }
+
+  .container {
+    padding-right: 70px !important; /* Espaço para o hamburger */
+  }
+
+  .menu {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Esconde o menu fora da tela */
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background: #1A1D25;
+    flex-direction: column;
+    padding: 80px 20px 20px;
+    gap: 15px;
+    transition: 0.3s;
+    z-index: 1000;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .menu.active {
+    right: 0; /* Mostra o menu */
+  }
+
+  .menu li {
+    width: 100%;
+  }
+
+  .menu a {
+    width: 100%;
+    padding: 12px 20px;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .logo {
+    height: 45px;
+  }
+
+  /* Ajustes para o post container em mobile */
+  .post-container {
+    padding: 20px 15px;
+    margin: 10px auto;
+  }
+
+  .post-container h1 {
+    font-size: 24px;
+  }
+
+  .post-meta {
+    font-size: 14px;
+  }
+
+  .post-content {
+    font-size: 1rem;
+  }
+
+  .post-image img {
+    max-width: 100% !important; /* Imagem ocupa 100% da largura em mobile */
+    margin: 20px auto !important;
+  }
+
+  .share-container h3 {
+    font-size: 1.1rem;
+  }
+
+  .social-share-buttons {
+    gap: 10px;
+  }
+
+  .theme-toggle-wrapper {
+    position: absolute;
+    right: 80px; /* Ajusta a posição para não colidir com o hamburger */
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    z-index: 1002;
+  }
+}
+
+/* Mobile muito pequeno */
+@media (max-width: 480px) {
+  .logo {
+    height: 40px;
+  }
+
+  .menu {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  header {
+    padding: 15px 0;
+  }
+
+  .post-container {
+    padding: 15px 10px;
+  }
+
+  .post-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .post-meta {
+    font-size: 0.85rem;
+  }
+
+  .post-content {
+    font-size: 0.95rem;
+  }
+
+  .share-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
