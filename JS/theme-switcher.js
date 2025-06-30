@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .find(key => !key.includes('light')); // Encontra a folha de estilo escura
   if (darkSheet) {
     themeStylesheet.href = themeStylesheet.href.replace(currentStylesheet, darkSheet);
-    themeCheckbox.checked = false; // Checkbox desmarcada para modo escuro
+    themeCheckbox.checked = true; // Checkbox desmarcada para modo escuro
     themeCheckbox.setAttribute('aria-label', 'Alternar para modo claro');
     localStorage.setItem('theme', 'dark'); // Salva o tema escuro como padrão
   }
