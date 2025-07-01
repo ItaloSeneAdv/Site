@@ -188,8 +188,6 @@ main.blog-index {
 }
 
 /* MAIN ESPECÍFICO PARA PÁGINA DE POST */
-/* Removido main.blog-post para usar o #post-content diretamente */
-
 /* Container principal do post */
 .post-container {
   font-family: "Athena", serif;

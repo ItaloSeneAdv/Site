@@ -35,7 +35,7 @@ body.no-scroll {
   width: 100%;
 }
 
-/* HEADER - Compartilhado com outras páginas */
+/* HEADER - Compartilhado com outras páginas (Consistente com blogstyle.css) */
 header {
   background: #1A1D25; /* Fundo do cabeçalho */
   padding: 20px 0;
@@ -92,7 +92,7 @@ header {
   transform: scale(1.05);
 }
 
-/* TOGGLE DE TEMA - Compartilhado com outras páginas */
+/* TOGGLE DE TEMA - Compartilhado com outras páginas (Consistente com blogstyle.css) */
 .theme-toggle-wrapper {
   display: flex;
   align-items: center;
@@ -177,27 +177,43 @@ header {
   box-shadow: 0 0 8px rgba(207, 100, 12, 0.7);
 }
 
-/* HAMBURGER - Compartilhado com outras páginas */
+/* HAMBURGER - Copiado de blogstyle.css para consistência */
 .hamburger {
   position: absolute !important;
   right: 20px;
-  top: 30% !important; /* Ajuste para centralizar verticalmente */
-  transform: translateY(-0%) !important;
-  display: none; /* Escondido por padrão em desktop */
+  top: 50% !important; /* Ajustado para centralizar verticalmente */
+  transform: translateY(-50%) !important;
+  display: none;
   z-index: 1001;
   background: transparent !important;
   width: 40px;
-  height: 0px;
+  height: 30px;
   cursor: pointer;
-  border: none; /* Remove borda padrão do botão */
 }
 
+/* Overlay para fundo (Consistente com blogstyle.css) */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/* Hamburger animation (Consistente com blogstyle.css) */
 .hamburger span {
   transition: all 0.3s ease;
   display: block;
   height: 3px;
   width: 100%;
-  background: #CF640C; /* Cor do hamburger */
+  background: #CF640C;
   border-radius: 3px;
   opacity: 1;
   position: absolute;
@@ -240,25 +256,29 @@ main {
   box-sizing: border-box;
 }
 
+/* Post Container */
 .post-container {
+  position: relative; /* Define o contexto de posicionamento */
   font-family: "Athena", serif;
   color: #FFFFFF;
   padding: 30px;
-  text-align: justify; /* Texto justificado */
-  background: #1A1D25; /* Fundo do container do post */
+  text-align: justify;
+  background: #1A1D25;
   border-radius: 8px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1; /* Garante que o container fique abaixo do header, mas acima do fundo */
 }
 
 .post-type-badge {
-  background: #cf640c; /* Cor do badge */
+  position: static; /* Remove position: absolute para evitar sobreposição */
+  display: inline-block;
+  background: #cf640c;
   color: #ffffff;
   font-size: 0.85rem;
   font-weight: bold;
   padding: 4px 8px;
   border-radius: 6px;
-  display: inline-block;
-  margin-bottom: 15px; /* Espaçamento abaixo do badge */
+  margin-bottom: 15px;
   text-transform: uppercase;
   letter-spacing: 0.8px;
   box-shadow: 0 2px 4px rgba(207, 100, 12, 0.3);
@@ -266,7 +286,7 @@ main {
 
 .post-container h1 {
   font-family: "Times New Roman", Times, serif;
-  text-align: left; /* Título alinhado à esquerda */
+  text-align: left;
   margin-bottom: 20px;
   font-size: 2.2rem;
   line-height: 1.3;
@@ -277,7 +297,7 @@ main {
   color: #DDDDDD;
   font-size: 16px;
   margin-bottom: 30px;
-  border-bottom: 1px solid #333; /* Linha separadora */
+  border-bottom: 1px solid #333;
   padding-bottom: 20px;
 }
 
@@ -286,23 +306,27 @@ main {
   line-height: 1.8;
   font-size: 1.1rem;
   text-align: justify; /* Conteúdo do texto justificado */
+  transition: none !important; /* Remove transições indesejadas */
 }
 
-.post-image {
+.post-content p {
+  margin: 0 0 20px; /* Espaçamento consistente */
+  transition: none !important; /* Garante que parágrafos não tenham animações */
+}
+
+/* Imagens dentro do post (Consistente com blogstyle.css) */
+.post-image, .post-content img {
   text-align: center; /* Centraliza a imagem */
-  margin: 30px 0; /* Margem acima e abaixo da imagem */
-}
-
-.post-image img {
+  margin: 30px auto !important; /* Margem acima e abaixo da imagem, centraliza */
   max-width: 60%; /* Imagem do post com no máximo 60% da largura do container */
   height: auto;
   display: block; /* Garante que a imagem se comporte como bloco para margin auto */
-  margin: 0 auto; /* Centraliza a imagem */
   border-radius: 5px;
   box-sizing: border-box;
   border: 1px solid #444; /* Borda sutil na imagem */
 }
 
+/* Share Container */
 .share-container {
   margin-top: 40px;
   padding-top: 20px;
@@ -334,7 +358,7 @@ main {
   color: #FFFFFF;
   font-size: 18px;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Corrigido o valor do box-shadow */
 }
 
 .share-btn:hover {
@@ -342,7 +366,7 @@ main {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-/* Cores dos botões de redes sociais */
+/* Cores dos botões de redes sociais (Consistente com blogstyle.css) */
 .facebook {
   background: #3b5998;
 }
@@ -359,7 +383,7 @@ main {
   background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
 }
 
-/* FOOTER - Compartilhado com outras páginas */
+/* FOOTER - Compartilhado com outras páginas (Consistente com blogstyle.css) */
 footer {
   background: #1A1D25;
   padding: 30px 0;
@@ -392,12 +416,17 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* MEDIA QUERIES */
+/* MEDIA QUERIES (Consistente com blogstyle.css) */
 
 /* Desktop grande */
-@media (min-width: 993px) {
+@media (min-width: 769px) {
   .hamburger {
     display: none; /* Garante que o hamburger não apareça em desktop */
+  }
+
+  .container, .header-container { /* Adicionado .header-container para consistência */
+    padding-right: 10px;
+    justify-content: space-between;
   }
 
   .menu {
@@ -411,9 +440,12 @@ footer a:hover {
     flex-direction: row;
   }
 
-  .theme-toggle-wrapper {
-    position: static;
-    transform: none;
+  .overlay {
+    display: none;
+  }
+
+  .overlay.active {
+    display: block;
   }
 }
 
@@ -433,9 +465,6 @@ footer a:hover {
 @media (max-width: 768px) {
   .hamburger {
     display: block; /* Mostra o hamburger em mobile */
-    right: 20px;
-    top: 50%; /* Centraliza verticalmente */
-    transform: translateY(-50%) !important;
   }
 
   .container {
@@ -480,7 +509,7 @@ footer a:hover {
   /* Ajustes para o post container em mobile */
   .post-container {
     padding: 20px 15px;
-    margin: 10px auto;
+    margin: 10px auto !important; /* Consistente com blogstyle.css */
   }
 
   .post-container h1 {
@@ -495,7 +524,8 @@ footer a:hover {
     font-size: 1rem;
   }
 
-  .post-image img {
+  /* Correção para imagens em posts no mobile (Consistente com blogstyle.css) */
+  .post-image img, .post-content img {
     max-width: 100% !important; /* Imagem ocupa 100% da largura em mobile */
     margin: 20px auto !important;
   }
@@ -530,6 +560,7 @@ footer a:hover {
 
   header {
     padding: 15px 0;
+    margin-bottom: 20px; /* Adicionado para consistência */
   }
 
   .post-container {
@@ -552,5 +583,79 @@ footer a:hover {
     width: 40px;
     height: 40px;
     font-size: 16px;
+  }
+
+  footer { /* Adicionado para consistência */
+    padding: 20px 0;
+  }
+}
+
+/* Garantir que o container principal seja visível */
+#post-content {
+  display: block;
+  width: 100%;
+}
+
+/* Corrigir posicionamento do conteúdo */
+.post-page.post-container {
+  margin-top: 20px;
+  padding: 30px;
+}
+
+/* Garantir que imagens sejam exibidas (redundante com .post-content img, mas mantido para clareza) */
+.post-image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto;
+}
+
+/* Classes adicionais do blogpost.css original, mantidas */
+.full-post {
+    position: relative;
+    z-index: 1;
+}
+
+.post-header {
+    position: relative;
+}
+
+.post-category {
+    display: inline-block;
+    background: #cf640c;
+    color: #ffffff;
+    padding: 4px 8px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.post-title {
+    margin-bottom: 20px;
+}
+
+/* .post-meta já definido acima */
+
+/* .post-content já definido acima */
+
+.post-image-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+.hamburger {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+}
+
+.hamburger span {
+    background: #CF640C !important; /* Cor laranja do tema */
+}
+@media (max-width: 480px) {
+  .menu {
+    max-width: 10%; /* Limita a largura máxima horizontal */
   }
 }
