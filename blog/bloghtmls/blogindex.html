@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog Ítalo Sêne Advocacia | Artigos e Notícias Jurídicas</title>
+  <meta name="description" content="Acompanhe os artigos e notícias jurídicas do Ítalo Sêne Advocacia. Conteúdo atualizado sobre Direito Civil, Contratual, Trânsito, Previdenciário e mais.">
+  <meta name="keywords" content="blog jurídico, artigos de direito, notícias jurídicas, direito civil, direito contratual, direito de trânsito, direito previdenciário, direito bancário, direito rural, direito criminal, direito de família, direito do consumidor, direito trabalhista, Ítalo Sêne Advocacia">
+  <meta name="author" content="Ítalo Sêne Advocacia">
+  <link rel="icon" href="../../landingassets/iconenavegador.webp" type="image/png">
+  <link rel="shortcut icon" href="../../landingassets/iconenavegador.webp">
+  <link rel="apple-touch-icon" href="../../landingassets/iconenavegador.webp">
+  <link id="theme-stylesheet" rel="stylesheet" href="../../CSS/blogstyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="../../index.html" class="logo-link">
+        <img src="../../landingassets/logo.webp" alt="Logotipo de Ítalo Sêne Advocacia" class="logo">
+      </a>
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav>
+        <ul class="menu">
+          <li><a href="../../index.html#atuacao">Áreas de Atuação</a></li>
+          <li><a href="../../index.html#sobre">Sobre</a></li>
+          <li><a href="../../index.html#contato">Contato</a></li>
+          <li><a href="../../index.html">Site</a></li>
+        </ul>
+      </nav>
+    <div class="theme-toggle-wrapper">
+      <label class="theme-toggle" for="theme-checkbox">
+        <input type="checkbox" id="theme-checkbox" aria-label="Alternar tema">
+        <span class="slider">
+          <span class="icon sun">☀️</span>
+          <span class="icon moon">🌙</span>
+        </span>
+      </label>
+    </div>
+  </div>
+  </header>
+
+  <main class="scroll-reveal">
+    <input type="text" id="search" placeholder="Buscar por título, autor, área jurídica ou conteúdo..." class="scroll-reveal-item" />
+    <div id="wrapper">
+      <div id="posts-container" class="grid scroll-reveal-item"></div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 Ítalo Sêne Advocacia. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+  <script src="../../js/blogposts.js"></script>
+  <script src="../../js/blogstorage.js?v=3"></script>
+  <script src="../../js/blogmain.js"></script>
+  
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+        // Elementos do menu
+        const hamburger = document.getElementById('hamburger');
+        const menu = document.querySelector('.menu');
+        
+        // Abrir/Fechar menu
+        hamburger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            menu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+        });
+
+        // Fechar menu ao clicar fora
+        document.addEventListener('click', function(event) {
+            if (menu.classList.contains('active') && 
+                !menu.contains(event.target) && 
+                !hamburger.contains(event.target)) {
+                menu.classList.remove('active');
+                hamburger.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            }
+        });
+
+        // Fechar menu ao clicar em um link
+        const menuLinks = menu.querySelectorAll('a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                menu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+        
+        if (typeof ScrollReveal !== 'undefined') {
+            const sr = ScrollReveal({
+                origin: 'bottom',
+                distance: '50px',
+                duration: 1000,
+                delay: 200,
+                reset: false
+            });
+            
+            sr.reveal('.scroll-reveal', { interval: 200 });
+            sr.reveal('.scroll-reveal-item', { interval: 150 });
+        }
+    });
+  </script>
+  <script src="../../JS/theme-switcher.js"></script>
+</body>
+</html>
