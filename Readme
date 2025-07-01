@@ -27,7 +27,6 @@ Este repositório contém o código-fonte do site do escritório de advocacia Í
 │   ├── transito.html
 ├── blog/
 │   ├── bloghtmls/
-│   │   ├── blogadmin.html
 │   │   ├── blogindex.html
 │   │   ├── blogpost.html
 │   ├── blogimages/
