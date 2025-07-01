@@ -43,7 +43,6 @@ Este repositório contém o código-fonte do site do escritório de advocacia Í
 │   ├── Safira March.otf
 ├── js/
 │   ├── blogadmin.js
-│   ├── bloglogin.js
 │   ├── blogmain.js
 │   ├── blogposts.js
 │   ├── blogstorage.js
