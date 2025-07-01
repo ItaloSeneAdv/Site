@@ -27,7 +27,45 @@ Este repositório contém o código-fonte do site do escritório de advocacia Í
 │   │   ├── blogadmin.html
 │   │   ├── blogindex.html
 │   │   ├── blogpost.html
-│   ├── blogposts.json
+│   ├── blogstyle.css
+│   ├── blogstyle-light.css
+│   ├── blogpost.css
+│   ├── blogpost-light.css
+├── CSS/
+│   ├── styles.css
+│   ├── styles-light.css
+├── JS/
+│   ├── blogadmin.js
+│   ├── bloglogin.js
+│   ├── blogmain.js
+│   ├── blogstorage.js
+│   ├── mobile.js
+│   ├── script.js
+│   ├── theme-switcher.js
+├── fonts/
+│   ├── Athena-Regular.ttf
+│   ├── Safira March.otf
+├── landingassets/
+│   ├── fotoperfil.webp
+│   ├── iconenavegador.webp
+│   ├── logo.webp
+│   ├── whatsapp-icon.webp
+├── landingpage.html
+└── google0b1fdc01032bdc67.htm/Site
+├── .gitignore
+├── areas/
+│   ├── civil.html
+│   ├── consultoria.html
+│   ├── consumidor.html
+│   ├── contratual.html
+│   ├── duvidas.html
+│   ├── familia.html
+│   ├── transito.html
+├── blog/
+│   ├── bloghtmls/
+│   │   ├── blogadmin.html
+│   │   ├── blogindex.html
+│   │   ├── blogpost.html
 │   ├── blogstyle.css
 │   ├── blogstyle-light.css
 │   ├── blogpost.css
@@ -53,6 +91,7 @@ Este repositório contém o código-fonte do site do escritório de advocacia Í
 │   ├── whatsapp-icon.webp
 ├── landingpage.html
 └── google0b1fdc01032bdc67.html
+└── blogposts.json
 
 
 ## Como Executar o Projeto
