@@ -29,14 +29,7 @@
     </div>
   </header>
   <main>
-    <div id="login-screen">
-      <h2>Área Administrativa</h2>
-      <input type="text" id="username" placeholder="Usuário" required>
-      <input type="password" id="password" placeholder="Senha" required>
-      <button onclick="login()">Entrar</button>
-    </div>
-
-    <div id="admin-screen" style="display:none;">
+    <div id="admin-screen">
       <button onclick="logout()" style="margin-top: 20px; background: #e74c3c;">Sair</button>
       <header><h1>Administração do Blog</h1></header>
       <form id="post-form">
@@ -67,7 +60,6 @@
 
   <script src="/JS/blogstorage.js"></script>
   <script src="/JS/blogadmin.js"></script>
-  <script src="/JS/bloglogin.js"></script>
   <script src="/JS/mobile.js"></script>
 </body>
 </html>
