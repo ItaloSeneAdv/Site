@@ -14,6 +14,9 @@ Este repositório contém o código-fonte do site do escritório de advocacia Í
 ```
 /Site
 ├── .gitignore
+├── _config.yml
+├── _headers
+├── Readme
 ├── areas/
 │   ├── civil.html
 │   ├── consultoria.html
@@ -27,79 +30,43 @@ Este repositório contém o código-fonte do site do escritório de advocacia Í
 │   │   ├── blogadmin.html
 │   │   ├── blogindex.html
 │   │   ├── blogpost.html
-│   ├── blogstyle.css
-│   ├── blogstyle-light.css
+│   ├── blogimages/
+├── CSS/
 │   ├── blogpost.css
 │   ├── blogpost-light.css
-├── CSS/
+│   ├── blogstyle.css
+│   ├── blogstyle-light.css
 │   ├── styles.css
 │   ├── styles-light.css
-├── JS/
+├── fonts/
+│   ├── Athena-Regular.ttf
+│   ├── Safira March.otf
+├── js/
 │   ├── blogadmin.js
 │   ├── bloglogin.js
 │   ├── blogmain.js
+│   ├── blogposts.js
 │   ├── blogstorage.js
 │   ├── mobile.js
 │   ├── script.js
 │   ├── theme-switcher.js
-├── fonts/
-│   ├── Athena-Regular.ttf
-│   ├── Safira March.otf
 ├── landingassets/
 │   ├── fotoperfil.webp
 │   ├── iconenavegador.webp
 │   ├── logo.webp
 │   ├── whatsapp-icon.webp
-├── landingpage.html
-└── google0b1fdc01032bdc67.htm/Site
-├── .gitignore
-├── areas/
-│   ├── civil.html
-│   ├── consultoria.html
-│   ├── consumidor.html
-│   ├── contratual.html
-│   ├── duvidas.html
-│   ├── familia.html
-│   ├── transito.html
-├── blog/
-│   ├── bloghtmls/
-│   │   ├── blogadmin.html
-│   │   ├── blogindex.html
-│   │   ├── blogpost.html
-│   ├── blogstyle.css
-│   ├── blogstyle-light.css
-│   ├── blogpost.css
-│   ├── blogpost-light.css
-├── CSS/
-│   ├── styles.css
-│   ├── styles-light.css
-├── JS/
-│   ├── blogadmin.js
-│   ├── bloglogin.js
-│   ├── blogmain.js
-│   ├── blogstorage.js
-│   ├── mobile.js
-│   ├── script.js
-│   ├── theme-switcher.js
-├── fonts/
-│   ├── Athena-Regular.ttf
-│   ├── Safira March.otf
-├── landingassets/
-│   ├── fotoperfil.webp
-│   ├── iconenavegador.webp
-│   ├── logo.webp
-│   ├── whatsapp-icon.webp
-├── landingpage.html
-└── google0b1fdc01032bdc67.html
-└── blogposts.json
-
+├── google0b1fdc01032bdc67.html
+├── index.html
+├── robots.txt
+├── ror.xml
+├── sitemap.html
+├── sitemap.xml
+├── sitemap.xml.gz
+├── urllist.txt
 
 ## Como Executar o Projeto
-**Abra o arquivo `landingpage.html` em um navegador** para visualizar o site ou clique no link.
+**Abra o arquivo `index.html` em um navegador** para visualizar o site ou clique no link.
 
-
-## Licença
-Este projeto está licenciado sob a [MIT License](LICENSE).
 
 ## Contato
 Para mais informações, entre em contato:
