@@ -1,5 +1,14 @@
 const POSTS_DATA = [
     {
+  "id": "1751395077258",
+  "title": "💳🛑 Foi vítima de clonagem de cartão? Saiba o que fazer e como se proteger! ⚖️📉",
+  "author": "Ítalo Sêne",
+  "date": "2025-07-01",
+  "image": "imagem01072025.png",
+  "type": "Bancário",
+  "content": "A clonagem de cartões é um golpe que continua prejudicando milhares de consumidores todos os anos — muitas vezes, deixando rastros de prejuízo sem nenhuma culpa da vítima.\n\nMas a verdade é: você não está desamparado.\n\n📌 Se o seu cartão foi clonado, veja como agir:\n\n1️⃣ Notifique o banco imediatamente: esse é o primeiro passo. Mesmo que a clonagem só tenha sido descoberta dias depois, a comunicação é essencial.\n\n2️⃣ Reúna provas: extratos, mensagens, prints de movimentações estranhas. Quanto mais documentado, melhor.\n\n3️⃣ Registre um boletim de ocorrência: mesmo que o valor pareça pequeno, o crime existe e deve ser formalizado.\n\n4️⃣ Exija o estorno e apuração da falha de segurança: o banco é responsável pela proteção do sistema. A falha é dele — e não sua.\n\n5️⃣ Se houver resistência, recusa ou omissão do banco... você pode buscar reparação na Justiça.\n\n💼 Nesses casos, a atuação profissional e técnica pode fazer toda a diferença:\n\n• Identificação das falhas da instituição\n• Representação adequada em pedidos de reembolso\n• Pedido de indenização por danos morais, quando o prejuízo extrapola o financeiro\n\nE o mais importante: a clonagem não pode ser tratada como culpa do consumidor.\n\n🔐 Seu dever é proteger seus dados.\n👎 O dever do banco é impedir que terceiros acessem seu dinheiro.\n\nNão aceite o prejuízo como normal.\n\n📣 Se você ou alguém próximo sofreu um golpe com cartão, compartilhe esta informação.\n\n📎 Informação também é forma de defesa.\n\n#fy #fypage #ClonagemDeCartão #FraudeBancária #DireitoDoConsumidor #SegurançaFinanceira #EstornoDeValores #GolpesFinanceiros #JustiçaFinanceira #ProtejaSeuCartão #DireitoBancário #CartãoClonado #BancosEClientes #AdvocaciaDigital"
+},
+    {
     "id": "1750951362804",
     "title": "🚗 Quanto tempo tenho para recorrer de uma multa de trânsito? 🕒",
     "author": "Ítalo Sêne",
