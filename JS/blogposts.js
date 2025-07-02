@@ -1,5 +1,14 @@
 const POSTS_DATA = [
     {
+  "id": "1751466128756",
+  "title": "💼💰 Você sabe o que é o ISS e como ele afeta o seu negócio?",
+  "author": "Ítalo Sêne",
+  "date": "2025-07-02",
+  "image": "imagem02072025.png",
+  "type": "Tributário",
+  "content": "Se você presta serviços, esse imposto faz parte da sua rotina — e ignorá-lo pode custar caro.\n\n📌 O que é o ISS?\nISS significa Imposto Sobre Serviços. É um tributo de competência municipal, cobrado sempre que você presta um serviço — seja como empresa ou autônomo.\n\n📍 O que você precisa entender:\n\n🔹 Incide sobre o valor do serviço\nCada município define sua própria alíquota (normalmente entre 2% e 5%) conforme a atividade exercida.\n\n🔹 Cada cidade, uma regra\nA cobrança segue as diretrizes da Lei Complementar nº 116/2003, mas a forma de cálculo, pagamento e fiscalização muda de cidade para cidade.\n\n🔹 Quem paga?\nNa maioria dos casos, o prestador do serviço. Mas em serviços para entes públicos ou grandes empresas, o tomador pode reter o imposto na fonte.\n\n📊 Por que isso importa?\n• O ISS é uma das principais fontes de receita dos municípios\n• Ignorar sua obrigação pode gerar multas, juros e problemas fiscais\n• Estar regular com o ISS evita restrições e garante tranquilidade para emitir notas fiscais e fechar contratos\n\n📌 Se você presta serviços, fique atento:\n\n✅ Faça seu cadastro na prefeitura\n✅ Emita nota fiscal sempre\n✅ Acompanhe o calendário de apuração\n✅ Pague o imposto dentro do prazo\n\n🎯 Entender o ISS é mais que uma obrigação: é parte da estratégia para crescer com segurança jurídica.\n\n#fy #fypage #ISS #ImpostoSobreServiços #DireitoTributário #NegócioRegular #ConsultoriaTributária #EmpreendedorismoLegal #ServiçosComNota #PrestadorDeServiço #AdvocaciaTributária #ComplianceFiscal #GestãoTributária #ImpostoMunicipal #EmpreenderComSegurança"
+},
+    {
   "id": "1751395077258",
   "title": "💳🛑 Foi vítima de clonagem de cartão? Saiba o que fazer e como se proteger! ⚖️📉",
   "author": "Ítalo Sêne",
