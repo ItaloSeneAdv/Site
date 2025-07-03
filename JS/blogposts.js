@@ -1,4 +1,13 @@
 const POSTS_DATA = [
+   {
+  "id": "1751554005063",
+  "title": "📌 Você conhece todos os benefícios que o INSS pode oferecer?",
+  "author": "Ítalo Sêne",
+  "date": "2025-07-03",
+  "image": "imagem03072025.png",
+  "type": "Previdenciário",
+  "content": "O sistema previdenciário brasileiro vai muito além da aposentadoria por idade — e saber isso pode fazer a diferença no momento em que você ou sua família mais precisarem.\n\nConfira os principais benefícios previdenciários e entenda para quem cada um é destinado:\n\n1️⃣ Aposentadoria por idade:\nPara quem atinge a idade mínima e tem o tempo de contribuição exigido. O valor depende das contribuições feitas ao longo da vida laboral.\n\n2️⃣ Aposentadoria por tempo de contribuição:\nNão exige idade mínima, mas sim tempo mínimo de contribuição — com regras específicas após a reforma da Previdência.\n\n3️⃣ Aposentadoria por invalidez:\nConcedida a quem está permanentemente incapaz para o trabalho. Exige comprovação por perícia médica.\n\n4️⃣ Auxílio-doença:\nPara incapacidades temporárias causadas por doença ou acidente. Também depende de perícia médica e carência mínima.\n\n5️⃣ Pensão por morte:\nPago aos dependentes do segurado falecido. O valor e a duração variam conforme a situação dos dependentes e tempo de contribuição do falecido.\n\n6️⃣ Salário-maternidade:\nDestinado a mulheres que se afastam do trabalho por gravidez, parto, adoção ou guarda judicial.\n\n7️⃣ Aposentadoria especial:\nPara quem trabalhou exposto a agentes nocivos à saúde, como ruído, agentes químicos ou biológicos. O tempo de contribuição necessário varia de acordo com o risco.\n\n8️⃣ Reabilitação profissional:\nBenefício pouco falado, mas essencial para quem precisa voltar ao mercado após uma incapacidade. Inclui programas de treinamento e acompanhamento técnico.\n\n📣 Conhecer esses direitos é o primeiro passo para exercê-los de forma segura e no tempo certo.\n\nCompartilhe este conteúdo com quem precisa dessa informação.\nSegurança social se constrói com informação.\n\n#fy #fypage #previdência #direitoprevidenciário #meuinss #benefíciosinss #aposentadoria #auxíliodoença #saláriomaternidade #pensaopormorte #invalidez #aposentadoriaspecial #reabilitação #direitosdossegurados #inss2025"
+},
     {
   "id": "1751466128756",
   "title": "💼💰 Você sabe o que é o ISS e como ele afeta o seu negócio?",
