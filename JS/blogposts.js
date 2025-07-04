@@ -1,5 +1,14 @@
 const POSTS_DATA = [
    {
+  "id": "1751655025000",
+  "title": "🚗 Preciso assinar a multa de trânsito? 📝",
+  "author": "Ítalo Sêne",
+  "date": "2025-07-04",
+  "image": "imagem04072025.png",
+  "type": "Trânsito",
+  "content": "Essa é uma das dúvidas mais comuns durante abordagens em blitz ou fiscalizações. E a resposta pode surpreender:\n\n📌 Não. Você não é obrigado a assinar o auto de infração.\n\nA assinatura tem apenas um único propósito: confirmar que você foi notificado, nada mais.\nEla não significa que você concorda com a infração, e muito menos que está abrindo mão do seu direito de defesa.\n\n👉 Se você se recusar a assinar, o agente de trânsito deve registrar a recusa e continuar com o procedimento normalmente.\nIsso não anula a multa, mas também não te prejudica juridicamente.\n\n🔍 E atenção: mesmo sem assinatura, você pode (e deve) exercer seu direito de defesa, apresentando:\n\n• Defesa prévia\n• Recurso à JARI\n• Recurso ao CETRAN\n\nTudo dentro dos prazos legais, que normalmente são de até 30 dias contados a partir da notificação.\n\n⚖️ Se você acredita que houve erro na autuação, que a infração foi injusta, ou que existem circunstâncias específicas que precisam ser analisadas, não se cale.\n\nO sistema prevê o contraditório e a ampla defesa — e você não precisa aceitar uma penalidade injusta sem questionar.\n\n📣 Em situações como essa, conhecimento jurídico é mais importante do que pressa.\n\n#fy #fypage #DireitoDeTrânsito #MultaDeTrânsito #CNH #AutoDeInfração #RecursoDeMulta #TrânsitoSeguro #AdvocaciaEspecializada #ConheçaSeusDireitos #JustiçaNoTrânsito #DefesaPrévia #BlitzPolicial"
+},
+   {
   "id": "1751554005063",
   "title": "📌 Você conhece todos os benefícios que o INSS pode oferecer?",
   "author": "Ítalo Sêne",
