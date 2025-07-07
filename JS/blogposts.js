@@ -1,4 +1,13 @@
 const POSTS_DATA = [
+     {
+  "id": "1751897845105",
+  "title": "🧠⚖️ Mães e pais de crianças autistas que são servidores públicos têm direito à redução da jornada — e sem corte no salário!",
+  "author": "Ítalo Sêne",
+  "date": "2025-07-07",
+  "image": "imagem07072025.png",
+  "type": "Trabalhista",
+  "content": "O Tribunal Superior do Trabalho (TST) reafirmou:\n➡️ empregados públicos que são responsáveis legais por crianças com TEA podem solicitar a redução da jornada de trabalho sem a exigência de compensação ou perda remuneratória.\n\n📌 O entendimento tem base em princípios constitucionais como:\n• a proteção integral da criança\n• a dignidade da pessoa humana\n• e o dever do Estado (e de seus entes) de garantir suporte às famílias em situação de vulnerabilidade.\n\nNo caso julgado, uma servidora conseguiu reduzir sua carga horária para acompanhar o tratamento do filho — que exige acompanhamento contínuo, terapias e cuidados específicos.\n🧩 O TST entendeu que impedir isso violaria o direito da criança e dificultaria a efetiva inclusão social.\n\n👀 Mas atenção: esse direito não é automático. É necessário:\n✔ Apresentar documentação médica atualizada\n✔ Comprovar a necessidade real da redução\n✔ Demonstrar a ligação direta entre a jornada e os cuidados com a criança\n\n💬 Para muitas famílias, essa decisão pode significar o que nenhuma política pública conseguiu oferecer até hoje: tempo real para cuidar de quem mais precisa.\n\n📢 Mais do que um benefício funcional, trata-se de justiça material.\n\n#fy #fypage #direitodotrabalho #direitodaspessoascomdeficiencia #servidorpúblico #TEA #autismo #inclusaosocial #jornadareduzida #tst #direitodefamilia #filhosemprimeirolugar #paisatípicos"
+},
    {
   "id": "1751655025000",
   "title": "🚗 Preciso assinar a multa de trânsito? 📝",
