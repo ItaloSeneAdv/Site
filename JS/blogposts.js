@@ -1,5 +1,14 @@
 const POSTS_DATA = [
      {
+  "id": "1751981407615",
+  "title": "⚖️ Pensando em processar alguém? Então você precisa entender o que isso realmente significa.",
+  "author": "Ítalo Sêne",
+  "date": "2025-07-08",
+  "image": "imagem08072025.png",
+  "type": "Diverso",
+  "content": "Muita gente acredita que \"entrar com um processo\" é algo simples como preencher um formulário — mas a verdade é que um erro no começo pode comprometer tudo até o fim.\n\n📌 Antes de tudo, é preciso saber:\n• O que exatamente você quer exigir (indenização, cumprimento de obrigação, revisão de contrato...)\n• Se há provas concretas daquilo que será alegado\n• Qual é o foro competente (ou seja, onde o processo deve ser iniciado)\n• E se já houve alguma tentativa prévia de solução extrajudicial\n\n📂 O passo a passo geralmente envolve:\n\n    Reunir provas (prints, contratos, laudos, testemunhas...)\n\n    Redigir uma petição inicial com fundamentação jurídica\n\n    Protocolar o processo no juizado ou vara competente\n\n    Acompanhar prazos, despachos, audiências e eventual sentença\n\n    E, se necessário, apresentar recursos\n\n🧠 Mas atenção: processar alguém não é apenas um ato formal. É uma escolha estratégica que exige técnica, prudência e preparo.\nPor isso, muitas vezes, o caminho começa fora do tribunal — com uma boa negociação ou uma notificação bem feita.\n\n👨‍⚖️ Só quando o diálogo falha, a via judicial se torna o caminho legítimo para buscar reparação e justiça.\n\nE sim, qualquer pessoa pode processar ou ser processada. Mas quem entende os bastidores do processo tem muito mais chance de sair com seus direitos preservados.\n\n🚫 Evite “ações por impulso” — uma petição mal elaborada, sem provas suficientes ou ajuizada no foro errado, pode gerar perda de tempo, dinheiro e credibilidade. A informação correta é a base de toda boa estratégia.\n\n🧾 Saber como agir é o primeiro passo para não depender da sorte.\n\n#fy #fypage #direitocivil #justiça #advocacia #processo #petiçãoinicial #consultajurídica #resoluçãodeconflitos #advogado"
+},
+     {
   "id": "1751897845105",
   "title": "🧠⚖️ Mães e pais de crianças autistas que são servidores públicos têm direito à redução da jornada — e sem corte no salário!",
   "author": "Ítalo Sêne",
