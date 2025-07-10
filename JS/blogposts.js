@@ -1,5 +1,14 @@
 const POSTS_DATA = [
      {
+  "id": "1752153054933",
+  "title": "🧓📊 Você sabe a diferença entre aposentadoria por idade e por tempo de contribuição?",
+  "author": "Ítalo Sêne",
+  "date": "2025-07-10",
+  "image": "imagem10072025.png",
+  "type": "Previdenciário",
+  "content": "As duas modalidades são comuns no Brasil, mas têm critérios e impactos diferentes. Entender essas diferenças pode fazer toda a diferença no valor e no momento da sua aposentadoria.\n\n🔹 1. Aposentadoria por Idade:\n• Requer idade mínima: 65 anos (homens) e 62 anos (mulheres)\n• Exige no mínimo 15 anos de contribuição\n• O valor do benefício pode ser afetado pelo fator previdenciário\n\n🔹 2. Aposentadoria por Tempo de Contribuição:\n• Não exige idade mínima\n• São necessários 35 anos de contribuição (homens) e 30 anos (mulheres)\n• Não há incidência obrigatória do fator previdenciário\n\n🧮 Fator Previdenciário:\n• É um cálculo que considera tempo de contribuição, idade e expectativa de vida\n• Pode reduzir o valor da aposentadoria, principalmente na modalidade por idade\n\n💡 Qual escolher?\nQuem preenche os requisitos de ambas pode optar pela mais vantajosa. Por isso, conhecer as regras de cálculo e os impactos práticos é essencial para planejar sua aposentadoria com segurança e inteligência.\n\n📌 Dica: O ideal é realizar um planejamento previdenciário completo antes de requerer o benefício. Um pequeno erro na escolha pode comprometer anos de contribuição com um valor abaixo do esperado.\n\n⚖️ Entender as regras é o primeiro passo para proteger o seu futuro. Informação é direito.\n\n#aposentadoria #direitoprevidenciario #meuinss #planejamentoprevidenciario #aposentadoriaporidade #aposentadoriaportempo #previdência #inss #fy #fypage"
+},
+     {
   "id": "1751981407615",
   "title": "⚖️ Pensando em processar alguém? Então você precisa entender o que isso realmente significa.",
   "author": "Ítalo Sêne",
