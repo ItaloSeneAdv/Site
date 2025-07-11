@@ -1,4 +1,13 @@
 const POSTS_DATA = [
+    {
+  "id": "1752239377573",
+  "title": "🚗 É possível transformar uma multa em advertência por escrito?",
+  "author": "Ítalo Sêne",
+  "date": "2025-07-11",
+  "image": "imagem11072025.png",
+  "type": "Trânsito",
+  "content": "Essa dúvida é mais comum do que parece — e a resposta pode te livrar de pontos na CNH.\n\n📜 O que diz a lei:\nSim, é possível. O Código de Trânsito permite a conversão em infrações leves ou médias, desde que alguns critérios sejam cumpridos.\n\n✅ Requisitos para a conversão:\n• A infração deve ser de natureza leve ou média\n• O condutor não pode ter cometido a mesma infração nos últimos 12 meses\n• O pedido precisa ser feito dentro do prazo legal após o recebimento da notificação\n• A infração não pode estar ligada a condutas perigosas, como:\n→ Excesso de velocidade acima de 50%\n→ Dirigir alcoolizado\n→ Ultrapassagens indevidas ou situações gravíssimas\n\n📝 Como solicitar:\nApresente um requerimento junto ao órgão de trânsito que aplicou a multa, respeitando o prazo da notificação. Se aceito, a multa é cancelada, você não paga o valor e não recebe pontos.\n\n⚠️ Mas atenção: não é automático. É um pedido administrativo e o órgão pode ou não deferir. Quanto mais correta e fundamentada for sua solicitação, maiores as chances de sucesso.\n\n📌 Por que vale a pena?\nEvita pontos no prontuário.\nPreserva sua CNH.\nEvita o risco de suspensão.\nÉ uma alternativa legal e inteligente.\n\n🎯 Se você recebeu uma infração leve ou média e preenche os requisitos, não perca tempo: pode ser o momento de agir e proteger sua habilitação.\n\n#DireitoDeTrânsito #AdvertênciaNoLugarDaMulta #MultaDeTrânsito #CNH #EvitePontos #LegislaçãoDeTrânsito #RecursoDeMulta #TrânsitoSeguro #fy #fypage"
+},
      {
   "id": "1752153054933",
   "title": "🧓📊 Você sabe a diferença entre aposentadoria por idade e por tempo de contribuição?",
