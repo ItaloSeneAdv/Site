@@ -1,4 +1,13 @@
 const POSTS_DATA = [
+   {
+  "id": "1752502003648",
+  "title": "🍞 Furto famélico e a nova interpretação dos tribunais",
+  "author": "Ítalo Sêne",
+  "date": "2025-07-14",
+  "image": "imagem14072025.png",
+  "type": "Criminal",
+  "content": "Recentemente, decisões judiciais têm restringido a aplicação do chamado furto famélico — aquele cometido por pessoa em situação de extrema necessidade alimentar — a casos em que o alimento subtraído seja de consumo imediato.\n\n📌 Isso significa que, segundo essa interpretação, somente alimentos prontos para ingestão no momento (como um pão, uma fruta ou um lanche) poderiam justificar a exclusão da ilicitude pelo estado de necessidade previsto no art. 23, I, do Código Penal.\n\nJá itens como arroz, feijão ou carnes congeladas, por não sanarem a fome de forma imediata, estariam fora da aplicação dessa excludente.\n\n📖 O fundamento está no entendimento de que o estado de necessidade exige uma ameaça atual e inevitável ao bem jurídico protegido — no caso, a subsistência do agente — e que a urgência de saciar a fome deve ser comprovada de forma objetiva.\n\n⚖️ O debate gira em torno da delimitação da expressão \"necessidade atual\", prevista no Código Penal, e como ela deve ser interpretada diante do contexto social e da proporcionalidade entre o bem jurídico tutelado e o bem sacrificado.\n\n📌 O Superior Tribunal de Justiça já reconheceu, em casos anteriores, a atipicidade de furtos em razão da insignificância e da necessidade extrema. No entanto, as novas decisões sinalizam um entendimento mais restritivo quanto ao alcance da excludente.\n\n🔍 Mas afinal, o que é o furto famélico?\n\nTrata-se de uma situação excepcional em que o furto não é punido por se tratar de um ato motivado pela fome extrema e imediata — condição que retira o caráter ilícito da conduta. Não é uma “tese genérica de absolvição”, mas uma aplicação técnica do estado de necessidade.\n\n📌 Como sempre, cada caso deve ser analisado de forma individual, com base em provas concretas e no princípio da dignidade da pessoa humana.\n\n#DireitoPenal #FurtoFamelico #EstadoDeNecessidade #CódigoPenal #DecisõesJudiciais #Jurisprudência #JustiçaCriminal #LegalidadePenal #STJ #fy #fypage #interpretação #direitoconsciente #normapenal #advocaciacriminal #dignidadehumana"
+},
     {
   "id": "1752239377573",
   "title": "🚗 É possível transformar uma multa em advertência por escrito?",
