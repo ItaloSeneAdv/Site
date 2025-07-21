@@ -1,5 +1,14 @@
 const POSTS_DATA = [
    {
+  "id": "1753108009262",
+  "title": "👶🧾 Trabalhou na infância? Isso pode contar na sua aposentadoria.",
+  "author": "Ítalo Sêne",
+  "date": "2025-07-21",
+  "image": "imagem21072025.png",
+  "type": "Previdenciário",
+  "content": "Uma nova norma publicada em 8 de julho de 2025 formalizou algo que os Tribunais Superiores já reconheciam há anos:\n\n📌 O INSS agora deve considerar o tempo de trabalho infantil — mesmo sendo ilegal — para fins de aposentadoria, desde que comprovado.\n\nA Instrução Normativa nº 188/2025 consolida esse direito e elimina a exigência de idade mínima para reconhecer o tempo trabalhado, mesmo que de forma informal, rural ou urbana.\n\n⚖ Por que isso importa?\n\nPorque negar o tempo de trabalho infantil seria punir duas vezes quem já teve os direitos violados na infância.\n\n👨‍🌾 Se você começou a trabalhar cedo na roça, numa oficina, comércio ou ajudando a família, isso pode antecipar sua aposentadoria e até aumentar o valor do seu benefício.\n\n📂 Mas precisa provar!\nO INSS exige documentos e testemunhos que mostrem que aquele trabalho realmente aconteceu. Exemplos:\n• Boletins escolares com horários incompatíveis com o trabalho\n• Fotos da época\n• Declarações de sindicatos ou vizinhos\n• Bloco de produtor rural, notas fiscais, contratos de parceria\n• Certidões que mostrem a atividade dos pais\n\n📉 O desafio é a prova.\nE é aí que entra a importância da orientação jurídica: reunir os documentos certos, apresentar o pedido de forma fundamentada e acompanhar o processo até o fim.\n\nEssa mudança valoriza a trajetória de vida real do trabalhador brasileiro e pode representar a diferença entre se aposentar em 2026 ou em 2030.\n\n⚠️ Atenção: isso não legaliza o trabalho infantil. Ele continua proibido.\nMas reconhece e repara quem já viveu essa realidade.\n\n📣 Já trabalhou na infância ou conhece alguém que trabalhou? Isso pode fazer diferença na hora de se aposentar.\n\n#direitoprevidenciario #aposentadoria #trabalhoinfantil #inss #meuinss #advocaciaprevidenciaria #carteirasemregistro #aposentadoriaportempo #tempoespecial #justicassociais #beneficiosinss #previdencia #reparacaosocial #fy #fypage"
+},
+   {
   "id": "1752502003648",
   "title": "🍞 Furto famélico e a nova interpretação dos tribunais",
   "author": "Ítalo Sêne",
