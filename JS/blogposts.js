@@ -1,4 +1,13 @@
 const POSTS_DATA = [
+  {
+  "id": "1753277048842",
+  "title": "🚽 O funcionário pode ir quantas vezes ao banheiro?",
+  "author": "Ítalo Sêne",
+  "date": "2025-07-23",
+  "image": "imagem23072025.png",
+  "type": "Trabalhista",
+  "content": "Essa pergunta parece absurda, mas a dúvida é legítima — e mais comum do que deveria.\n\n⛔ Existem empresas que controlam o número de idas ao banheiro, exigem autorização prévia ou aplicam advertências com base nesse tipo de “ausência”.\n\n⚠️ E isso é legal?\nNão — a legislação não fixa um número máximo de vezes que o empregado pode ir ao banheiro.\n\n📌 O que temos, então?\n\n✔️ O uso do banheiro é considerado uma necessidade fisiológica básica e inadiável.\n✔️ O empregado pode se ausentar brevemente do posto de trabalho, sem necessidade de autorização formal, desde que a conduta não seja abusiva ou frequente a ponto de afetar suas funções.\n✔️ Controle excessivo, vigilância vexatória ou punição por uso do banheiro pode configurar assédio moral, principalmente se houver constrangimento público ou repetido.\n\n🔎 O que já vimos nos tribunais?\n\n• Empresas condenadas por limitar tempo no banheiro.\n• Empregadores obrigados a indenizar por controle abusivo.\n• Reconhecimento de que o banheiro não é benefício — é necessidade.\n\n📣 Resumo prático:\n\n➡ Não existe um “limite legal” de idas ao banheiro.\n➡ Se houver abuso por parte do empregado, cabe advertência dentro do razoável.\n➡ Mas se o abuso vier da empresa, é caso para ação trabalhista.\n\nSe o trabalhador precisa de autorização para ir ao banheiro, o problema não está no funcionário — está na cultura da empresa.\n\n#direitodotrabalho #assedio #clt #banheiro #respeito #advocaciatrabalhista #trabalhador #condicoesdetrabalho #assedioambiental #juridico #fy #fypage"
+},
    {
   "id": "1753108009262",
   "title": "👶🧾 Trabalhou na infância? Isso pode contar na sua aposentadoria.",
