@@ -1,4 +1,13 @@
 const POSTS_DATA = [
+ {
+  "id": "1753711635489",
+  "title": "🚗 “Rapidinho” também é infração.",
+  "author": "Ítalo Sêne",
+  "date": "2025-07-28",
+  "image": "imagem28072025.png",
+  "type": "Trânsito",
+  "content": "Vaga especial não é estacionamento rotativo.\n\n📌 A Lei de Trânsito é clara:\nAs vagas destinadas a idosos ou pessoas com deficiência só podem ser usadas por quem tem o cartão de autorização visível no veículo.\n\n⛔ Parar \"só um minutinho\" já é infração grave:\n➡️ Multa de R$ 293,47\n➡️ 5 pontos na CNH\n➡️ Possível remoção do veículo\n\n🧓🏽👩🏽‍🦽 O problema vai além da multa.\nEstacionar em vaga especial, mesmo por poucos minutos, prejudica quem depende desses espaços para ter autonomia e dignidade.\n\n⚠️ Dizer “só um segundo” não torna a conduta menos ilegal.\nA vaga não está vaga — ela está reservada.\n\n📣 Se presenciar esse tipo de infração, denuncie.\nA cidadania também se constrói fora do carro.\n\n📄 Comente abaixo: você já viu esse tipo de abuso?\n✍️ #DireitoDeTrânsito #VagaEspecial #InclusãoJá #MultaGrave #CidadaniaNoTrânsito #RespeitoÉLei #MultaDeTrânsito #MobilidadeUrbana #TrânsitoResponsável #fypage #fy"
+},
   {
   "id": "1753277048842",
   "title": "🚽 O funcionário pode ir quantas vezes ao banheiro?",
