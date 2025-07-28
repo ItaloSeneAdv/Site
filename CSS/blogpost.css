@@ -659,3 +659,14 @@ footer a:hover {
     max-width: 10%; /* Limita a largura máxima horizontal */
   }
 }
+
+.post-content a {
+    color: #CF640C; 
+    text-decoration: none; 
+    transition: color 0.3s; 
+}
+
+.post-content a:hover {
+    color: #E87F25; 
+    text-decoration: underline; 
+}
