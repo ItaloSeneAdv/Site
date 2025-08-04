@@ -12,6 +12,14 @@
      <ror:sortOrder>0</ror:sortOrder>
      <ror:resourceOf>sitemap</ror:resourceOf>
 </item>
+  <item>
+     <link>https://italoseneadv.github.io/Site/landingpage.html</link>
+     <title>Ítalo Sêne Advocacia</title>
+     <description>Consultoria jurídica especializada em Direito Civil, Direito Contratual e Direito de Trânsito. Atuação estratégica na elaboração e revisão de contratos, resolução extrajudicial de conflitos civis e defesa técnica em infrações e processos administrativos de trânsito.</description>
+     <ror:updatePeriod></ror:updatePeriod>
+     <ror:sortOrder>0</ror:sortOrder>
+     <ror:resourceOf>sitemap</ror:resourceOf>
+</item>
 <item>
      <link>https://italoseneadv.github.io/Site/blog/bloghtmls/blogindex.html</link>
      <title>Blog Ítalo Sêne Advocacia</title>
@@ -86,3 +94,4 @@
 </item>
 </channel>
 </rss>
+
