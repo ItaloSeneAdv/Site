@@ -1,0 +1,198 @@
+:root {
+    --primary-color: #CF640C;
+    --primary-hover: #f36d07;
+    --dark-bg-1: #121417;
+    --dark-bg-2: #1A1D25;
+    --dark-bg-3: #22252B;
+    --text-light: #EAEAEA;
+    --text-white: #FFFFFF;
+    --font-primary: "Athena", serif;
+    --font-secondary: "Safira March", serif;
+    --border-radius-sm: 5px;
+    --border-radius-md: 10px;
+    --border-radius-lg: 55px;
+    --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.3);
+    --shadow-medium: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Athena";
+    src: url("../fonts/Athena-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Safira March";
+    src: url("../fonts/Safira March.otf") format("opentype");
+}
+
+/* Estilos Gerais (ATUALIZADO COM BACKGROUND) */
+body {
+    /* Cor de fundo que será exibida caso a imagem não carregue */
+    background-color: var(--dark-bg-1); 
+
+    /* Imagem de fundo e sobreposição para garantir a leitura */
+    background-image: 
+        linear-gradient(rgba(18, 20, 23, 0.85), rgba(18, 20, 23, 0.85)), 
+        url('../landingassets/landingwallpaper.png');
+
+    /* Ajustes para a imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir toda a tela */
+    background-position: center center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    background-attachment: fixed; /* Mantém a imagem fixa durante a rolagem */
+    color: var(--text-light);
+    font-family: var(--font-primary);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 40px 20px;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 680px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Cabeçalho do Perfil */
+.profile-header {
+    margin-bottom: 25px;
+}
+
+.profile-picture {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    object-fit: cover;
+    margin-bottom: 15px;
+    box-shadow: var(--shadow-medium);
+}
+
+.username {
+    font-family: var(--font-secondary);
+    color: var(--text-white);
+    font-size: 28px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.bio {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Ícones Sociais */
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.social-icons a {
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--primary-color);
+    transform: scale(1.15);
+}
+
+.social-icons i {
+    font-size: 28px;
+}
+
+/* Container de Links Principais */
+.links-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Container do Mapa */
+.map-container {
+    width: 100%;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden; /* Garante que o iframe respeite o border-radius */
+    box-shadow: var(--shadow-light);
+    line-height: 0; /* Remove espaço extra abaixo do iframe */
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 200px; /* Altura padrão para o mapa */
+    border: none;
+}
+
+/* Botão de Link Padrão */
+.link-button {
+    background: var(--dark-bg-2);
+    color: var(--text-white);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 18px 25px;
+    border-radius: var(--border-radius-lg);
+    border: 2px solid var(--dark-bg-3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    transition: background 0.3s, transform 0.3s, border-color 0.3s;
+}
+
+.link-button:hover {
+    background: var(--dark-bg-3);
+    border-color: var(--primary-color);
+    transform: scale(1.03);
+}
+
+.link-button i {
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+/* Rodapé */
+.footer {
+    margin-top: 40px;
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    body {
+        padding: 25px 15px;
+    }
+    .profile-picture {
+        width: 100px;
+        height: 100px;
+    }
+    .username {
+        font-size: 24px;
+    }
+    .social-icons {
+        gap: 20px;
+    }
+    .social-icons i {
+        font-size: 24px;
+    }
+}
