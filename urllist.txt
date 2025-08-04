@@ -1,4 +1,5 @@
 https://italoseneadv.github.io/Site/
+https://italoseneadv.github.io/Site/index.html
 https://italoseneadv.github.io/Site/landingpage.html
 https://italoseneadv.github.io/Site/blog/blogindex.html
 https://italoseneadv.github.io/Site/areas/contratual.html
