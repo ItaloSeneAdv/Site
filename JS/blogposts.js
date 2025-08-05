@@ -1,4 +1,13 @@
 const POSTS_DATA = [
+{
+  "id": "1754399391681",
+  "title": "👵👴 Avós podem ser obrigados a pagar pensão?",
+  "author": "Ítalo Sêne",
+  "date": "2025-08-05",
+  "image": "imagem05082025.png",
+  "type": "Família",
+  "content": "Sim! Quando os pais não têm condições de arcar com a <a href=\"https://italoseneadv.github.io/Site/areas/familia.html\">pensão alimentícia</a>, a obrigação pode recair sobre os avós — é o que chamamos de pensão avoenga.\n\n⚖️ O Código Civil permite esse tipo de obrigação de forma subsidiária e complementar. Isso significa que:\n🔹 Primeiro, a Justiça analisa se pai ou mãe têm condições.\n🔹 Só depois, em caso de impossibilidade real, os avós podem ser acionados.\n\n🧾 Mas atenção: não é automática. É preciso comprovar a necessidade da criança e a incapacidade do genitor, além de que os avós tenham condições financeiras de contribuir.\n\n📌 A pensão avoenga é uma forma de proteger o melhor interesse da criança, garantindo que ela não fique desamparada.\n\n💬 Marque alguém que precisa saber disso e salve este post para não esquecer!\n\n#PensãoAvoenga #<a href=\"https://italoseneadv.github.io/Site/areas/familia.html\">DireitoDeFamília</a> #PensãoAlimentícia #Avós #ObrigaçãoDosAvós #Filhos #Família #Justiça #Alimentos #DireitoParaTodos"
+},
  {
   "id": "1753711635489",
   "title": "🚗 “Rapidinho” também é infração.",
@@ -694,3 +703,4 @@ const POSTS_DATA = [
     }
 ];
 window.POSTS_DATA = POSTS_DATA;
+
