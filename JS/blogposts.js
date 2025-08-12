@@ -1,5 +1,14 @@
 const POSTS_DATA = [
 {
+  "id": "1755008828037",
+  "title": "💡 Farol baixo durante o dia: quando é obrigatório e quando dá multa?",
+  "author": "Ítalo Sêne",
+  "date": "2025-08-12",
+  "image": "imagem12082025.png",
+  "type": "Trânsito",
+  "content": "Muita gente ainda acha que precisa andar com o farol aceso o tempo todo, mas o <a href=\"https://italoseneadv.github.io/Site/areas/transito.html\">art. 250 do CTB</a> mudou essa regra.\nHoje, você só precisa ligar o farol baixo durante o dia nos seguintes casos:\n\n🔹 Túneis, mesmo iluminados\n🔹 Chuva, neblina ou cerração\n🔹 Ônibus, micro-ônibus e vans em faixas ou pistas exclusivas\n🔹 Motos, motonetas e ciclomotores (sempre, em qualquer via)\n🔹 Rodovias de pista simples fora do perímetro urbano, quando o veículo não tiver DRL\n\n💡 O que é DRL?\nÉ a luz de rodagem diurna, um tipo de iluminação que acende automaticamente ao ligar o carro. Se o veículo tiver DRL, não é preciso usar o farol baixo nessas rodovias.\n\n⚠️ Se você descumprir a regra em qualquer desses casos, comete infração média:\n💰 Multa de R$ 130,16\n📉 4 pontos na CNH\n\n📌 Ou seja: nem sempre é obrigatório, mas quando a situação se encaixa na lei, esquecer o farol pode custar caro.\n\n💬 Já conhecia todas essas regras? Salve para não esquecer e evitar multas!\n\n#LeiDoFarol #CTB #FarolBaixo #DRL #MultaDeTrânsito #CódigoDeTrânsito #CNH #SegurançaNoTrânsito #DireitoDeTrânsito #Trânsito"
+},
+  {
   "id": "1754399391681",
   "title": "👵👴 Avós podem ser obrigados a pagar pensão?",
   "author": "Ítalo Sêne",
@@ -703,4 +712,5 @@ const POSTS_DATA = [
     }
 ];
 window.POSTS_DATA = POSTS_DATA;
+
 
