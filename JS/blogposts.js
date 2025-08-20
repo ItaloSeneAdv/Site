@@ -1,5 +1,14 @@
 const POSTS_DATA = [
 {
+  "id": "1755697328204",
+  "title": "👵👴 Aposentadoria por idade: como funciona hoje no INSS",
+  "author": "Ítalo Sêne",
+  "date": "2025-08-20",
+  "image": "imagem20082025.png",
+  "type": "Previdenciário",
+  "content": "Depois da <a href=\"https://italoseneadv.github.io/Site/areas/consultoria.html\">Reforma da Previdência</a>, as regras mudaram — e muita gente ainda se confunde. Veja os requisitos atuais:\n\n✅ Idade mínima\n\n    Mulheres: 62 anos\n\n    Homens: 65 anos\n\n✅ Tempo de contribuição / carência\n\n    Mulheres: mínimo de 15 anos de contribuição\n\n    Homens:\n      • 20 anos se começou a contribuir após 13/11/2019\n      • 15 anos se já contribuía antes da Reforma (há regras de transição)\n\n    A carência geral continua sendo de 180 contribuições mensais (15 anos).\n\n💰 Cálculo do valor\nO benefício é calculado pela média de todos os salários de contribuição desde julho/1994, aplicando-se:\n➡️ 60% da média + 2% por ano que ultrapassar:\n  • 15 anos de contribuição (mulheres)\n  • 20 anos de contribuição (homens)\n\n📝 Como solicitar\nO pedido é feito pelo aplicativo ou site Meu INSS, apresentando documentos pessoais e comprovação de tempo de contribuição.\n\n⚠️ Importante: quem já contribuía antes da Reforma pode se enquadrar em regras de transição. Cada caso deve ser analisado individualmente.\n\n💬 Você ou alguém da família já está perto de se aposentar? Salve este post e compartilhe essa informação!\n\n#AposentadoriaPorIdade #INSS #DireitoPrevidenciário #MeuINSS #Previdência #ReformaDaPrevidência #Carência #TempoDeContribuição #Aposentadoria"
+},
+  {
   "id": "1755008828037",
   "title": "💡 Farol baixo durante o dia: quando é obrigatório e quando dá multa?",
   "author": "Ítalo Sêne",
@@ -712,5 +721,6 @@ const POSTS_DATA = [
     }
 ];
 window.POSTS_DATA = POSTS_DATA;
+
 
 
