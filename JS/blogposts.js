@@ -1,5 +1,14 @@
 const POSTS_DATA = [
 {
+  "id": "1757512578618",
+  "title": "💸 Caiu em golpe do Pix: o banco é obrigado a devolver o dinheiro?",
+  "author": "Ítalo Sêne",
+  "date": "2025-09-10",
+  "image": "imagem10092025.png",
+  "type": "Bancário",
+  "content": "O Pix trouxe praticidade, mas também abriu espaço para golpes cada vez mais sofisticados. Eles podem vir em forma de mensagens de “parentes em apuros”, falsos funcionários de banco ou até manipulação psicológica para que a própria vítima faça a transferência.\n\nMas afinal, o banco precisa indenizar nesses casos?\n\n✅ Quando existe falha de segurança, sim. Isso acontece quando a instituição não identifica movimentações fora do padrão do cliente, deixa de adotar mecanismos de bloqueio ou ignora protocolos de prevenção previstos pelo Banco Central. A Justiça entende que a fraude faz parte do risco da atividade bancária e, por isso, a indenização é devida.\n\n❌ Quando não há falha do banco, a situação é diferente. Se toda a operação foi feita exclusivamente pela vítima, sem qualquer brecha no sistema, a responsabilidade pode não recair sobre a instituição.\n\n⚖️ O STJ já firmou posição: fraudes eletrônicas são classificadas como “fortuito interno”, ou seja, risco que deve ser absorvido pelo banco e não pelo cliente.\n\n📌 Se você for vítima de golpe, registre boletim de ocorrência, guarde extratos e prints e procure orientação jurídica. O <a href=\"https://italoseneadv.github.io/Site/areas/consumidor.html\">consumidor</a> é a parte mais vulnerável e o banco deve ser o guardião da segurança digital.\n\n💬 Já sabia disso? Salve esta postagem e compartilhe para que mais pessoas fiquem atentas!\n\n#GolpeDoPix #SegurançaFinanceira #DireitoDoConsumidor #ResponsabilidadeCivil #Banco #STJ #PixSeguro #FraudesDigitais"
+},
+  {
   "id": "1755697328204",
   "title": "👵👴 Aposentadoria por idade: como funciona hoje no INSS",
   "author": "Ítalo Sêne",
@@ -721,6 +730,7 @@ const POSTS_DATA = [
     }
 ];
 window.POSTS_DATA = POSTS_DATA;
+
 
 
 
