@@ -115,14 +115,74 @@
     }
   }
   </script>
-
-  <!-- Stylesheets -->
+   <script>
+    (function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const postId = urlParams.get('id');
+        
+        if (postId && window.POSTS_DATA) {
+            const post = window.POSTS_DATA.find(p => p.id === postId);
+            
+            if (post) {
+                // Atualizar title imediatamente
+                document.title = post.title + ' | Blog Ítalo Sêne Advocacia';
+                
+                // Criar meta tags dinamicamente
+                const meta = {
+                    description: post.content.replace(/#[\w\u00C0-\u017F]+/g, '').substring(0, 150),
+                    'og:title': post.title,
+                    'og:description': post.content.replace(/#[\w\u00C0-\u017F]+/g, '').substring(0, 150),
+                    'og:image': `https://italoseneadv.github.io/Site/blog/blogimages/${post.image}`,
+                    'og:url': window.location.href
+                };
+                
+                Object.entries(meta).forEach(([key, value]) => {
+                    const existing = document.querySelector(`meta[${key.startsWith('og:') ? 'property' : 'name'}="${key}"]`);
+                    if (existing) {
+                        existing.content = value;
+                    } else {
+                        const metaTag = document.createElement('meta');
+                        metaTag.setAttribute(key.startsWith('og:') ? 'property' : 'name', key);
+                        metaTag.content = value;
+                        document.head.appendChild(metaTag);
+                    }
+                });
+                
+                // Adicionar JSON-LD estruturado
+                const jsonLD = {
+                    "@context": "https://schema.org",
+                    "@type": "BlogPosting",
+                    "headline": post.title,
+                    "description": post.content.replace(/#[\w\u00C0-\u017F]+/g, '').substring(0, 150),
+                    "image": `https://italoseneadv.github.io/Site/blog/blogimages/${post.image}`,
+                    "author": {
+                        "@type": "Person",
+                        "name": post.author
+                    },
+                    "publisher": {
+                        "@type": "Organization",
+                        "name": "Ítalo Sêne Advocacia",
+                        "logo": "https://italoseneadv.github.io/Site/landingassets/logo.webp"
+                    },
+                    "datePublished": post.date,
+                    "dateModified": post.date,
+                    "mainEntityOfPage": window.location.href
+                };
+                
+                const script = document.createElement('script');
+                script.type = 'application/ld+json';
+                script.textContent = JSON.stringify(jsonLD);
+                document.head.appendChild(script);
+            }
+        }
+    })();
+    </script>
+  <script src="../JS/blogstorage.js"></script>
   <link id="theme-stylesheet" rel="stylesheet" href="../../CSS/blogpost.css">
   
-  <!-- Font Awesome para ícones de redes sociais -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
-  <!-- Scroll Reveal -->
+  <script src="../JS/blogposts.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js"></script>
 </head>
 <body>
@@ -232,6 +292,41 @@ document.addEventListener('DOMContentLoaded', function() {
             sr.reveal('.scroll-reveal-item', { interval: 150 });
         }
     });
+    document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const postId = urlParams.get('id');
+    
+    if (postId && window.POSTS_DATA) {
+        const post = window.POSTS_DATA.find(p => p.id === postId);
+        if (post) {
+            // Atualizar title
+            document.title = `${post.title} | Blog Ítalo Sêne Advocacia`;
+            
+            // Atualizar meta description
+            let metaDesc = document.querySelector('meta[name="description"]');
+            if (metaDesc) {
+                const cleanContent = post.content.replace(/#[\w\u00C0-\u017F]+/g, '').substring(0, 150);
+                metaDesc.content = cleanContent + '...';
+            }
+            
+            // Atualizar Open Graph
+            let ogTitle = document.querySelector('meta[property="og:title"]');
+            if (ogTitle) ogTitle.content = post.title;
+            
+            let ogDesc = document.querySelector('meta[property="og:description"]');
+            if (ogDesc) {
+                const cleanContent = post.content.replace(/#[\w\u00C0-\u017F]+/g, '').substring(0, 150);
+                ogDesc.content = cleanContent + '...';
+            }
+            
+            // Atualizar canonical URL
+            let canonical = document.querySelector('link[rel="canonical"]');
+            if (canonical) {
+                canonical.href = `https://italoseneadv.github.io/Site/blog/bloghtmls/blogpost.html?id=${postId}`;
+            }
+        }
+    }
+});
   </script>
   <script src="../../JS/theme-switcher.js"></script>
 </body>
