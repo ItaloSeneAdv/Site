@@ -1,5 +1,14 @@
 const POSTS_DATA = [
 {
+  "id": "1759844873053",
+  "title": "É obrigatório pintar o imóvel no fim do aluguel?",
+  "author": "Ítalo Sêne",
+  "date": "2025-10-07",
+  "image": "imagem07102025.png",
+  "type": "Imobiliário",
+  "content": "Muita gente ainda acredita que é preciso entregar o imóvel com pintura nova, mas a Lei do Inquilinato (Lei 8.245/91) diz algo diferente.\n\nO inquilino deve devolver o imóvel no estado em que recebeu, considerando o desgaste natural do uso. Isso quer dizer que:\n\n✅ Desgaste natural é o desbotamento da tinta, pequenas manchas ou sujeiras do dia a dia. É normal e não gera obrigação de nova pintura.\n\n❌ Danos além do uso comum são furos, manchas grandes, riscos, mudança de cor ou descuido. Nesses casos, o inquilino precisa reparar ou pintar novamente.\n\n⚖️ <a href=\"https://italoseneadv.github.io/Site/areas/contratual.html\">E se o contrato exigir pintura nova na saída?</a>\nEssa cláusula é abusiva. A lei determina que o locatário só precisa entregar o imóvel como o recebeu, salvo o desgaste natural. Ou seja, mesmo que o contrato diga que é obrigatório pintar, essa obrigação não vale se não houver danos.\n\n📋 Dica prática:\nGuarde a vistoria de entrada e compare com a vistoria de saída. Isso evita discussões e mostra se houve realmente dano ou só desgaste.\n\n🏠 O locador é responsável por manter o imóvel em boas condições e responder pelos desgastes naturais. O inquilino responde apenas por danos causados além do uso comum.\n\n💬 Já viu essa cláusula no seu contrato? Salve este post e compartilhe para que mais pessoas conheçam seus direitos!\n\n#DireitoImobiliário #LeiDoInquilinato #Aluguel #ContratoDeLocação #Locador #Locatário #PinturaDoImóvel #DireitoParaTodos #CláusulaAbusiva #DicasJurídicas"
+},
+  {
   "id": "1757512578618",
   "title": "💸 Caiu em golpe do Pix: o banco é obrigado a devolver o dinheiro?",
   "author": "Ítalo Sêne",
