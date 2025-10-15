@@ -8,5 +8,7 @@ Disallow: /wp-admin/
 Disallow: /private/
 Disallow: /backup/
 Disallow: /cgi-bin/
+Disallow: /JS/
+Disallow: /CSS/
 
 Sitemap: https://italoseneadv.github.io/Site/sitemap.xml
