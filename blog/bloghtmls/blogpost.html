@@ -114,40 +114,67 @@
     }
   }
   </script>
-   <script>
-    (function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const postId = urlParams.get('id');
+  <script>
+(function() {
+    // Executa imediatamente, antes do DOM carregar
+    const urlParams = new URLSearchParams(window.location.search);
+    const postId = urlParams.get('id');
+    
+    // Se não há ID, redireciona para o blog index
+    if (!postId) {
+        window.location.href = '../blogindex.html';
+        return;
+    }
+    
+    // Atualiza canonical imediatamente
+    const canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (canonicalLink && postId) {
+        canonicalLink.href = `https://italoseneadv.github.io/Site/blog/bloghtmls/blogpost.html?id=${postId}`;
+    }
+    
+    // Continua com as outras atualizações quando o DOM carregar
+    if (typeof window.POSTS_DATA !== 'undefined' && postId) {
+        const post = window.POSTS_DATA.find(p => p.id === postId);
         
-        if (postId && window.POSTS_DATA) {
-            const post = window.POSTS_DATA.find(p => p.id === postId);
+        if (post) {
+            // Atualizar title
+            document.title = post.title + ' | Blog Ítalo Sêne Advocacia';
             
-            if (post) {
-                // Atualizar title imediatamente
-                document.title = post.title + ' | Blog Ítalo Sêne Advocacia';
+            // Atualizar meta tags
+            const meta = {
+                description: post.content.replace(/#[\w\u00C0-\u017F]+/g, '').substring(0, 150) + '...',
+                'og:title': post.title,
+                'og:description': post.content.replace(/#[\w\u00C0-\u017F]+/g, '').substring(0, 150) + '...',
+                'og:image': `https://italoseneadv.github.io/Site/blog/blogimages/${post.image}`,
+                'og:url': window.location.href,
+                'twitter:title': post.title,
+                'twitter:description': post.content.replace(/#[\w\u00C0-\u017F]+/g, '').substring(0, 150) + '...',
+                'twitter:image': `https://italoseneadv.github.io/Site/blog/blogimages/${post.image}`
+            };
+            
+            Object.entries(meta).forEach(([key, value]) => {
+                const selector = key.startsWith('og:') || key.startsWith('twitter:') 
+                    ? `meta[property="${key}"]` 
+                    : `meta[name="${key}"]`;
+                const existing = document.querySelector(selector);
                 
-                // Criar meta tags dinamicamente
-                const meta = {
-                    description: post.content.replace(/#[\w\u00C0-\u017F]+/g, '').substring(0, 150),
-                    'og:title': post.title,
-                    'og:description': post.content.replace(/#[\w\u00C0-\u017F]+/g, '').substring(0, 150),
-                    'og:image': `https://italoseneadv.github.io/Site/blog/blogimages/${post.image}`,
-                    'og:url': window.location.href
-                };
-                
-                Object.entries(meta).forEach(([key, value]) => {
-                    const existing = document.querySelector(`meta[${key.startsWith('og:') ? 'property' : 'name'}="${key}"]`);
-                    if (existing) {
-                        existing.content = value;
+                if (existing) {
+                    existing.content = value;
+                } else {
+                    const metaTag = document.createElement('meta');
+                    if (key.startsWith('og:') || key.startsWith('twitter:')) {
+                        metaTag.setAttribute('property', key);
                     } else {
-                        const metaTag = document.createElement('meta');
-                        metaTag.setAttribute(key.startsWith('og:') ? 'property' : 'name', key);
-                        metaTag.content = value;
-                        document.head.appendChild(metaTag);
+                        metaTag.setAttribute('name', key);
                     }
-                });
-                
-                // Adicionar JSON-LD estruturado
+                    metaTag.content = value;
+                    document.head.appendChild(metaTag);
+                }
+            });
+            
+            // Atualizar JSON-LD
+            const existingJsonLd = document.querySelector('script[type="application/ld+json"]');
+            if (existingJsonLd) {
                 const jsonLD = {
                     "@context": "https://schema.org",
                     "@type": "BlogPosting",
@@ -156,26 +183,29 @@
                     "image": `https://italoseneadv.github.io/Site/blog/blogimages/${post.image}`,
                     "author": {
                         "@type": "Person",
-                        "name": post.author
+                        "name": post.author || "Ítalo Sêne"
                     },
                     "publisher": {
                         "@type": "Organization",
                         "name": "Ítalo Sêne Advocacia",
-                        "logo": "https://italoseneadv.github.io/Site/landingassets/logo.webp"
+                        "logo": {
+                            "@type": "ImageObject",
+                            "url": "https://italoseneadv.github.io/Site/landingassets/logo.webp"
+                        }
                     },
                     "datePublished": post.date,
                     "dateModified": post.date,
-                    "mainEntityOfPage": window.location.href
+                    "mainEntityOfPage": {
+                        "@type": "WebPage",
+                        "@id": window.location.href
+                    }
                 };
-                
-                const script = document.createElement('script');
-                script.type = 'application/ld+json';
-                script.textContent = JSON.stringify(jsonLD);
-                document.head.appendChild(script);
+                existingJsonLd.textContent = JSON.stringify(jsonLD);
             }
         }
-    })();
-    </script>
+    }
+})();
+</script>
   <script src="../JS/blogstorage.js"></script>
   <link id="theme-stylesheet" rel="stylesheet" href="../../CSS/blogpost.css">
   
