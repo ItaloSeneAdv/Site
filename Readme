@@ -1,74 +1,8 @@
-# Ítalo Sêne Advocacia
+Ítalo Sêne Advocacia
 
-## Descrição
-Este repositório contém o código-fonte do site do escritório de advocacia Ítalo Sêne, atuante em diversas áreas do Direito, incluindo Direito Civil, Contratual, de Família, do Consumidor, de Trânsito, Agrário, Previdenciário, Bancário, Trabalhista e Criminal. O site oferece informações sobre os serviços prestados, além de um blog com artigos e notícias jurídicas.
+Este repositório contém o código-fonte do meu site
 
-## Tecnologias Utilizadas
-- **HTML5**: Estruturação do conteúdo do site.
-- **CSS3**: Estilização e layout responsivo.
-- **JavaScript**: Interatividade e funcionalidades dinâmicas.
-- **Font Awesome**: Ícones para melhorar a interface do usuário.
-- **ScrollReveal.js**: Efeitos de revelação ao rolar a página.
-
-## Estrutura do Projeto
-```
-/Site
-├── .gitignore
-├── _config.yml
-├── _headers
-├── Readme
-├── areas/
-│   ├── civil.html
-│   ├── consultoria.html
-│   ├── consumidor.html
-│   ├── contratual.html
-│   ├── duvidas.html
-│   ├── familia.html
-│   ├── transito.html
-├── blog/
-│   ├── bloghtmls/
-│   │   ├── blogindex.html
-│   │   ├── blogpost.html
-│   ├── blogimages/
-├── CSS/
-│   ├── blogpost.css
-│   ├── blogpost-light.css
-│   ├── blogstyle.css
-│   ├── blogstyle-light.css
-│   ├── styles.css
-│   ├── styles-light.css
-├── fonts/
-│   ├── Athena-Regular.ttf
-│   ├── Safira March.otf
-├── js/
-│   ├── blogadmin.js
-│   ├── blogmain.js
-│   ├── blogposts.js
-│   ├── blogstorage.js
-│   ├── mobile.js
-│   ├── script.js
-│   ├── theme-switcher.js
-├── landingassets/
-│   ├── fotoperfil.webp
-│   ├── iconenavegador.webp
-│   ├── logo.webp
-│   ├── whatsapp-icon.webp
-├── google0b1fdc01032bdc67.html
-├── index.html
-├── landingpage.html
-├── robots.txt
-├── ror.xml
-├── sitemap.html
-├── sitemap.xml
-├── sitemap.xml.gz
-├── urllist.txt
-
-## Como Executar o Projeto
-**Abra o arquivo `index.html` em um navegador** para visualizar o site ou clique no link.
-
-
-## Contato
 Para mais informações, entre em contato:
-- **Email**: italoseneadv@gmail.com
-- **Telefone**: +55 43 98800-8177
+italoseneadv@gmail.com
++55 43 98800-8177
 
