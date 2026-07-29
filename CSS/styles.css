@@ -7,11 +7,12 @@
     --dark-bg-3: #22252B;
     --text-light: #EAEAEA;
     --text-white: #FFFFFF;
+    --font-text: Georgia, "Times New Roman", serif;
     --font-primary: "Athena", serif;
     --font-secondary: "Safira March", serif;
-    --border-radius-sm: 5px;
-    --border-radius-md: 10px;
-    --border-radius-lg: 55px;
+    --border-radius-sm: 1px;
+    --border-radius-md: 1px;
+    --border-radius-lg: 1px;
     --shadow-light: 0 4px 10px rgba(0, 0, 0, 0.3);
     --shadow-medium: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
@@ -25,11 +26,13 @@
 @font-face {
     font-family: "Athena";
     src: url("../fonts/Athena-Regular.ttf") format("truetype");
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Safira March";
     src: url("../fonts/Safira March.otf") format("opentype");
+    font-display: swap;
 }
 
 /* Animações */
@@ -46,9 +49,9 @@
 
 /* Estilos Gerais */
 body {
-    background: linear-gradient(to right, var(--dark-bg-1), var(--dark-bg-3));
+    background: #000;
     color: var(--text-light);
-    font-family: var(--font-primary);
+    font-family: var(--font-text);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -67,6 +70,25 @@ section {
     max-width: 1200px;
     padding: 60px 20px;
     margin: 0 auto 20px auto;
+}
+
+.home-grid {
+    width: min(1240px, calc(100% - 32px));
+    margin: 24px auto 60px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.home-grid > section {
+    max-width: none;
+    width: 100%;
+    margin: 0;
+    padding: 28px 22px;
+}
+
+.home-grid > #atuacao {
+    grid-column: 1 / -1;
 }
 
 /* Header (Estilo Original Restaurado) */
@@ -168,30 +190,30 @@ header {
 
 /* Seções Principais com Borda */
 .hero, .sobre, .atuacao, .contato {
-    border: 2px solid var(--primary-color);
+    border: 1px solid var(--primary-color);
     border-radius: var(--border-radius-md);
     background: var(--dark-bg-2);
 }
 
 /* Hero */
 .hero {
-    min-height: 60vh;
+    min-height: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 30px 20px;
-    margin-top: 20px; /* Espaço inicial */
+    padding: 28px 22px;
+    margin-top: 0;
 }
-.hero-content { max-width: 800px; }
-.hero h1 { font-size: 48px; margin-bottom: 20px; color: var(--text-white); }
-.hero p { font-size: 20px; margin-bottom: 30px; line-height: 1.6; }
+.hero-content { max-width: 560px; }
+.hero h1 { font-size: 34px; margin-bottom: 16px; color: var(--text-white); }
+.hero p { font-size: 17px; margin-bottom: 24px; line-height: 1.55; }
 
 /* Botão CTA Principal e Botão de Formulário */
 .cta-button, button[type="submit"] {
     text-decoration: none;
     font-size: 18px;
-    font-family: var(--font-primary);
+    font-family: var(--font-text);
     color: var(--text-white);
     font-weight: bold;
     padding: 15px 35px;
@@ -213,7 +235,7 @@ header {
 .sobre-container {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 24px;
     flex-wrap: wrap;
     justify-content: center; /* Centraliza itens em telas maiores também */
 }
@@ -223,25 +245,25 @@ header {
     text-align: center;
 }
 .sobre-imagem img {
-    max-width: 350px;
+    max-width: 250px;
     width: 100%;
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-medium);
-    border: 2px solid var(--primary-color);
+    border: 1px solid var(--primary-color);
 }
 .sobre-texto {
     flex-basis: 300px;
     flex-grow: 2;
-    max-width: 700px; /* Controla a largura máxima do texto */
+    max-width: 520px; /* Controla a largura máxima do texto */
 }
 .sobre-texto h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 18px;
+    margin-bottom: 16px;
 }
 .sobre-texto p {
-    font-size: 18px;
-    line-height: 1.7;
-    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 16px;
     text-align: justify;
     overflow-wrap: break-word; /* Garante que palavras longas quebrem */
     word-wrap: break-word; /* Compatibilidade para navegadores mais antigos */
@@ -250,34 +272,34 @@ header {
 
 /* Áreas de Atuação */
 .atuacao { text-align: center; }
-.atuacao h2 { font-size: 36px; margin-bottom: 50px; }
-.atuacao-container { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+.atuacao h2 { font-size: 28px; margin-bottom: 24px; }
+.atuacao-container { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
 .area {
     background: var(--dark-bg-3);
-    padding: 30px;
+    padding: 20px;
     border-radius: var(--border-radius-md);
-    width: 320px;
+    width: 100%;
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: var(--shadow-light);
-    border-bottom: 4px solid var(--primary-color);
+    border-bottom: 1px solid var(--primary-color);
     text-decoration: none;
     color: var(--text-light);
 }
 .area:hover { transform: translateY(-10px); box-shadow: var(--shadow-medium); }
-.area i { font-size: 50px; color: var(--primary-color); margin-bottom: 20px; transition: transform 0.3s; }
+.area i { font-size: 40px; color: var(--primary-color); margin-bottom: 14px; transition: transform 0.3s; }
 .area:hover i { transform: scale(1.1); }
-.area h3 { font-size: 24px; color: var(--text-white); margin-bottom: 15px; font-family: var(--font-primary); font-weight: bold; }
-.area p { font-size: 16px; line-height: 1.6; }
+.area h3 { font-size: 20px; color: var(--text-white); margin-bottom: 10px; font-family: var(--font-secondary); font-weight: bold; }
+.area p { font-size: 15px; line-height: 1.5; }
 
 /* Contato */
 .contato { text-align: center; margin-bottom: 60px; /* Espaçamento para o rodapé */ }
-.contato h2 { font-size: 36px; margin-bottom: 15px; }
-.contato > p { max-width: 600px; margin: 0 auto 40px; }
+.contato h2 { font-size: 28px; margin-bottom: 12px; }
+.contato > p { max-width: 540px; margin: 0 auto 24px; }
 .contato-wrapper { display: flex; gap: 40px; flex-wrap: wrap; text-align: left; }
 #contato-form { flex: 2; min-width: 300px; }
 .contato-info { flex: 1; min-width: 300px; }
-.contato-info h3 { font-size: 24px; margin-bottom: 20px; font-family: var(--font-primary); font-weight: bold; }
+.contato-info h3 { font-size: 24px; margin-bottom: 20px; font-family: var(--font-secondary); font-weight: bold; }
 .contato-info ul { list-style: none; margin-bottom: 20px; padding-left: 0; }
 .contato-info ul li { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; font-size: 16px; }
 .contato-info ul li i { color: var(--primary-color); font-size: 20px; width: 20px; text-align: center; }
@@ -288,12 +310,12 @@ form input, form textarea {
     width: 100%;
     padding: 15px;
     font-size: 16px;
-    border: 2px solid var(--dark-bg-3);
+    border: 1px solid var(--dark-bg-3);
     border-radius: var(--border-radius-sm);
     background: var(--dark-bg-3);
     color: var(--text-light);
     transition: border-color 0.3s, box-shadow 0.3s;
-    font-family: var(--font-primary);
+    font-family: var(--font-text);
 }
 form input:focus, form textarea:focus {
     outline: none;
@@ -309,7 +331,7 @@ footer {
     color: var(--text-light);
     text-align: center;
     padding: 20px 0;
-    border-top: 2px solid var(--primary-color);
+    border-top: 1px solid var(--primary-color);
     width: 100%;
     margin-top: auto; /* Garante que o footer fique no final */
 }
@@ -329,6 +351,10 @@ footer {
 
 /* Media Queries */
 @media (max-width: 992px) {
+    .home-grid {
+        grid-template-columns: 1fr;
+        width: min(760px, calc(100% - 24px));
+    }
     .sobre-container {
         flex-direction: column;
         text-align: center;
@@ -362,6 +388,9 @@ footer {
     }
     .hero h1 { font-size: 40px; }
     .hero p { font-size: 18px; }
+    .atuacao-container {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
@@ -397,9 +426,15 @@ footer {
     body { font-size: 14px; }
     .logo { height: 50px; }
     section { padding: 40px 15px; }
+    .home-grid {
+        width: calc(100% - 16px);
+        gap: 14px;
+        margin-top: 16px;
+    }
+    .home-grid > section { padding: 22px 16px; }
     .hero h1 { font-size: 28px; }
     .hero p { font-size: 16px; }
-    h2 { font-size: 30px; }
+    h2 { font-size: 26px; }
     .area { width: 100%; flex-basis: 100%; }
     form button, .cta-button { width: 100%; font-size: 16px; padding: 14px 28px; }
 }

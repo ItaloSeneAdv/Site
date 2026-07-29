@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -23,8 +23,18 @@
     <meta property="og:title" content="Direito Civil | Ítalo Sêne Advocacia">
     <meta property="og:description" content="Consultoria jurídica especializada em Direito Civil. Soluções personalizadas para resolução de conflitos e responsabilidade civil.">
     <meta property="og:image" content="https://italoseneadv.github.io/Site/landingassets/fotoperfil.webp">
+    <meta property="og:image:alt" content="Ítalo Sêne, advogado em Siqueira Campos">
     <meta property="og:url" content="https://italoseneadv.github.io/Site/areas/civil.html">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Ítalo Sêne Advocacia">
+    <meta property="og:locale" content="pt_BR">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Direito Civil | Ítalo Sêne Advocacia">
+    <meta name="twitter:description" content="Consultoria jurídica especializada em Direito Civil. Soluções personalizadas para resolução de conflitos e responsabilidade civil.">
+    <meta name="twitter:image" content="https://italoseneadv.github.io/Site/landingassets/fotoperfil.webp">
+    <meta name="twitter:image:alt" content="Ítalo Sêne, advogado em Siqueira Campos">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
     <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -128,12 +138,16 @@
             <a href="../index.html" class="logo-link">
                 <img src="../landingassets/logo.webp" alt="Logotipo de Ítalo Sêne Advocacia" class="logo">
             </a>
+            <button class="hamburger" id="hamburger" aria-label="Abrir menu de navegação">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <nav>
                 <ul class="menu">
                     <li><a href="../index.html#atuacao" class="menu-link">Áreas de Atuação</a></li>
                     <li><a href="../index.html#sobre" class="menu-link">Sobre</a></li>
                     <li><a href="../index.html#contato" class="menu-link">Contato</a></li>
-                    <li><a href="../blog/blogindex.html" class="menu-link">Blog</a></li>
                 </ul>
             </nav>
         </div>
@@ -183,24 +197,6 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Menu Toggle
-            const menuToggle = document.querySelector('.menu-toggle');
-            const menuClose = document.querySelector('.menu-close');
-            const menu = document.querySelector('.menu');
-            
-            menuToggle.addEventListener('click', function() {
-                menu.classList.add('active');
-            });
-            
-            menuClose.addEventListener('click', function() {
-                menu.classList.remove('active');
-            });
-            
-            document.querySelectorAll('.menu a').forEach(link => {
-                link.addEventListener('click', function() {
-                    menu.classList.remove('active');
-                });
-            });
             
             // Scroll Reveal
             const sr = ScrollReveal({
@@ -217,5 +213,8 @@
     </script>
 </body>
 </html>
+
+
+
 
 

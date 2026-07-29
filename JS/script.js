@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const originalTitle = document.title;
+    const hiddenTitle = 'Estaremos aqui se precisar';
 
     /**
      * LÓGICA DO MENU HAMBURGER (MÓVEL) - LÓGICA ORIGINAL
@@ -59,6 +61,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     animateOnScroll();
 
+    window.addEventListener('blur', function() {
+        document.title = hiddenTitle;
+    });
+
+    window.addEventListener('focus', function() {
+        document.title = originalTitle;
+    });
+
+    document.addEventListener('visibilitychange', function() {
+        document.title = document.hidden ? hiddenTitle : originalTitle;
+    });
+
     /**
      * LÓGICA DO FORMULÁRIO DE CONTATO PARA WHATSAPP
      */
@@ -71,11 +85,6 @@ document.addEventListener('DOMContentLoaded', function() {
             let nome = document.getElementById("nome").value.trim();
             let problema = document.getElementById("problema").value.trim();
             let mensagem = document.getElementById("mensagem").value.trim();
-
-            if (nome === "" || problema === "" || mensagem === "") {
-                alert("Por favor, preencha todos os campos do formulário.");
-                return;
-            }
 
             let texto = `Olá, meu nome é ${nome}. Meu caso é sobre ${problema}.\n\nDescrição: ${mensagem}\n\n*Mensagem enviada através do site.*`;
             let mensagemCodificada = encodeURIComponent(texto);
