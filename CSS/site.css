@@ -47,3 +47,6 @@ body{background:#121315;color:#eeeeeb;font-family:Georgia,'Times New Roman',seri
 /* Mapa do index: abaixo do formulário e dos canais, em largura total */
 .contact-utility-grid>.mapa-original{grid-column:1 / -1;width:100%;margin-top:2.2rem;border:1px solid #cf640c;background:#17191d;line-height:0}.contact-utility-grid>.mapa-original iframe{display:block;width:100%;height:250px;border:0!important}.contact-utility .mapa-original{padding:0}.whatsapp-fab img{width:44px;height:44px;object-fit:contain}.whatsapp-fab{width:64px;height:64px}
 @media(max-width:700px){.contact-utility-grid>.mapa-original iframe{height:300px}.whatsapp-fab{width:64px;height:64px}.whatsapp-fab img{width:46px;height:46px}}
+
+.whatsapp-fab{background:#cf640c!important;border-color:#cf640c!important;width:64px;height:64px}.whatsapp-fab .whatsapp-icon{display:block;width:40px;height:40px;fill:#fff}.whatsapp-fab:hover{background:#f36d07!important}.whatsapp-fab img{display:none!important}
+@media(max-width:700px){.whatsapp-fab{width:64px;height:64px}.whatsapp-fab .whatsapp-icon{width:42px;height:42px}}

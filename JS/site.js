@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         form.reportValidity();
         return;
       }
-      const texto = `Olá, meu nome é ${nome}.\n\nAssunto: ${problema}\n\nMensagem: ${mensagem}\n\nMensagem enviada pelo site.`;
+      const texto = `Olá, Ítalo. Acessei seu site e gostaria de explicar uma situação jurídica.\n\nMeu nome é ${nome}.\n\nAssunto: ${problema}\n\nMensagem: ${mensagem}`;
       window.open(`https://wa.me/5543988008177?text=${encodeURIComponent(texto)}`, '_blank', 'noopener');
     });
   }

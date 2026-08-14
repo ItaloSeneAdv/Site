@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
             let texto = `Olá, meu nome é ${nome}. Meu caso é sobre ${problema}.\n\nDescrição: ${mensagem}\n\n*Mensagem enviada através do site.*`;
             let mensagemCodificada = encodeURIComponent(texto);
             let numeroWhatsApp = "5543988008177";
-            let linkWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${mensagemCodificada}`;
+            let linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${mensagemCodificada}`;
 
             window.open(linkWhatsApp, '_blank');
         });

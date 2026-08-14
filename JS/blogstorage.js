@@ -187,7 +187,7 @@ class BlogStorage {
                         <div class="social-share-buttons">
                             <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}" target="_blank" class="share-btn facebook" aria-label="Compartilhar no Facebook"><i class="fab fa-facebook-f"></i></a>
                             <a href="https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(window.location.href)}&title=${encodeURIComponent(post.title)}" target="_blank" class="share-btn linkedin" aria-label="Compartilhar no LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://api.whatsapp.com/send?text=${encodeURIComponent(post.title + ' ' + window.location.href)}" target="_blank" class="share-btn whatsapp" aria-label="Compartilhar no WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://wa.me/?text=${encodeURIComponent(post.title + ' — ' + window.location.href)}" target="_blank" class="share-btn whatsapp" aria-label="Compartilhar no WhatsApp"><i class="fab fa-whatsapp"></i></a>
                             <a href="https://www.instagram.com/?url=${encodeURIComponent(window.location.href)}" target="_blank" class="share-btn instagram" aria-label="Compartilhar no Instagram"><i class="fab fa-instagram"></i></a>
                         </div>
                     </div>
