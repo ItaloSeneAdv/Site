@@ -1,2 +1,5 @@
 include:
   - "*.xml"
+
+exclude:
+  - "blog/_AI_INSTRUCTIONS.txt"
