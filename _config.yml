@@ -3,3 +3,5 @@ include:
 
 exclude:
   - "blog/_AI_INSTRUCTIONS.txt"
+  - "archive/"
+  - "docs/"
