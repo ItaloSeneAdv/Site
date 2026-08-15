@@ -1,0 +1,43 @@
+name: Keep sitemap current
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'blog/**'
+      - 'areas/**'
+      - 'index.html'
+      - 'landingpage.html'
+      - 'scripts/generate_sitemap.py'
+      - '.github/workflows/update-sitemap.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sitemap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Enrich article authorship
+        run: python3 scripts/enrich_article_schema.py
+
+      - name: Generate sitemap
+        run: python3 scripts/generate_sitemap.py
+
+      - name: Commit SEO metadata and sitemap when changed
+        run: |
+          if git diff --quiet -- blog sitemap.xml; then
+            echo 'SEO metadata and sitemap are already current.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add blog sitemap.xml
+          git commit -m 'chore: update sitemap from published pages'
+          git push
