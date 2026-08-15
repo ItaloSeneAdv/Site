@@ -1,0 +1,121 @@
+ORIENTAÇÕES INTERNAS PARA QUALQUER IA QUE ALTERAR ESTE BLOG
+==============================================================
+
+STATUS DO ARQUIVO
+-----------------
+Este arquivo é interno. Ele existe para orientar futuras IAs que forem manter o repositório. NÃO deve ser exibido no site público, NÃO deve entrar no sitemap e NÃO deve ser linkado por nenhuma página pública.
+
+O arquivo está dentro de blog/ por solicitação do proprietário, mas seu nome começa com sublinhado e ele deve permanecer excluído pelo build do GitHub Pages. Nunca renomeie este arquivo para um nome público.
+
+IDENTIDADE DO PROJETO
+---------------------
+Domínio oficial: https://italoseneadv.com.br/
+Repositório: https://github.com/ItaloSeneAdv/Site
+Hospedagem: GitHub Pages, site HTML/CSS/JS estático.
+Proprietário e autor profissional: Ítalo Sêne, advogado inscrito na OAB/PR sob o nº 127.730.
+Atendimento presencial: Siqueira Campos / PR.
+Atendimento remoto: Todo o Brasil.
+Instagram oficial: https://www.instagram.com/italosene.advogado/
+
+SEPARAÇÃO OBRIGATÓRIA DE PROPRIEDADES
+--------------------------------------
+Existem três propriedades distintas e elas não devem ser confundidas:
+
+1. Site principal: https://italoseneadv.com.br/ ou /index.html. É a apresentação institucional principal.
+2. Landing page: https://italoseneadv.com.br/landingpage.html. É uma página independente de links e conversão.
+3. Blog: https://italoseneadv.com.br/blog/ ou /blog/index.html. É a área de conteúdos e artigos.
+
+Uma alteração no blog não deve alterar a landing page nem o site principal, salvo autorização expressa. Uma alteração no site principal não deve substituir ou reestruturar a landing page. Preserve a separação de navegação, estilos e objetivos.
+
+ESTRUTURA ATUAL DO BLOG
+-----------------------
+O índice fica em blog/index.html.
+Os artigos individuais ficam diretamente em blog/*.html.
+As imagens dos artigos ficam em blog/blogimages/.
+As áreas de atuação ficam em areas/.
+O sitemap fica em sitemap.xml na raiz.
+O rastreamento é orientado por robots.txt na raiz.
+O CSS principal fica em CSS/site.css.
+
+REGRA DE PUBLICAÇÃO DE ARTIGO
+-----------------------------
+Todo artigo novo deve ser um arquivo HTML individual dentro de blog/ com slug estável, descritivo, minúsculo e separado por hífens. Não publique vários assuntos diferentes em uma única URL. Não crie páginas artificiais apenas para capturar variações de palavras-chave.
+
+Todo artigo precisa conter, no mínimo:
+
+- <!doctype html> e lang="pt-BR";
+- <title> único, descritivo e legível para pessoas;
+- meta description única, clara e correspondente ao conteúdo;
+- meta robots com index, follow;
+- link rel="canonical" apontando para a URL HTTPS definitiva do próprio artigo;
+- Open Graph e Twitter Card coerentes com título, descrição e imagem;
+- conteúdo principal visível no HTML, sem depender de JavaScript para o texto;
+- H1 único e headings H2/H3 em ordem lógica;
+- autoria visível: Ítalo Sêne, OAB/PR 127.730;
+- data de publicação e, quando houver alteração substancial, data de modificação;
+- BlogPosting em JSON-LD;
+- BreadcrumbList em JSON-LD;
+- autor Person no JSON-LD com url https://italoseneadv.com.br/#sobre;
+- imagem relevante com alt descritivo, sem texto genérico ou keyword stuffing;
+- links internos para /blog/ e para uma área de atuação relacionada;
+- chamada de contato sem prometer resultado jurídico;
+- nota informativa deixando claro que o artigo não substitui análise individualizada.
+
+DADOS E AUTORIA
+---------------
+Não invente formação, experiência, decisões judiciais, clientes, resultados, endereços, avaliações ou especialidades. Se faltar uma informação, mantenha o conteúdo neutro e peça confirmação ao proprietário.
+
+O autor deve permanecer identificado como Ítalo Sêne. Preserve a OAB/PR 127.730. O link de autoria estruturada deve apontar para https://italoseneadv.com.br/#sobre. Não atribua artigos ao nome de uma IA.
+
+CONTEÚDO E BOAS PRÁTICAS DO GOOGLE
+-----------------------------------
+Siga a documentação oficial:
+https://developers.google.com/search/docs/fundamentals/ai-optimization-guide?hl=pt-br
+https://developers.google.com/search/docs/fundamentals/creating-helpful-content?hl=pt-br
+https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview?hl=pt-br
+
+O Google informa que SEO tradicional continua relevante para experiências de IA, que as páginas precisam estar indexadas e qualificadas para snippets e que nenhuma prática garante rastreamento, indexação ou exibição. Portanto, não prometa ao proprietário que um artigo aparecerá automaticamente ou ficará em primeiro lugar.
+
+Escreva para pessoas reais. O conteúdo deve ser útil, claro, original, juridicamente responsável e baseado em conhecimento profissional. Não copie ou apenas reescreva outros sites. Não produza dezenas de artigos quase iguais. Não altere datas sem mudança real. Não escreva com uma contagem artificial de palavras. Não use títulos sensacionalistas só para obter cliques.
+
+Quando fizer sentido, explique a fonte legal, a data de atualização, os limites da informação e quais fatos/documentos podem mudar a análise. Evite aconselhamento jurídico individualizado sem conhecer o caso.
+
+SITEMAP E AUTOMAÇÃO
+-------------------
+O sitemap deve conter apenas URLs públicas canônicas e acessíveis. Nunca inclua este arquivo interno, arquivos de instrução, arquivos temporários, 404, duplicatas ou URLs de teste.
+
+O repositório possui:
+- scripts/generate_sitemap.py: gera sitemap.xml a partir de páginas e artigos publicados;
+- scripts/enrich_article_schema.py: reforça a URL de autoria no JSON-LD dos artigos;
+- .github/workflows/update-sitemap.yml: executa a manutenção quando há publicação na branch main.
+
+Após adicionar artigo ou área, execute os scripts localmente quando possível e verifique a quantidade de URLs. Não edite o sitemap manualmente se a automação puder regenerá-lo.
+
+VALIDAÇÃO ANTES DE PUBLICAR
+----------------------------
+Antes do commit:
+
+1. Confirme que o artigo abre diretamente em sua URL.
+2. Confirme que não há noindex, canonical incorreta ou links quebrados.
+3. Confirme que o título, descrição, H1, data e autoria correspondem ao texto real.
+4. Confirme que BlogPosting e BreadcrumbList continuam válidos.
+5. Confirme que a URL entrou no sitemap e não entrou arquivo interno.
+6. Execute git diff --check.
+7. Verifique que o índice do blog possui link rastreável para o novo artigo.
+8. Preserve o layout responsivo, as fontes, o mapa, o formulário e o botão verde do WhatsApp.
+9. Não altere a landing page ou o index sem pedido específico.
+10. Depois da publicação, aguarde o GitHub Pages e valide a URL pública com curl ou navegador.
+
+GOOGLE SEARCH CONSOLE
+---------------------
+Sitemap ajuda o Google a descobrir URLs, mas não garante indexação. O Search Console é a fonte para verificar páginas indexadas, impressões, cliques e posição média. Para artigos prioritários, inspecione a URL individualmente e solicite indexação apenas quando necessário. Não solicite repetidamente a mesma URL.
+
+PRESERVAÇÃO DE ESTILO E ESCOPO
+------------------------------
+O proprietário prefere luxo discreto, minimalismo tecnológico, fundo escuro, tipografia legível, espaço equilibrado e comunicação direta. Não transformar o site em página de coach, não inventar slogans genéricos e não inserir textos de briefing ou placeholders no conteúdo final.
+
+Não remover mapa, formulário, áreas de atuação, links de contato, compartilhamento funcional, paginação ou separação entre site, landing page e blog sem autorização expressa.
+
+REGRA FINAL
+-----------
+Se uma alteração puder quebrar URLs existentes, expor este arquivo, modificar outra propriedade ou inventar informação profissional, pare e peça confirmação antes de publicar.
