@@ -9,6 +9,7 @@ on:
       - 'index.html'
       - 'landingpage.html'
       - 'scripts/generate_sitemap.py'
+      - 'scripts/enrich_article_schema.py'
       - '.github/workflows/update-sitemap.yml'
   workflow_dispatch:
 
