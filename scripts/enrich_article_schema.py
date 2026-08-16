@@ -1,77 +1,71 @@
 #!/usr/bin/env python3
 """Maintain canonical authorship and BreadcrumbList JSON-LD for blog articles."""
 from pathlib import Path
+import json
 import re
 
 ROOT = Path(__file__).resolve().parents[1]
 AUTHOR_URL = "https://italoseneadv.com.br/#sobre"
 BASE_URL = "https://italoseneadv.com.br"
+LD_RE = re.compile(r'(<script\s+type=["\']application/ld\+json["\']>\s*)(.*?)(\s*</script>)', re.S | re.I)
 
 
-def add_author_url(text: str) -> tuple[str, bool]:
-    if AUTHOR_URL in text:
+def make_breadcrumb(article_url: str, section: str) -> dict:
+    return {
+        "@type": "BreadcrumbList",
+        "@id": f"{article_url}#breadcrumb",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Início", "item": f"{BASE_URL}/"},
+            {"@type": "ListItem", "position": 2, "name": "Conteúdos", "item": f"{BASE_URL}/blog/index.html"},
+            {"@type": "ListItem", "position": 3, "name": section, "item": article_url},
+        ],
+    }
+
+
+def update_jsonld(text: str, article_url: str) -> tuple[str, bool]:
+    match = LD_RE.search(text)
+    if not match:
         return text, False
-    pattern = re.compile(
-        r'("author"\s*:\s*\{\s*"@type"\s*:\s*"Person",\s*"name"\s*:\s*"Ítalo Sêne",)(\s*)'
-    )
-    updated, count = pattern.subn(
-        r'\1\n      "url": "' + AUTHOR_URL + r'",\2', text, count=1
-    )
-    return updated, bool(count)
-
-
-def add_breadcrumb(text: str, article_url: str) -> tuple[str, bool]:
-    if '"@type": "BreadcrumbList"' in text:
+    try:
+        data = json.loads(match.group(2))
+    except json.JSONDecodeError:
         return text, False
 
-    section_match = re.search(r'"articleSection"\s*:\s*"([^"]+)"', text)
-    section = section_match.group(1) if section_match else "Conteúdos jurídicos"
-    marker = f'      "articleSection": "{section}"\n    }}\n  ]'
-    replacement = f'''      "articleSection": "{section}"
-    }},
-    {{
-      "@type": "BreadcrumbList",
-      "@id": "{article_url}#breadcrumb",
-      "itemListElement": [
-        {{
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Início",
-          "item": "{BASE_URL}/"
-        }},
-        {{
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Conteúdos",
-          "item": "{BASE_URL}/blog/index.html"
-        }},
-        {{
-          "@type": "ListItem",
-          "position": 3,
-          "name": "{section}",
-          "item": "{article_url}"
-        }}
-      ]
-    }}
-  ]'''
-    if marker not in text:
+    if isinstance(data.get("@graph"), list):
+        graph = data["@graph"]
+        article = next((x for x in graph if isinstance(x, dict) and x.get("@type") == "BlogPosting"), None)
+        if article is None:
+            return text, False
+        if isinstance(article.get("author"), dict):
+            article["author"]["url"] = AUTHOR_URL
+        section = article.get("articleSection", "Conteúdos jurídicos")
+        if not any(isinstance(x, dict) and x.get("@type") == "BreadcrumbList" for x in graph):
+            graph.append(make_breadcrumb(article_url, section))
+        else:
+            return text, False
+        new_data = data
+    elif isinstance(data, dict) and data.get("@type") == "BlogPosting":
+        if isinstance(data.get("author"), dict):
+            data["author"]["url"] = AUTHOR_URL
+        section = data.get("articleSection", "Conteúdos jurídicos")
+        new_data = {"@context": data.get("@context", "https://schema.org"), "@graph": [data, make_breadcrumb(article_url, section)]}
+    else:
         return text, False
-    return text.replace(marker, replacement, 1), True
+
+    rendered = json.dumps(new_data, ensure_ascii=False, indent=2)
+    updated = text[:match.start(2)] + rendered + text[match.end(2):]
+    return updated, True
 
 
-author_changed = 0
-breadcrumb_changed = 0
+changed = 0
 for path in sorted((ROOT / "blog").glob("*.html")):
     if path.name == "index.html":
         continue
     text = path.read_text(encoding="utf-8")
     article_url = f"{BASE_URL}/blog/{path.name}"
-    text, changed_author = add_author_url(text)
-    text, changed_breadcrumb = add_breadcrumb(text, article_url)
-    if changed_author or changed_breadcrumb:
-        path.write_text(text, encoding="utf-8")
-    author_changed += int(changed_author)
-    breadcrumb_changed += int(changed_breadcrumb)
+    updated, did_change = update_jsonld(text, article_url)
+    if did_change:
+        path.write_text(updated, encoding="utf-8")
+        changed += 1
 
-print(f"Updated author profile URL in {author_changed} articles")
-print(f"Added BreadcrumbList in {breadcrumb_changed} articles")
+print(f"Updated JSON-LD in {changed} articles")
