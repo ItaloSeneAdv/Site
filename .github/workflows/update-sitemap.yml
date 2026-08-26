@@ -33,12 +33,12 @@ jobs:
 
       - name: Push SEO metadata to automation branch
         run: |
-          if git diff --quiet -- blog sitemap.xml; then
+          if git diff --quiet -- blog sitemap.xml sitemap.xml.gz sitemap.html urllist.txt; then
             echo 'SEO metadata and sitemap are already current.'
             exit 0
           fi
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add blog sitemap.xml
+          git add blog sitemap.xml sitemap.xml.gz sitemap.html urllist.txt
           git commit -m 'chore: update sitemap from published pages'
           git push origin HEAD:automation/seo-metadata-sync --force
