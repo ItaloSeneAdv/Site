@@ -54,3 +54,13 @@ body{background:#121315;color:#eeeeeb;font-family:Georgia,'Times New Roman',seri
 .whatsapp-fab .whatsapp-icon{display:block!important;flex:0 0 36px!important;width:36px!important;height:36px!important;max-width:36px!important;max-height:36px!important;margin:0!important;padding:0!important;fill:#fff!important;overflow:visible!important}
 .whatsapp-fab span{display:none!important}
 @media(max-width:700px){.whatsapp-fab{right:max(20px,env(safe-area-inset-right))!important;bottom:max(20px,env(safe-area-inset-bottom))!important;width:60px!important;height:60px!important;min-width:60px!important;min-height:60px!important}.whatsapp-fab .whatsapp-icon{flex-basis:36px!important;width:36px!important;height:36px!important;max-width:36px!important;max-height:36px!important}}
+
+
+/* Dúvidas frequentes nas páginas das áreas */
+.page-faq{margin-top:3.2rem;border-top:1px solid #c4beb4}
+.page-faq details{border-bottom:1px solid #c4beb4}
+.page-faq summary{cursor:pointer;list-style:none;padding:1.15rem 2.2rem 1.15rem 0;position:relative;font:600 1rem/1.4 var(--sans)}
+.page-faq summary::-webkit-details-marker{display:none}
+.page-faq summary:after{content:'+';position:absolute;right:.3rem;top:1rem;color:var(--gold);font:400 1.4rem var(--sans)}
+.page-faq details[open] summary:after{content:'−'}
+.page-faq details p{margin:0;padding:0 2.2rem 1.2rem 0;color:#625e57;line-height:1.65}
