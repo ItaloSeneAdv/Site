@@ -297,15 +297,6 @@ const POSTS_DATA = [
     "content": "O Código de Trânsito Brasileiro (CTB) prevê um sistema de pontos que registra as infrações cometidas pelo condutor ao longo de 12 meses. O acúmulo excessivo desses pontos pode levar à suspensão do direito de dirigir — e, para quem trabalha com o veículo, isso significa perda imediata de renda.\n\n📍 Veja como funciona:\nSegundo o art. 261 do CTB, a penalidade de suspensão será imposta quando o condutor atinge:\n🔴 20 pontos, se houver 2 ou mais infrações gravíssimas\n🟠 30 pontos, se houver 1 infração gravíssima\n🟢 40 pontos, se não houver nenhuma infração gravíssima\n\n🚛 Mas existe uma regra especial para motoristas profissionais:\nDe acordo com o §5º do mesmo artigo, quem exerce atividade remunerada ao veículo (como motoristas de aplicativo, caminhoneiros, entregadores e taxistas) só será suspenso ao atingir 40 pontos, independentemente da gravidade das infrações.\n\n💡 E mais: ao atingir 30 pontos, o condutor profissional pode, de forma preventiva, realizar um curso de reciclagem voluntária, evitando que a suspensão se concretize e mantendo sua habilitação ativa.\n\n🎯 Por isso, se você depende da CNH para trabalhar, atenção redobrada:\n✔️ Acompanhe sua pontuação no site do Detran\n✔️ Recorra das autuações quando for o caso\n✔️ Pratique direção defensiva — ela protege vidas e o seu sustento\n✔️ Evite infrações recorrentes por excesso de velocidade, celular ao volante e cinto de segurança\n\n🔎 A suspensão da CNH não acontece do dia para a noite. Mas quando chega, os impactos são imediatos. E o caminho mais seguro é sempre a informação — aliada à prevenção.\n\n#CNHProfissional #<a href=\"https://italoseneadv.com.br/areas/transito.html\">DireitoDeTrânsito</a> #MotoristasDoBrasil #PontosNaCNH #SuspensãoDaCNH #TrânsitoResponsável #CondutorRemunerado #LegislaçãoDeTrânsito #ProfissãoAoVolante #DireitoEmTrânsito #AdvocaciaInformativa #EducaçãoNoTrânsito #SegurançaViária #MotoristaConsciente"
   },
    {
-    "id": "1747332164203",
-    "title": "🍼⚖️ Guarda de boneca “bebê reborn” na Justiça? Entenda por que esse pedido não tem validade legal",
-    "author": "Ítalo Sêne",
-    "date": "2025-05-15",
-    "image": "imagem15052025.png",
-    "type": "Família",
-    "content": "Um caso inusitado ganhou repercussão recentemente: um casal, após o fim do relacionamento, quis disputar judicialmente a “guarda” de uma boneca do tipo bebê reborn — conhecida por seu alto realismo e valor emocional para os donos.\n\nMas do ponto de vista jurídico, não há possibilidade legal de atribuir guarda judicial a objetos inanimados, mesmo que estes possuam forte valor afetivo.\n\n📌 A guarda legal existe para proteger o interesse de seres humanos menores de idade, garantindo-lhes cuidado, sustento e convivência familiar. Ela envolve direitos e deveres de natureza civil e constitucional — o que não se aplica a bens materiais.\n\n🎠 Embora a disputa seja compreensível no aspecto emocional, juridicamente a boneca é considerada um bem patrimonial — e nesse caso, o caminho correto seria discutir sua divisão como parte do patrimônio comum do casal, e não como se fosse uma criança.\n\n🧸 Casos como esse revelam o quanto o apego afetivo a determinados bens pode gerar conflitos emocionais sérios, mas é importante lembrar que o Direito tem critérios objetivos para garantir segurança e racionalidade às decisões judiciais.\n\n👀 E atenção: essa situação, apesar de parecer inusitada, pode ocorrer com outros objetos de valor sentimental — como pets, coleções e heranças simbólicas. Nesses casos, o melhor caminho é sempre buscar o bom senso e o diálogo, antes que as emoções levem uma discussão para a esfera judicial.\n\n#Guarda #<a href=\"https://italoseneadv.com.br/areas/familia.html\">DireitoDeFamília</a> #BensComuns #Divórcio #PartilhaDeBens #BebêReborn #DireitoCivil #Jurisprudência #DisputaJudicial #CuriosidadesJurídicas #AdvocaciaInformativa #JustiçaEEquilíbrio #fyi #fy #fypageシ"
-  },
-   {
     "id": "1747249160776",
     "title": "🔒💼 Saiba seus direitos: entenda suas garantias em relação aos empréstimos consignados! ⚖️",
     "author": "Ítalo Sêne",
@@ -739,7 +730,6 @@ const POSTS_DATA = [
     }
 ];
 window.POSTS_DATA = POSTS_DATA;
-
 
 
 
