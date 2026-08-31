@@ -55,6 +55,11 @@ body{background:#121315;color:#eeeeeb;font-family:Georgia,'Times New Roman',seri
 .whatsapp-fab span{display:none!important}
 @media(max-width:700px){.whatsapp-fab{right:max(20px,env(safe-area-inset-right))!important;bottom:max(20px,env(safe-area-inset-bottom))!important;width:60px!important;height:60px!important;min-width:60px!important;min-height:60px!important}.whatsapp-fab .whatsapp-icon{flex-basis:36px!important;width:36px!important;height:36px!important;max-width:36px!important;max-height:36px!important}}
 
+/* Ajustes técnicos sem alteração visual */
+.category-filters button,.blog-pagination button{min-height:44px}
+.blog-pagination button{min-width:44px;height:44px}
+.brand img{max-width:none}
+
 
 /* Dúvidas frequentes nas páginas das áreas */
 .page-faq{margin-top:3.2rem;border-top:1px solid #c4beb4}

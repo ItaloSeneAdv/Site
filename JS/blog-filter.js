@@ -6,8 +6,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const pagination = document.getElementById('blog-pagination');
   
   let activeCategory = 'all';
-  let currentPage = 1;
   const itemsPerPage = 12;
+
+  const pageFromUrl = () => {
+    const page = Number.parseInt(new URL(window.location.href).searchParams.get('page') || '1', 10);
+    return Number.isFinite(page) && page > 0 ? page : 1;
+  };
+
+  const setPageInUrl = (page, method) => {
+    const url = new URL(window.location.href);
+    if (page > 1) url.searchParams.set('page', String(page));
+    else url.searchParams.delete('page');
+    window.history[method]({ page }, '', url);
+  };
+
+  let currentPage = pageFromUrl();
 
   const normalize = (value) => (value || '').toLocaleLowerCase('pt-BR').normalize('NFD').replace(/[\u0300-\u036f]/g, '');
 
@@ -25,7 +38,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Calcula páginas.
     const totalPages = Math.ceil(filtered.length / itemsPerPage);
-    if (currentPage > totalPages) currentPage = totalPages || 1;
+    const validPage = Math.min(currentPage, totalPages || 1);
+    if (validPage !== currentPage) {
+      currentPage = validPage;
+      setPageInUrl(currentPage, 'replaceState');
+    }
 
     // Oculta todos e mostra apenas os da página atual.
     cards.forEach(c => {
@@ -50,9 +67,13 @@ document.addEventListener('DOMContentLoaded', () => {
           const btn = document.createElement('button');
           btn.type = 'button';
           btn.textContent = String(i);
+          btn.setAttribute('aria-label', `Ir para a página ${i}`);
+          if (i === currentPage) btn.setAttribute('aria-current', 'page');
           btn.classList.toggle('active', i === currentPage);
           btn.addEventListener('click', () => {
+            if (i === currentPage) return;
             currentPage = i;
+            setPageInUrl(currentPage, 'pushState');
             update();
             window.scrollTo({ top: document.querySelector('.blog-section').offsetTop - 100, behavior: 'smooth' });
           });
@@ -66,15 +87,22 @@ document.addEventListener('DOMContentLoaded', () => {
     activeCategory = button.dataset.filter || 'all';
     buttons.forEach((item) => item.classList.toggle('active', item === button));
     currentPage = 1;
+    setPageInUrl(currentPage, 'replaceState');
     update();
   }));
 
   if (search) {
     search.addEventListener('input', () => {
       currentPage = 1;
+      setPageInUrl(currentPage, 'replaceState');
       update();
     });
   }
+
+  window.addEventListener('popstate', () => {
+    currentPage = pageFromUrl();
+    update();
+  });
 
   update();
 });
